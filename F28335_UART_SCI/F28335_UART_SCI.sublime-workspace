@@ -1,0 +1,1866 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"RES",
+				"Reset"
+			],
+			[
+				"SCIC",
+				"SCICTL1"
+			],
+			[
+				"PA",
+				"PARITY"
+			],
+			[
+				"c",
+				"comment"
+			],
+			[
+				"t",
+				"tSec\tparam"
+			],
+			[
+				"nam",
+				"naming_convention\tfunction"
+			],
+			[
+				"na",
+				"__name__"
+			],
+			[
+				"dir",
+				"dirname\tfunction"
+			],
+			[
+				"d",
+				"Directory"
+			],
+			[
+				"defin",
+				"defined"
+			],
+			[
+				"de",
+				"details\tTag"
+			],
+			[
+				"Dis",
+				"disassembly"
+			],
+			[
+				"margin",
+				"margin-left"
+			],
+			[
+				"PC",
+				"PC-USB"
+			],
+			[
+				"au",
+				"auto"
+			],
+			[
+				"bord",
+				"border-style"
+			],
+			[
+				"bor",
+				"border"
+			],
+			[
+				"inl",
+				"inline"
+			],
+			[
+				"foot",
+				"footIcon\tstatement"
+			],
+			[
+				"aut",
+				"author\tstatement"
+			],
+			[
+				"loca",
+				"location\tstatement"
+			],
+			[
+				"form",
+				"format\tfunction"
+			],
+			[
+				"find",
+				"findall\tfunction"
+			],
+			[
+				"del",
+				"delete"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"foo",
+				"footerTemplate"
+			],
+			[
+				"mod",
+				"modifiedStr\tfunction"
+			],
+			[
+				"str",
+				"string"
+			],
+			[
+				"fin",
+				"finished"
+			],
+			[
+				"htm",
+				"html\tstatement"
+			],
+			[
+				"art",
+				"article_footer"
+			],
+			[
+				"ali",
+				"text-align"
+			],
+			[
+				"he",
+				"header\tTag"
+			],
+			[
+				"align",
+				"vertical-align"
+			],
+			[
+				"marg",
+				"margin-right"
+			],
+			[
+				"becom",
+				"become"
+			],
+			[
+				"CPU",
+				"CPU-Load"
+			],
+			[
+				"margi",
+				"margin-left"
+			],
+			[
+				"font",
+				"font-style"
+			],
+			[
+				"thr",
+				"thread"
+			],
+			[
+				"thre",
+				"threads"
+			],
+			[
+				"whi",
+				"Which"
+			],
+			[
+				"cente",
+				"centered"
+			],
+			[
+				"jitter_",
+				"jitter_flash.bmp\tFile"
+			],
+			[
+				"7_1",
+				"7_1_perc.bmp\tFile"
+			],
+			[
+				"sr",
+				"strx\tstatement"
+			],
+			[
+				"autoS",
+				"autoStrReg\tstatement"
+			],
+			[
+				"auto",
+				"autoStrReg\tstatement"
+			],
+			[
+				"line",
+				"lineRegs\tstatement"
+			],
+			[
+				"mo",
+				"most"
+			],
+			[
+				"ELT",
+				"ELT131_Praktikum_upw:EZ3:47\\K.pdf\tFile"
+			],
+			[
+				"tmp",
+				"tmplen"
+			],
+			[
+				"De",
+				"Deutsche_Telekom_Root_CA_2"
+			],
+			[
+				"ss",
+				"ssl/\tDir"
+			],
+			[
+				"ref",
+				"make_reference\tfunction"
+			],
+			[
+				"L",
+				"Lumpy\tclass"
+			],
+			[
+				"ins",
+				"insert\t(MarkdownPreview.py)"
+			],
+			[
+				"Arch",
+				"Architekturen"
+			],
+			[
+				"Base",
+				"BaseClassA"
+			],
+			[
+				"Architek",
+				"Architektur"
+			],
+			[
+				"Arc",
+				"Architektur"
+			],
+			[
+				"Modell",
+				"Modellierungssprache"
+			],
+			[
+				"Archite",
+				"Architektur"
+			],
+			[
+				"La",
+				"Language_"
+			],
+			[
+				"Model",
+				"Modeling"
+			],
+			[
+				"buff",
+				"buffName"
+			],
+			[
+				"alter",
+				"alterDir"
+			],
+			[
+				"ce",
+				"center\tTag"
+			],
+			[
+				"pro",
+				"produces"
+			],
+			[
+				"Th",
+				"This"
+			],
+			[
+				"specif",
+				"specified\t(MarkdownPreview.py)"
+			],
+			[
+				"subs",
+				"substitutes\t(MarkdownPreview.py)"
+			],
+			[
+				"MarkdownPre",
+				"MarkdownPreview.sublime-settings"
+			],
+			[
+				"se",
+				"settings"
+			],
+			[
+				"suff",
+				"suffix"
+			],
+			[
+				"diag",
+				"diagFilePath"
+			],
+			[
+				"dia",
+				"diag"
+			],
+			[
+				"date",
+				"datetime"
+			],
+			[
+				"__",
+				"__name__"
+			],
+			[
+				"gett",
+				"gettempdir"
+			],
+			[
+				"export",
+				"exportDir"
+			],
+			[
+				"img",
+				"img_tag"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"width",
+				"width: 〔property〕"
+			],
+			[
+				"defau",
+				"defaultDict"
+			],
+			[
+				"defA",
+				"defAttrsDict"
+			],
+			[
+				"attr",
+				"attr_dict"
+			],
+			[
+				"next",
+				"next_line"
+			],
+			[
+				"call",
+				"caller_method"
+			],
+			[
+				"first",
+				"first_line_after_block"
+			],
+			[
+				"firs",
+				"first_line_after_block"
+			],
+			[
+				"err",
+				"errMsg\tstatement"
+			],
+			[
+				"defa",
+				"defas\tstatement"
+			],
+			[
+				"bla",
+				"blah_name\tstatement"
+			],
+			[
+				"__a",
+				"__name__\tinstance"
+			],
+			[
+				"all",
+				"allfound"
+			],
+			[
+				"caller",
+				"caller_class"
+			],
+			[
+				"blk",
+				"blk_attr"
+			],
+			[
+				"get_att",
+				"get_attr_region"
+			],
+			[
+				"att",
+				"attr_reg"
+			],
+			[
+				"defaul",
+				"default_style"
+			],
+			[
+				"fig",
+				"figcaption\tTag"
+			],
+			[
+				"def",
+				"defas"
+			],
+			[
+				"inla",
+				"inlas"
+			],
+			[
+				"inli",
+				"inline_attrs"
+			],
+			[
+				"default",
+				"default_attrs"
+			],
+			[
+				"inline",
+				"inlineAttrs"
+			],
+			[
+				"pass",
+				"passedDict"
+			],
+			[
+				"gro",
+				"groups\tfunction"
+			],
+			[
+				"debu",
+				"debug_levels"
+			],
+			[
+				"keys",
+				"keys"
+			],
+			[
+				"deb",
+				"debug_levels"
+			],
+			[
+				"debug",
+				"debug_lvls"
+			],
+			[
+				"Test",
+				"TestClassNewprint"
+			],
+			[
+				"key",
+				"keys\t(MarkdownPreview.py)"
+			],
+			[
+				"the_",
+				"the_class"
+			],
+			[
+				"num",
+				"numFiles"
+			],
+			[
+				"copyF",
+				"copyFilesWithProgress"
+			],
+			[
+				"Progr",
+				"ProgressBar"
+			],
+			[
+				"whz",
+				"whzHome"
+			],
+			[
+				"obje",
+				"object"
+			],
+			[
+				"Markdow",
+				"MarkdownPreview"
+			],
+			[
+				"Mar",
+				"MarkdownPreview"
+			],
+			[
+				"class",
+				"classname"
+			],
+			[
+				"basi",
+				"basicConfig"
+			],
+			[
+				"floa",
+				"float\t(styleMdb.css)"
+			],
+			[
+				"diagr",
+				"diagram_files"
+			],
+			[
+				"attribute_",
+				"attribute_region"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "main.c",
+			"settings":
+			{
+				"buffer_size": 6340,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "/**\n * @file        uart_sci.c\n * @project     F28335_UART_SCI\n *\n * @date        25 Mar 2017\n * @author      Manuel Del Basso (mainster)\n * @email       manuel.delbasso@gmail.com\n *\n * @ide         Code Composer Studio Version: 7.1.0.00015\n * @license     GNU GPL v3\n *\n * @brief       Implementation of interrupt driven UART interface via\n *              TMS320F28335 SCI module.\n *\n   @verbatim\n\n    ------------------------------------------------------------------------\n\n    Copyright (C) 2016  Manuel Del Basso\n\n    This program is free software: you can redistribute it and/or modify\n    it under the terms of the GNU General Public License as published by\n    the Free Software Foundation, either version 3 of the License, or\n    (at your option) any later version.\n\n    This program is distributed in the hope that it will be useful,\n    but WITHOUT ANY WARRANTY; without even the implied warranty of\n    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n    GNU General Public License for more details.\n    You should have received a copy of the GNU General Public License\n    along with this program.  If not, see <http://www.gnu.org/licenses/>.\n\n    ------------------------------------------------------------------------\n\n   @endverbatim\n *\n */\n#include <stdlib.h>\n#include \"uart_sci.h\"\n\nchar sciaRxBuff [SCI_RX_BUFF_SIZ];\nchar sciaTxBuff [SCI_TX_BUFF_SIZ];\nchar *pUartRxBuff = &sciaRxBuff[0];\nchar *pUartTxBuff = &sciaTxBuff[0];\n\n\n\nvoid MD_SCIA_Init (const float F_CPU_MHZ, const uint32_t baudrate) {\n    EALLOW;\n    GpioCtrlRegs.GPAMUX2.bit.GPIO28 = 1;        //!< GPIO28 alternate pin funtion: SCIA_Rx\n    GpioCtrlRegs.GPAMUX2.bit.GPIO29 = 1;        //!< GPIO29 alternate pin funtion: SCIA_Tx\n    EDIS;\n\n    /**\n     * SCI software reset (active low). Writing a 0 to this bit initializes the SCI state\n     * machines and operating flags (registers SCICTL2 and SCIRXST) to the reset condition\n     */\n    SciaRegs.SCICTL1.bit.SWRESET = 0;           //!< Reset SCI registers\n    SciaRegs.SCICTL1.bit.SWRESET = 1;           //!< Reset SCI registers\n\n    /**\n     * SCICCR:   SCI Communication control register\n     * |     7     |    6     |     5      |      4       |     3     |  2 ... 0  |\n     * |-----------|----------|------------|--------------|-----------|-----------|\n     * | STOP BITS | EVEN/ODD | PARITY ENA | LOOPBACK ENA | ADDR/IDLE | SCICHARx  |\n     */\n    SciaRegs.SCICCR.bit.STOPBITS = 1-1;         //!< Stop bit ctrl: 0: 1-Stop 1: 2-Stop\n    SciaRegs.SCICCR.bit.PARITY = 1;             //!< Parity: Even\n    SciaRegs.SCICCR.bit.PARITYENA = 0;          //!< Parity check: disable\n    SciaRegs.SCICCR.bit.SCICHAR = 8-1;          //!< Character-length ctrl bits 2..0\n\n    /**\n     * SCICTL1:   SCI Control register 1\n     * SCI receiver/transmitter enable/disable\n     */\n    SciaRegs.SCICTL1.bit.RXENA = 1;             //!< Enable receiver to buffer transfer\n    SciaRegs.SCICTL1.bit.TXENA = 1;             //!< Enable transmitter\n    SciaRegs.SCICTL2.bit.TXINTENA = 1;          //!< Enable SCI_A Tx IRQ\n    SciaRegs.SCICTL2.bit.RXBKINTENA = 1;        //!< Enable SCI_A Rx IRQ\n\n\n    /**\n     * LSPCLK   Low-speed peripheral clock.\n     * LOSPCP   Low-speed peripheral clock pre-scaler\n     *\n     * BRR = (LSPCLK[Hz] / (BAUDRATE * 8)) -1\n     * LSPCLK[Hz] = (SYSCLKOUT / LSPCLK_DIV)\n     *\n     * ATTENTION:   (SPRUFB0D.pdf, p39)\n     * --------------------------------\n     * LSPCLK_DIV = (SysCtrlRegs.LOSPCP.bit.LSPCLK << 1)\n     *\n     * BRR(BAUD, SYSCLKOUT) = (SYSCLKOUT/(LOSPCP * BAUD *8)) - 1\n     */\n    uint16_t BRR =\n            (F_CPU_MHZ * 1e6) /\n            ((SysCtrlRegs.LOSPCP.bit.LSPCLK << 1) * baudrate * 8) - 1;\n\n    SciaRegs.SCIHBAUD = UINT8_C(BRR >> 8);      //!< Set the upper 8-Bits\n    SciaRegs.SCILBAUD = UINT8_C(BRR & 0x00ff);  //!< Set the lower 8-Bits\n\n    BRR = SysCtrlRegs.LOSPCP.all;\n    BRR = SysCtrlRegs.LOSPCP.bit.LSPCLK;\n\n    /**\n     * Initialize transmit and receive buffers\n     */\n    pUartRxBuff = &sciaRxBuff[0];\n    pUartTxBuff = &sciaTxBuff[0];\n}\n\n\nretVal_t uartPuts(const char *str) {\n    /* Return busy if pUartTxBuff doesnt match txBuff base */\n    if (pUartTxBuff != &sciaTxBuff[0])\n        return ret_busy;\n\n    retVal_t retVal = ret_ok;\n\n    /* Strip if string doesnt fit into tx buffer */\n    if (strlen(str) >= SCI_TX_BUFF_SIZ) {\n        strncpy(pUartTxBuff, str, SCI_TX_BUFF_SIZ-1);\n        retVal = ret_striped;\n    }\n    else {\n        strcpy(pUartTxBuff, str);\n    }\n\n    /* Copy first char to SCI Tx register */\n    SciaRegs.SCITXBUF = *pUartTxBuff++;\n\n    return retVal;\n}\n\n\nchar *_uartGets(const int maxChars) {\n    pUartRxBuff = &sciaRxBuff[0];\n    /**\n     * If less than strlen(pUartRxBuff) chars has been queried,\n     * strip rx buffer by manual placed '\\0'.\n     */\n    if ((maxChars > 0) && (maxChars < strlen(pUartRxBuff))) {\n        if (maxChars < strlen(pUartRxBuff))\n            *(pUartRxBuff + maxChars) = '\\0';\n    }\n    uartSetRxed(0);\n    return pUartRxBuff;\n}\n\nint16_t _uartRxedLine(int16_t state) {\n    static int16_t line_received = 0;\n    if (state > -1) {\n        line_received = state;\n        if (state == 0)\n            /**\n             * Clear RX FIFO interrupt flag to unblock new incoming interrupts\n             */\n            SciaRegs.SCIFFRX.bit.RXFFINTCLR = 1;\n    }\n\n    return line_received;\n}\n\n\n/**\n * @brief      SCIA ready to transmit IRQ handler \n */\ninterrupt void MD_SCIA_Tx_irq(void) {\n    /**\n     * Acknowledge group 9 IRQ \n     */\n    PieCtrlRegs.PIEACK.all = PIEACK_GROUP9;\n\n    if ((*pUartTxBuff != '\\0') && \n        (pUartTxBuff <= &sciaTxBuff[SCI_TX_BUFF_SIZ]))\n        SciaRegs.SCITXBUF = *pUartTxBuff++;\n    else\n        /*\n         * Reset pointer to buffer base address stops blocking of\n         * new uartPuts() calls.\n         */\n        pUartTxBuff = &sciaTxBuff[0];\n}\n\n\n/**\n * @brief      SCIA data receive IRQ handler\n */\ninterrupt void MD_SCIA_Rx_irq(void) {\n    /**\n     * Acknowledge group 9 IRQ \n     */\n    PieCtrlRegs.PIEACK.all = PIEACK_GROUP9;\n\n    /**\n     * If Rx buffer pointer equals Rf buffer base address,\n     * memset Rx buffer up to (and including) next '\\0'\n     */\n    if (pUartRxBuff == &sciaRxBuff[SCI_RX_BUFF_SIZ])\n        memset(pUartRxBuff, ' ', strlen(pUartRxBuff)+1);\n\n    /**\n     * If \\n detected, close string in buffer by appending \\0\n     */\n    if ((SciaRegs.SCIRXBUF.all == '\\n') ||\n            (pUartRxBuff >= &sciaRxBuff[SCI_RX_BUFF_SIZ])) {\n        *pUartRxBuff = '\\0';\n        uartSetRxed(1);\n    }\n    else {\n        *pUartRxBuff++ = SciaRegs.SCIRXBUF.all;\n        /**\n         * Clear RX FIFO interrupt flag to unblock new incoming interrupts\n         */\n        SciaRegs.SCIFFRX.bit.RXFFINTCLR = 1;\n    }\n    //SciaRegs.SCIFFRX.bit.RXFFOVRCLR=1;   // Clear Overflow flag\n}\n\n",
+			"file": "uart_sci.c",
+			"file_size": 6772,
+			"file_write_time": 131349659133255652,
+			"settings":
+			{
+				"buffer_size": 6772,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "/**\n * @file        uart_sci.c\n * @project     F28335_UART_SCI\n *\n * @date        25 Mar 2017\n * @author      Manuel Del Basso (mainster)\n * @email       manuel.delbasso@gmail.com\n *\n * @ide         Code Composer Studio Version: 7.1.0.00015\n * @license     GNU GPL v3\n *\n *\n   @verbatim\n\n    ------------------------------------------------------------------------\n\n    Copyright (C) 2016  Manuel Del Basso\n\n    This program is free software: you can redistribute it and/or modify\n    it under the terms of the GNU General Public License as published by\n    the Free Software Foundation, either version 3 of the License, or\n    (at your option) any later version.\n\n    This program is distributed in the hope that it will be useful,\n    but WITHOUT ANY WARRANTY; without even the implied warranty of\n    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n    GNU General Public License for more details.\n    You should have received a copy of the GNU General Public License\n    along with this program.  If not, see <http://www.gnu.org/licenses/>.\n\n    ------------------------------------------------------------------------\n\n   @endverbatim\n *\n */\n#ifndef UART_SCI_H_\n#define UART_SCI_H_\n\n#include <stdint.h>\n#include <string.h>\n#include \"DSP2833x_Device.h\"\n\n#define SCI_RX_BUFF_SIZ   64\n#define SCI_TX_BUFF_SIZ   64\n\ntypedef enum RetVal {\n    ret_ok,\n    ret_busy,\n    ret_fail,\n    ret_striped,\n} retVal_t;\n\n#define uartGets()      (*_uartGets(-1))\n#define uartGetsn(n)    (*_uartGets(n))\n#define uartHasRxed()   (_uartRxedLine(-1))     //!< Returns static state\n#define uartSetRxed(x)  (_uartRxedLine(x))      //!< Updates and returns static state\n\nvoid MD_SCIA_Init (const float _F_CPU_MHZ,\n                   const uint32_t baudrate);\n\nchar *_uartGets(const int maxChars);\nretVal_t uartPuts(const char *str);\nint16_t _uartRxedLine(int16_t state);\n\ninterrupt void MD_SCIA_Rx_irq(void);\ninterrupt void MD_SCIA_Tx_irq(void);\n\n\n#endif /* UART_SCI_H_ */\n",
+			"file": "uart_sci.h",
+			"file_size": 1967,
+			"file_write_time": 131349658837806434,
+			"settings":
+			{
+				"buffer_size": 1967,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/mainster/.config/sublime-text-3/Packages/User/alignSingleLineComments.py",
+			"settings":
+			{
+				"buffer_size": 390,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/User/c2000_gmake.sublime-build",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/User/markdownChapters.sublime-build",
+					""
+				],
+				[
+					"Packages/User/mkDoxy.sublime-build",
+					""
+				],
+				[
+					"Packages/User/udev_reload.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				],
+				[
+					"Packages/User/markdownChapters.sublime-build",
+					""
+				],
+				[
+					"Packages/User/mkDoxy.sublime-build",
+					""
+				],
+				[
+					"Packages/User/udev_reload.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/User/c2000_gmake.sublime-build",
+					""
+				],
+				[
+					"Packages/User/c2000_gmake.sublime-build",
+					"Clean"
+				],
+				[
+					"Packages/User/c2000_gmake.sublime-build",
+					"Test"
+				]
+			],
+			[
+				"Packages/User/c2000_gmake.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/User/c2000_gmake.sublime-build",
+					""
+				],
+				[
+					"Packages/User/c2000_gmake.sublime-build",
+					"build"
+				],
+				[
+					"Packages/User/c2000_gmake.sublime-build",
+					"clean"
+				]
+			],
+			[
+				"Packages/User/c2000_gmake.sublime-build",
+				"build"
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "set syn ma",
+		"selected_items":
+		[
+			[
+				"set syn ma",
+				"Set Syntax: MultiMarkdown"
+			],
+			[
+				"cle",
+				"Clear Console"
+			],
+			[
+				"js",
+				"Pretty JSON: Format and Sort JSON"
+			],
+			[
+				"prv",
+				"PackageResourceViewer: Extract Package"
+			],
+			[
+				"keyma",
+				"Keymaps: Find a keymap for..."
+			],
+			[
+				"pack ena",
+				"Package Control: Enable Package"
+			],
+			[
+				"set syn c",
+				"Set Syntax: C"
+			],
+			[
+				"set syn mark",
+				"Set Syntax: Markdown Extended"
+			],
+			[
+				"beau",
+				"SublimeAStyleFormmatter: Format Current Selection"
+			],
+			[
+				"tri",
+				"Trimmer: Trim trailing whitespace."
+			],
+			[
+				"colo",
+				"Color Picker"
+			],
+			[
+				" anac lin",
+				"Anaconda: Disable linting on this file"
+			],
+			[
+				"anacon",
+				"Anaconda: Enable linting on this file"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"beat",
+				"SublimeAStyleFormmatter: Format Current Selection"
+			],
+			[
+				"set syn latex",
+				"Set Syntax: LaTeX"
+			],
+			[
+				"anac d",
+				"Anaconda: Disable linting on this file"
+			],
+			[
+				"set py",
+				"Set Syntax: Python"
+			],
+			[
+				"anaco",
+				"Anaconda: Disable linting on this file"
+			],
+			[
+				"trim",
+				"Trimmer: Trim trailing whitespace."
+			],
+			[
+				"trimm",
+				"Trimmer: Trim trailing whitespace."
+			],
+			[
+				"ana",
+				"Anaconda: Set Python interpreter"
+			],
+			[
+				"disab",
+				"Package Control: Disable Package"
+			],
+			[
+				"debu",
+				"Plugin Debugger: run debug_example (opens Debugger)"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"lore",
+				"Add some Lorem Gibson"
+			],
+			[
+				"prett",
+				"Pretty JSON: Format and Sort JSON"
+			],
+			[
+				"cl",
+				"Clear Console"
+			],
+			[
+				"set syn pyth",
+				"Set Syntax: Python"
+			],
+			[
+				"dia",
+				"Diagram: Generate Diagrams for Active View"
+			],
+			[
+				"clea",
+				"Clear Console"
+			],
+			[
+				"clear",
+				"Clear Console"
+			],
+			[
+				"set sy ic",
+				"Set Syntax: iCalendar"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"yum",
+				"yUML: Open Diagram in Browser"
+			],
+			[
+				"syntax uml",
+				"Set Syntax: yUML"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"synta per",
+				"Set Syntax: Perl"
+			],
+			[
+				"ena",
+				"Package Control: Enable Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"color",
+				"Color Picker"
+			],
+			[
+				"set ht",
+				"Set Syntax: HTML"
+			],
+			[
+				"run",
+				"Build With: C++ Single File - Run"
+			],
+			[
+				"url",
+				"Open URL"
+			],
+			[
+				"tras",
+				"DoxyDoxygen: Translate Selection To..."
+			],
+			[
+				"pa",
+				"Package Control: Disable Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ena",
+				"Package Control: Enable Package"
+			],
+			[
+				"goto",
+				"GotoLineEnhanced: Prompt goto line"
+			],
+			[
+				"disa pa",
+				"Package Control: Disable Package"
+			],
+			[
+				"Package Control: rem",
+				"Package Control: Remove Package"
+			],
+			[
+				"trans",
+				"DoxyDoxygen: Translate Selection To..."
+			],
+			[
+				"tra",
+				"DoxyDoxygen: Translate Selection To..."
+			],
+			[
+				"markd ",
+				"MarkdownEditing: New Reference"
+			],
+			[
+				"markdow url",
+				"MarkdownEditing: Fix Underlined Headers"
+			],
+			[
+				"set syn jso",
+				"Set Syntax: JSON"
+			],
+			[
+				"trans ",
+				"DoxyDoxygen: Translate Selection To..."
+			],
+			[
+				"col",
+				"Color Picker"
+			],
+			[
+				"syn bash",
+				"Set Syntax: Shell Script (Bash)"
+			],
+			[
+				"lor",
+				"Add some Lorem Gibson"
+			],
+			[
+				"lorem",
+				"Snippet: Lorem ipsum"
+			],
+			[
+				"loe",
+				"File: Locate"
+			],
+			[
+				"open",
+				"Open URL"
+			],
+			[
+				"markdown",
+				"Set Syntax: Markdown"
+			],
+			[
+				"toc",
+				"MarkdownTOC:Update TOC"
+			],
+			[
+				"set mar",
+				"Set Syntax: Markdown Extended"
+			],
+			[
+				"mark",
+				"Markdown HTML Preview"
+			],
+			[
+				"synta mark",
+				"Set Syntax: MultiMarkdown"
+			],
+			[
+				"markd",
+				"Markdown HTML Preview"
+			],
+			[
+				"tran",
+				"DoxyDoxygen: Translate Selection To..."
+			],
+			[
+				"set syn diff",
+				"Set Syntax: Diff"
+			],
+			[
+				"set sy lo",
+				"Set Syntax: log2"
+			],
+			[
+				"inden",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"subl syna",
+				"Plugin Development: Convert Syntax to .sublime-syntax"
+			],
+			[
+				"synta",
+				"Plugin Development: Convert Syntax to .sublime-syntax"
+			],
+			[
+				"set mult",
+				"Set Syntax: MultiMarkdown"
+			],
+			[
+				"set synmar",
+				"Set Syntax: Markdown Extended"
+			],
+			[
+				"shell",
+				"shell_mdmerge"
+			],
+			[
+				"shell_md",
+				"shell_mdmerge"
+			],
+			[
+				"mark pre",
+				"Markdown HTML Preview"
+			],
+			[
+				"mar",
+				"Markdown HTML Preview"
+			],
+			[
+				"md",
+				"shell_mdmerge"
+			],
+			[
+				"glue",
+				"Glue - Launch"
+			],
+			[
+				"Package Control: insta",
+				"Package Control: Install Package"
+			],
+			[
+				"disa",
+				"Table Editor: Disable for current syntax"
+			],
+			[
+				"mark prev",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"markdownEd",
+				"MarkdownEditing: Fold Level 4 Sections"
+			],
+			[
+				"syntax ma",
+				"Set Syntax: MATLAB"
+			],
+			[
+				"syntax c",
+				"Set Syntax: C"
+			],
+			[
+				"foot",
+				"MarkdownEditing: New Footnote"
+			],
+			[
+				"markdown link",
+				"Snippet: Markdown Hyperlink"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Disable Package"
+			],
+			[
+				"diag",
+				"Diagram: Generate Diagrams for Active View"
+			],
+			[
+				"add repo",
+				"Package Control: Add Repository"
+			],
+			[
+				"markdow",
+				"Markdown HTML Preview"
+			]
+		],
+		"width": 629.0
+	},
+	"console":
+	{
+		"height": 178.0,
+		"history":
+		[
+			"sublime.run_command('build', {\"choice_variant\": \"ff\"})",
+			"sublime.run_command('build', {\"choice_variant\": \"clean\"})",
+			"sublime.run_command('build', \"choice_variant\": \"clean\")",
+			"sublime.run_command('build', \"choice_variant\")",
+			"sublime.run_command('build', true)",
+			"sublime.run_command('build', \"select\": true)",
+			"sublime.run_command('build', \"select\", true)",
+			"sublime.reu_command('build', \"select\", true)",
+			"sublime.reu_command('build', \"select\": true)",
+			"sublime.log_commands(True)",
+			"sublime.run_command('build')",
+			"view.run_command('build')",
+			"view.run_command('build_with')",
+			"view.run_command('build')",
+			"view.run_command('insert_snippet', 'head.sublime-snippet')",
+			"p.sub('', 'Microsoft ist Word microsoft word doof')",
+			"p.sub('Microsoft ist Word microsoft word doof')",
+			"p = re.compile('(microsoft|word)', re.IGNORECASE)",
+			"p",
+			"p=m.sub('', 'Microsoft ist microsoft doof')",
+			"m=re.compile('microsoft',re.IGNORECASE)",
+			"re.compile('microsoft',re.IGNORECASE)",
+			"re.sub('microsoft', '', 'Microsoft ist microsoft doof',re.IGNORECASE)",
+			"pp(dir(re.sub))",
+			"pp(dir(re.sub)",
+			"re.sub('microsoft', '', 'Microsoft ist microsoft doof',re.CASEINSENSITIVE)",
+			"re.sub('microsoft', '', 'Microsoft ist microsoft doof')",
+			"re.sub('microsoft', 'Microsoft ist microsoft doof')",
+			"re.sub('microsoft', 'Microsoft ist microsoft doof)'",
+			"import re",
+			"os.path.basename('/media/data/ti/TMS320F28335_docs/wsprufz5a.pdf')",
+			"os.path.basename('/media/data/ti/TMS320F28335_docs/wsprufz5a')",
+			"os.path.basename('/media/data/ti/TMS320F28335_docs/w')",
+			"os.path.name('/media/data/ti/TMS320F28335_docs/w')",
+			"os.path.filename('/media/data/ti/TMS320F28335_docs/w')",
+			"list(filter(lambda x: '.pdf' in x, os.listdir('/media/data/ti/TMS320F28335_docs/w')))",
+			"import os",
+			"list(filter(lambda x: '.pdf' in x, os.listdir('/media/data/ti/TMS320F28335_docs/w')))",
+			"''.join(list(filter(lambda x: x in string.printable, myStr)))",
+			"''.join(list(filter(lambda x: x in string.printable, myStr))",
+			"str(filter(lambda x: x in string.printable, myStr))",
+			"list(filter(lambda x: x in string.printable, myStr))",
+			"filter(lambda x: x in string.printable, myStr)",
+			"myStr='sffgfg<3>waf<3>�\u0002�S��*\u0003fwwfsfs'",
+			"filter(lambda x: x in string.printable, myStr)",
+			"import string",
+			"type(f)",
+			"f=open('/tmp/file', 'w')",
+			"f=open('/tmp/file', 'c')",
+			"pp(dir(argparse))",
+			"pp(dir(argparse.File))",
+			"pp(dir(argparse.FileName))",
+			"pp(dir(argparse.FileType))",
+			"argparse.FileType",
+			"argparse.FileTypoe",
+			"pp(dir(argparse))",
+			"pp(dir(argparser))",
+			"from pprint import pprint as pp",
+			"pp(dir(argparser))",
+			"parser = argparse.ArgumentParser(description=__doc__,formatter_class=argparse.RawDescriptionHelpFormatter)",
+			"parser = argparse.ArgumentParser(description=__doc__,formatter_class=argparse.RawDescriptionHelpFormatter)\n",
+			"import argparse; from argparse import ArgumentTypeError as err",
+			"list(filter('.pdf', argsf))",
+			"list(filter('.pdf' in argsf))",
+			"list(filter(lambda x: '.pdf' in argsf))",
+			"list(filter(lambda x: '.pdf' in x argsf))",
+			"list(filter(lambda x: '.pdf' in x, argsf))",
+			"argsf='ddff.pdf'",
+			"args.f='ddff.pdf'",
+			"re.findall('<hr>', lst[0])",
+			"re.findall('<hrd>', lst[0])",
+			"re.findall('<hr>', lst[0])",
+			"re.match('<hr>', lst[0])",
+			"re.match('<hr>', lst)",
+			"re.find('<hr>', lst)",
+			"re.findall('<hr>', lst)",
+			"import re",
+			"re.findall('<hr>', lst)",
+			"'hr' in lst",
+			"'.*<hr>.*' in lst",
+			"'*<hr>*' in lst",
+			"lst",
+			"'<hr>' in lst",
+			"list(filter(lambda x: x.subs('<hr>','###'), lst))",
+			"list(filter(lambda x: x.replace('<hr>','###'), lst))",
+			"list(filter(lambda x: x.replace('<hr>'), lst))",
+			"list(filter(lambda x: x.replace('<hr>'), lst)]",
+			"list(filter(lambda x: x.replace('<hr>'), lst]",
+			"lst.subs()",
+			"lst.sub()",
+			"lst.replace()",
+			"lst=['<center><div style=\"width: 95%\"><hr><table style=\"width: 100%\"><tr>', '<center><div style=\"width: 95%\"><hr><table style=\"width: 100%\"><tr>']",
+			"lst=['<center><div style=\"width: 95%\"><hr><table style=\"width: 100%\"><tr>']",
+			"lst=['<center><div style=\"width: 95%\"><hr><table style=\"width: 100%\"><tr>',",
+			"ss.find(' sg.*')",
+			"ss",
+			"ss[10]",
+			"ss(10)",
+			"ss.find(' sg ')",
+			"ss.find('sg')",
+			"ss='sdfdssgdsg sg dsgd sdggddg'",
+			"len(m[0])",
+			"meta.update({m})",
+			"meta.update({m[0], m[1]})",
+			"meta.update(m[0], m[1])",
+			"m=['key', 'val']",
+			"meta=dict()",
+			"type(list())==type(k)",
+			"type(k)",
+			"k=['d']",
+			"type(list())",
+			"[print(r) for r in range(5)]",
+			"print(str(range(5)))",
+			"print(range(5))",
+			"range(5)",
+			"print(''.join(footerTemplate))",
+			"''.join(footerTemplate)",
+			"footerTemplate = [\n'\\n \\\n<footer style=\"vertical-align: bottom;\">\\n \\\n<table style=\"width: 100%\">\\n', \n'</table>\\n \\\n</footer>\\n' ]\n",
+			"    footerTemplate = [\n    '\\n \\\n    <footer style=\"vertical-align: bottom;\">\\n \\\n    <table style=\"width: 100%\">\\n', \n    '</table>\\n \\\n    </footer>\\n' ]",
+			"print(str(type(['dd']).__name__))",
+			"print(str(type(['dd']).name))",
+			"print(str(type(['dd'])).name)",
+			"print(str(type(['dd'])).__name__)",
+			"print(str(type(['dd'])))",
+			"print(footerTemplate.format(arg[0],arg[1],arg[2]))",
+			"arg=[ \\\n                    'Laborbericht ELT131 LAB 01',\n                    'Del Basso, Manuel',\n                    'Zwickau, WHZ, 16-03-2017']",
+			"arg=[[ \\\n                    'Laborbericht ELT131 LAB 01',\n                    'Del Basso, Manuel',\n                    'Zwickau, WHZ, 16-03-2017']",
+			"print(footerTemplate.format('dd','ff','gg'))"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/mainster/CODES_local/ccs7_workspace3/F28335_UART_SCI",
+		"/home/mainster/CODES_local/ccs7_workspace3/F28335_UART_SCI/Debug",
+		"/home/mainster/CODES_local/ccs7_workspace3/F28335_UART_SCI/linker",
+		"/home/mainster/CODES_local/ccs7_workspace3/F28335_UART_SCI/targetConfigs"
+	],
+	"file_history":
+	[
+		"/media/data/CODES/ccs7_workspace3/MD_BSP_EXPLORER_F28335/DIMM100_pinout.md",
+		"/opt/ti/ccsv7/eclipse/features/code.satyagraha.gfm.viewer.feature_2.0.1/feature.xml",
+		"/home/mainster/CODES_local/ccs7_workspace3/MD_BSP_EXPLORER_F28335/F28335_controlCARD_DIMM100_pinout.mmd",
+		"/home/mainster/.config/sublime-text-3/Packages/User/c2000_gmake.sublime-build",
+		"/home/mainster/CODES_local/ccs7_workspace3/F28335_UART_SCI/F28335_UART_SCI.sublime-project",
+		"/home/mainster/CODES_local/ccs7_workspace3/F28335_ram_led/linker/f28335_flash_prog_0.cmd",
+		"/media/data/ti/C28x_Communications_Driver_Library_sprc183/readme.txt",
+		"/home/mainster/scripts/pdfTitleExtractor.py",
+		"/home/mainster/.config/sublime-text-3/Packages/User/snipsMdb/projectTemplate.sublime-snippet",
+		"/home/mainster/.config/sublime-text-3/Packages/Keymaps/cheat_sheet.hidden-tmLanguage",
+		"/home/mainster/.config/sublime-text-3/Packages/Keymaps/Default (Linux).sublime-keymap",
+		"/home/mainster/.config/sublime-text-3/Packages/Default/default.sublime-project",
+		"/home/mainster/.config/sublime-text-3/Packages/Keymaps/Main.sublime-menu",
+		"/opt/ti/controlSUITE/libs/utilities/boot_rom/2833x/2833x_2823x_boot_ROM_source.txt",
+		"/home/mainster/CODES_local/pythons/subprocess_clipboard.py",
+		"/tmp/.fr-JpMZHl/README.TXT",
+		"/media/data/CODES/ccs7_workspace3/README_C2000.mmd",
+		"/home/mainster/CODES_local/ccs7_workspace3/F28335_UART_SCI/main.c",
+		"/home/mainster/.config/sublime-text-3/Packages/User/TemplateProjectFile.sublime-project",
+		"/home/mainster/.config/sublime-text-3/Packages/User/snipsMdb/head.sublime-snippet",
+		"/home/mainster/CODES_local/ccs7_workspace3/F28335_UART_SCI/bo.txt",
+		"/home/mainster/CODES_local/ccs7_workspace3/F28335_UART_SCI/mainc2",
+		"/tmp/Lab9_2.txt",
+		"/home/mainster/CODES_local/ccs7_workspace3/F28335_UART_SCI/md.txt",
+		"/home/mainster/.config/sublime-text-3/Packages/User/snipsMdb/singleLineComment.sublime-snippet",
+		"/media/data/whz/reports/ELT131/ELT131_LAB_reports.sublime-project",
+		"/home/mainster/.config/sublime-text-3/Packages/User/snipsMdb/pylibs.sublime-snippet",
+		"/home/mainster/scripts/pdfTitleExtractor.sh",
+		"/media/data/whz/zki-script.sh",
+		"/media/data/whz/reports/ELT131/makePicsRel.sh",
+		"/tmp/ee/ELT131_LAB_01/ELT131_LAB_01.html",
+		"/media/data/whz/reports/ELT131/ELT131_LAB_01/ELT131_LAB_01.mmd",
+		"/home/mainster/.config/sublime-text-3/Packages/User/snipsMdb/pyScriptTemplate.sublime-snippet",
+		"/media/data/whz/reports/ELT131/ELT131_LAB_01/ELT131_LAB_01.html",
+		"/media/data/whz/reports/ELT131/ELT131_LAB_02/ELT131_LAB_02.mmd",
+		"/media/data/whz/reports/ELT131/ELT131_LAB_01/disasm_ram",
+		"/media/data/whz/reports/ELT131/ELT131_LAB_01/disasm_flash",
+		"/home/mainster/CODES_local/ccs7_workspace3/ELT131_LAB_01/main.c",
+		"/home/mainster/CODES_local/ccs7_workspace3/ELT131_LAB_02/source/main.c",
+		"/opt/ti/installers/bios_setuplinux_6_33_04_39.bin",
+		"/media/data/whz/reports/ELT131/picsInc/whz.jpg",
+		"/home/mainster/.config/sublime-text-3/Packages/User/snipsMdb/jsonDocSect.sublime-snippet",
+		"/home/mainster/.config/sublime-text-3/Packages/User/snipsMdb/hlines.sublime-snippet",
+		"/home/mainster/.config/sublime-text-3/Packages/User/snipsMdb/doxyGroups.sublime-snippet",
+		"/home/mainster/.config/sublime-text-3/Packages/User/snipsMdb/CfuncHead.sublime-snippet",
+		"/home/mainster/.config/sublime-text-3/Packages/Markdown Preview/helper.py",
+		"/home/mainster/.config/sublime-text-3/Packages/Markdown Preview/MarkdownPreview.py",
+		"/home/mainster/.config/sublime-text-3/Packages/User/MarkdownPreview.sublime-settings",
+		"/media/data/whz/reports/ELT131/ELT131_LAB_02/ELT131_LAB_02.html",
+		"/media/data/o2_Box_6431_Arcadyan_VGV7510KW22_zwickau/o2Box6431_bins/o2Box6431_python_try1_DECRYPTED.txt",
+		"/media/data/o2_Box_6431_Arcadyan_VGV7510KW22_zwickau/o2Box6431_bins/o2Box6431_delta_webuicfg_python_try1_DECRIPTED.diff",
+		"/media/data/o2_Box_6431_Arcadyan_VGV7510KW22_zwickau/decrypted.credentials.txt",
+		"/home/mainster/.config/sublime-text-3/Packages/User/SublimeAStyleFormatter.sublime-settings",
+		"/home/mainster/.config/sublime-text-3/Packages/User/asmComment.py",
+		"/home/mainster/.config/sublime-text-3/Packages/User/styleMdb.css",
+		"/media/data/whz/reports/ELT131/ELT131_LAB_01/markdown/ELT131_LAB_01.mmd",
+		"/media/data/whz/reports/ELT131/ELT131_LAB_01/mathjax.html",
+		"/media/data/knoteRest",
+		"/media/data/whz/reports/ELT131/ELT131_LAB_01.sublime-project",
+		"/home/mainster/.config/sublime-text-3/Packages/SublimeAStyleFormatter/SublimeAStyleFormatter.sublime-settings",
+		"/home/mainster/.config/sublime-text-3/Packages/User/pdflatex.sublime-build",
+		"/media/data/whz/reports/ELT131/ELT131_LAB_01/test.mmd",
+		"/media/data/whz/reports/ELT131/ELT131_LAB_01/ELT131_LAB_01.tex",
+		"/media/data/whz/reports/ELT131/ELT131_LAB_01.mmd",
+		"/media/data/whz/reports/ELT131/ELT131_LAB_01/ELT131_LAB_01.pdf",
+		"/home/mainster/.config/sublime-text-3/Packages/User/pandoc-markdown-to-word.sublime-build",
+		"/home/mainster/.config/sublime-text-3/Packages/User/pandoc-markdown-to-pdf.sublime-build",
+		"/home/mainster/.config/sublime-text-3/Packages/User/SideBarEnhancements/Open With/Side Bar.sublime-menu",
+		"/home/mainster/CODES_local/ccs6_workspaces/minirtos/Release/hellocfg.cmd",
+		"/media/data/whz/reports/ELT131/cpu_timer0_irq_handler.asm",
+		"/media/data/whz/reports/ELT131/ELT131_Lab_1.mmd",
+		"/media/data/whz/reports/ELT131/ELT131_LAB_1/ELT131_Lab_1.html",
+		"/media/data/SMathStudioDesktop.0_98_6179.Mono/smathstudio_desktop_mono",
+		"/media/whzWebspace/adchef",
+		"/tmp/.fr-7VG3o9/TMDSPREX28335-HWDevPackage[R5]/PeripheralExplorerBaseboardHWdevPkg/USB-JTAG[R2].sch",
+		"/media/data/ti/TMS320F28335_docs/TMS320C28x_DSP_CPU_and_Instruction_Set_Rev._F_.txt",
+		"/home/mainster/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
+		"/media/data/CODES/ccs6_workspaces/ELT131_F28335_workspace/ELT131_01/main.c",
+		"/media/data/CODES/ccs7_workspace2/ELT131_01/main.c",
+		"/media/data/CODES/ccs7_workspaces/ELT131_01/main.c",
+		"/media/data/whz/modulunterlagen/ELT131_Mikroprozessor-Betriebssysteme/2017/ELT131_Praktikum.pdf.bat",
+		"/home/mainster/.config/sublime-text-3/Packages/User/example_command.py",
+		"/usr/bin/vpnWhz2.sh",
+		"/media/data/whz/zki-script.sh.py",
+		"/media/data/whz/projectGalvoDocu/trytry.py",
+		"/home/mainster/scripts/VpnWhzOpenconnect.sh",
+		"/media/data/whz/projectGalvoDocu/merged.mmd",
+		"/media/data/whz/projectGalvoDocu/pics/UML-Diagrammhierarchie_Mdb.svg",
+		"/home/mainster/CODES_local/dia_diagram_workspace/pyumltest.py",
+		"/home/mainster/.pythonrc",
+		"/media/data/whz/projectGalvoDocu/projectGalvoDocu.sublime-project",
+		"/media/data/whz/projectGalvoDocu/svgCoord.py",
+		"/media/data/whz/projectGalvoDocu/pics/gnus2/gnu_flatten.svg",
+		"/home/mainster/.config/sublime-text-3/Packages/anaconda/Context.sublime-menu",
+		"/home/mainster/.config/sublime-text-3/Packages/Anaconda/Main.sublime-menu",
+		"/home/mainster/.config/sublime-text-3/Packages/anaconda/Main.sublime-menu",
+		"/home/mainster/.config/sublime-text-3/Packages/Anaconda/Context.sublime-menu",
+		"/home/mainster/.config/sublime-text-3/Packages/DoxyDoxygen (evolution)/Context.sublime-menu",
+		"/home/mainster/.config/sublime-text-3/Packages/DoxyDoxygen (evolution)/Main.sublime-menu",
+		"/home/mainster/.config/sublime-text-3/Packages/DoxyDoxygen (evolution)/*.menu",
+		"/opt/sublime_text/sublime_plugin.py",
+		"/opt/sublime_text/sublime.py",
+		"/media/data/CODES/dia_diagram_workspace/UML-Diagrammhierarchie_Mdb.py",
+		"/media/data/CODES/dia_diagram_workspace/UML-Diagrammhierarchie_Mdb.cxx",
+		"/media/data/CODES/pythons/lumyTest.py",
+		"/media/data/whz/projectGalvoDocu/pics/uml_diagrams_strukt.dia",
+		"/home/mainster/.config/sublime-text-3/Packages/Markdown/MultiMarkdown.sublime-syntax",
+		"/home/mainster/.config/sublime-text-3/Packages/Python/Python.sublime-syntax",
+		"/home/mainster/.config/sublime-text-3/Packages/Markdown Extended/Syntaxes/Markdown Extended.sublime-syntax",
+		"/home/mainster/.config/sublime-text-3/Packages/Markdown/Markdown.sublime-syntax",
+		"/home/mainster/.config/sublime-text-3/Packages/SmartMarkdown/Default.sublime-keymap",
+		"/tmp/.fr-kokbVJ/Readme.txt",
+		"/home/mainster/compiledStuff/pyNsource-1.61-src/src/pyNsourceGui.py",
+		"/media/data/CODES/papyrus_uml_workspace/firstUml/the2model.uml",
+		"/media/data/CODES/papyrus_uml_workspace/firstUml/theModel.uml",
+		"/home/mainster/.config/sublime-text-3/Packages/Markdown Preview/README.md",
+		"/home/mainster/.config/sublime-text-3/Packages/Markdown Preview/MarkdownPreview.sublime-settings",
+		"/media/data/whz/gcalcli_emv_pr",
+		"/tmp/tmp7xeowg.md",
+		"/tmp/newname",
+		"/home/mainster/.config/sublime-text-3/Packages/User/testpy",
+		"/home/mainster/.config/sublime-text-3/Packages/User/debug_example.py",
+		"/home/mainster/.config/sublime-text-3/Packages/Plugin Debugger/README.rst",
+		"/media/data/whz/projectGalvoDocu/test.py",
+		"/media/data/whz/treeInfo5",
+		"/tmp/term",
+		"/media/data/CODES/googleAPI/client_id.json",
+		"/media/data/whz/trees"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"(GPIO\\-[0-9]+)",
+			"PB",
+			"$",
+			"^",
+			"( [0-9]{1,})( [0-9]{1,})",
+			"( [0-9]{1,}){2}",
+			"\\.cmd",
+			"(\\{ ?\\\"keys)",
+			"subprocess",
+			">>> ",
+			"^.*\\/(.[^\\/]*)$",
+			".*GPIO_GP[BC].*\\n",
+			"([0-9]) ",
+			")\n",
+			"^",
+			" ",
+			"pics",
+			"50us_irq2irq",
+			"pics",
+			"^\\n",
+			"^(\\/\\*)|( \\*.+)\n",
+			"border-sty",
+			"footer",
+			"footIcon",
+			"header",
+			"details",
+			"location",
+			"Title",
+			"Del Bass",
+			"meta",
+			"0035",
+			"indent",
+			"\\\"true\\\"",
+			"(.*)",
+			"(.*)\\=(.*)",
+			"o",
+			"%",
+			"\\\\(begin|end)\\{shaded\\}",
+			"font",
+			"src=\"./",
+			"C:\\TI\\controlSUITE\\device_support\\f2833x\\v141\\DSP2833x_headers",
+			"jitters",
+			"   |",
+			"RB",
+			"ABORTI",
+			"Regio",
+			"self",
+			"asm",
+			"“",
+			"\\.+.*$",
+			"\\.+",
+			"\\\\",
+			"C:\\TI\\",
+			"\\/source\\/",
+			"\\\\",
+			"C:\\TI\\controlSUITE\\device_support\\f2833x\\v141\\DSP2833x_common",
+			"C\\:\\\\.*",
+			"codecs",
+			"\\\\",
+			"\\\\(.[^ \\(\\)]*)",
+			"    ",
+			" \\\\",
+			"entry",
+			",",
+			"\\n",
+			"#-",
+			"##",
+			"sett",
+			"\\s",
+			"import",
+			"WINDOW_SIZE",
+			"@startuml",
+			"get_replace_reg",
+			"create_temporary_copy",
+			"digram_file",
+			"os.path.splitext",
+			"splitext",
+			"osd",
+			"block",
+			"defaultAttrsDict",
+			"defAttrsDict",
+			"extract_diagram_attrs",
+			"gen_image_tag",
+			"attrsDict",
+			"imgStyle",
+			"imgAttrs",
+			"get_replace_reg",
+			"diagAttrs",
+			"extract_diagram_attr",
+			"first_line_after_block",
+			"extract_diagram_attr",
+			"gen_image_tag",
+			"extract_diagram_attr",
+			"UmlBlock",
+			"attr_reg",
+			"UmlBlock",
+			"attr_reg",
+			"gen_image_tag",
+			"set_diag",
+			"blk.get",
+			"self\\.region",
+			"attribute_dict",
+			"gen_image_tag",
+			"extract_diagram_attr",
+			"dprint",
+			"Debug\\(.*",
+			"sublime_diagram_plugin",
+			"(EMV I Pr V.)",
+			"10:00",
+			"gen_image_tag",
+			"extract_diagram_attr",
+			"gen_image_tag",
+			"blk_attr",
+			"extract_diagram_attr",
+			"Debug",
+			"##\\s+",
+			"InlineUmlDiagram",
+			"UmlBlock",
+			"gen_image_tag",
+			"imgTag",
+			"re.sub",
+			"strt",
+			"key",
+			"extract_diagram_attr",
+			"inlineAttrs",
+			"defaultAttrs",
+			"gen_image_tag",
+			"defaultAttrs"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"_\\1_",
+			" |",
+			"| ",
+			" | \\1 | \\2 | ",
+			"\n\\1",
+			"sp",
+			"",
+			"\\1",
+			"",
+			"| \\1 ",
+			" * ",
+			"_",
+			"",
+			"footicon",
+			"true",
+			"\\t\"\\1\": true,",
+			"\\t\"\\1\": \"\\2\",",
+			"\\t\"\\1\": \"\\2\"",
+			"",
+			"src=\"./pics/",
+			"",
+			" * asm",
+			"\"",
+			"",
+			"/",
+			"",
+			"/",
+			"",
+			"/",
+			"\\",
+			"attrEntry",
+			", \\\n",
+			"\n",
+			"# ",
+			"#",
+			", ",
+			"",
+			"splitext",
+			"uml_block",
+			"defaultDict",
+			"defaultAttrsDict",
+			"attrsObj",
+			"imgStyleStr",
+			"imgAttrsStr",
+			"attrsDict",
+			"next_line",
+			"__attr_reg",
+			"self.blk_reg",
+			"get_attr_dict",
+			"",
+			"\\1 UHRZEIT?",
+			"13:30",
+			"",
+			"imgAttrs",
+			"imgTag",
+			"pair[0]",
+			"inlas",
+			"defas",
+			"defa",
+			"defaultAttrs",
+			"inlineAttrs",
+			"img_tag",
+			"defTag",
+			"gen_image_tag",
+			"img_attrs",
+			"img_tag",
+			"dprint",
+			",\\t'",
+			"",
+			"print(\\1)",
+			"print",
+			"",
+			"print",
+			"d.print",
+			"extract_diagram_attr",
+			"undo_inline_subst",
+			"attr_reg",
+			"self.attrs_dict",
+			"extract_inline_block_attr",
+			"default_style",
+			"blocks",
+			"self.view",
+			"preserve_ext",
+			"_FILE_",
+			"self.file",
+			"locate_code_blocks",
+			"dfile",
+			"srcFile",
+			" -->",
+			"diags",
+			"inline_diagram",
+			"regsEnd",
+			"regsStart",
+			"cRegs",
+			"uml",
+			"Regs",
+			"endCharNums",
+			"startCharNums",
+			"startOrEnd",
+			"end",
+			"\\t-",
+			"- ",
+			"\\1\n",
+			"\n",
+			"\\1\n",
+			"",
+			"x",
+			"pI",
+			"nRows",
+			"pGnuTrans",
+			" * ",
+			"nRows",
+			"{ \\1, \\2 },",
+			"<figcaption>ENTER CAPTION</figcaption>",
+			"<figcaption><yelBg>ENTER CAPTION</yelBg></figcaption>",
+			"<figure>\\1<figcaption></figcaption></figure>",
+			"incfile",
+			"{{\\1, \\2}, {\\3, \\4}}",
+			"<figure><img",
+			" floatr",
+			".floatl",
+			".floatr",
+			".botal",
+			".topal",
+			"\\1box",
+			".\\1",
+			"invEl",
+			"logfile"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "main.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6340,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1368,
+								1368
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 273.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 1,
+					"file": "uart_sci.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6772,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1267,
+								1267
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 156.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "uart_sci.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1967,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1137,
+								1137
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/home/mainster/.config/sublime-text-3/Packages/User/alignSingleLineComments.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 390,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								390,
+								390
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 21.0
+	},
+	"input":
+	{
+		"height": 29.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.593080220453,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.ShellCommand":
+	{
+		"height": 182.0
+	},
+	"output.anaconda_documentation":
+	{
+		"height": 154.0
+	},
+	"output.astyle_error_message":
+	{
+		"height": 0.0
+	},
+	"output.exec":
+	{
+		"height": 138.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.stino_panel":
+	{
+		"height": 88.0
+	},
+	"pinned_build_system": "Packages/User/c2000_gmake.sublime-build",
+	"project": "F28335_UART_SCI.sublime-project",
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": false,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"main",
+				"main.c"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 231.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

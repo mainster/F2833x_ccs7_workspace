@@ -1,0 +1,1975 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"RES",
+				"Reset"
+			],
+			[
+				"SCIC",
+				"SCICTL1"
+			],
+			[
+				"PA",
+				"PARITY"
+			],
+			[
+				"c",
+				"comment"
+			],
+			[
+				"t",
+				"tSec\tparam"
+			],
+			[
+				"nam",
+				"naming_convention\tfunction"
+			],
+			[
+				"na",
+				"__name__"
+			],
+			[
+				"dir",
+				"dirname\tfunction"
+			],
+			[
+				"d",
+				"Directory"
+			],
+			[
+				"defin",
+				"defined"
+			],
+			[
+				"de",
+				"details\tTag"
+			],
+			[
+				"Dis",
+				"disassembly"
+			],
+			[
+				"margin",
+				"margin-left"
+			],
+			[
+				"PC",
+				"PC-USB"
+			],
+			[
+				"au",
+				"auto"
+			],
+			[
+				"bord",
+				"border-style"
+			],
+			[
+				"bor",
+				"border"
+			],
+			[
+				"inl",
+				"inline"
+			],
+			[
+				"foot",
+				"footIcon\tstatement"
+			],
+			[
+				"aut",
+				"author\tstatement"
+			],
+			[
+				"loca",
+				"location\tstatement"
+			],
+			[
+				"form",
+				"format\tfunction"
+			],
+			[
+				"find",
+				"findall\tfunction"
+			],
+			[
+				"del",
+				"delete"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"foo",
+				"footerTemplate"
+			],
+			[
+				"mod",
+				"modifiedStr\tfunction"
+			],
+			[
+				"str",
+				"string"
+			],
+			[
+				"fin",
+				"finished"
+			],
+			[
+				"htm",
+				"html\tstatement"
+			],
+			[
+				"art",
+				"article_footer"
+			],
+			[
+				"ali",
+				"text-align"
+			],
+			[
+				"he",
+				"header\tTag"
+			],
+			[
+				"align",
+				"vertical-align"
+			],
+			[
+				"marg",
+				"margin-right"
+			],
+			[
+				"becom",
+				"become"
+			],
+			[
+				"CPU",
+				"CPU-Load"
+			],
+			[
+				"margi",
+				"margin-left"
+			],
+			[
+				"font",
+				"font-style"
+			],
+			[
+				"thr",
+				"thread"
+			],
+			[
+				"thre",
+				"threads"
+			],
+			[
+				"whi",
+				"Which"
+			],
+			[
+				"cente",
+				"centered"
+			],
+			[
+				"jitter_",
+				"jitter_flash.bmp\tFile"
+			],
+			[
+				"7_1",
+				"7_1_perc.bmp\tFile"
+			],
+			[
+				"sr",
+				"strx\tstatement"
+			],
+			[
+				"autoS",
+				"autoStrReg\tstatement"
+			],
+			[
+				"auto",
+				"autoStrReg\tstatement"
+			],
+			[
+				"line",
+				"lineRegs\tstatement"
+			],
+			[
+				"mo",
+				"most"
+			],
+			[
+				"ELT",
+				"ELT131_Praktikum_upw:EZ3:47\\K.pdf\tFile"
+			],
+			[
+				"tmp",
+				"tmplen"
+			],
+			[
+				"De",
+				"Deutsche_Telekom_Root_CA_2"
+			],
+			[
+				"ss",
+				"ssl/\tDir"
+			],
+			[
+				"ref",
+				"make_reference\tfunction"
+			],
+			[
+				"L",
+				"Lumpy\tclass"
+			],
+			[
+				"ins",
+				"insert\t(MarkdownPreview.py)"
+			],
+			[
+				"Arch",
+				"Architekturen"
+			],
+			[
+				"Base",
+				"BaseClassA"
+			],
+			[
+				"Architek",
+				"Architektur"
+			],
+			[
+				"Arc",
+				"Architektur"
+			],
+			[
+				"Modell",
+				"Modellierungssprache"
+			],
+			[
+				"Archite",
+				"Architektur"
+			],
+			[
+				"La",
+				"Language_"
+			],
+			[
+				"Model",
+				"Modeling"
+			],
+			[
+				"buff",
+				"buffName"
+			],
+			[
+				"alter",
+				"alterDir"
+			],
+			[
+				"ce",
+				"center\tTag"
+			],
+			[
+				"pro",
+				"produces"
+			],
+			[
+				"Th",
+				"This"
+			],
+			[
+				"specif",
+				"specified\t(MarkdownPreview.py)"
+			],
+			[
+				"subs",
+				"substitutes\t(MarkdownPreview.py)"
+			],
+			[
+				"MarkdownPre",
+				"MarkdownPreview.sublime-settings"
+			],
+			[
+				"se",
+				"settings"
+			],
+			[
+				"suff",
+				"suffix"
+			],
+			[
+				"diag",
+				"diagFilePath"
+			],
+			[
+				"dia",
+				"diag"
+			],
+			[
+				"date",
+				"datetime"
+			],
+			[
+				"__",
+				"__name__"
+			],
+			[
+				"gett",
+				"gettempdir"
+			],
+			[
+				"export",
+				"exportDir"
+			],
+			[
+				"img",
+				"img_tag"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"width",
+				"width: 〔property〕"
+			],
+			[
+				"defau",
+				"defaultDict"
+			],
+			[
+				"defA",
+				"defAttrsDict"
+			],
+			[
+				"attr",
+				"attr_dict"
+			],
+			[
+				"next",
+				"next_line"
+			],
+			[
+				"call",
+				"caller_method"
+			],
+			[
+				"first",
+				"first_line_after_block"
+			],
+			[
+				"firs",
+				"first_line_after_block"
+			],
+			[
+				"err",
+				"errMsg\tstatement"
+			],
+			[
+				"defa",
+				"defas\tstatement"
+			],
+			[
+				"bla",
+				"blah_name\tstatement"
+			],
+			[
+				"__a",
+				"__name__\tinstance"
+			],
+			[
+				"all",
+				"allfound"
+			],
+			[
+				"caller",
+				"caller_class"
+			],
+			[
+				"blk",
+				"blk_attr"
+			],
+			[
+				"get_att",
+				"get_attr_region"
+			],
+			[
+				"att",
+				"attr_reg"
+			],
+			[
+				"defaul",
+				"default_style"
+			],
+			[
+				"fig",
+				"figcaption\tTag"
+			],
+			[
+				"def",
+				"defas"
+			],
+			[
+				"inla",
+				"inlas"
+			],
+			[
+				"inli",
+				"inline_attrs"
+			],
+			[
+				"default",
+				"default_attrs"
+			],
+			[
+				"inline",
+				"inlineAttrs"
+			],
+			[
+				"pass",
+				"passedDict"
+			],
+			[
+				"gro",
+				"groups\tfunction"
+			],
+			[
+				"debu",
+				"debug_levels"
+			],
+			[
+				"keys",
+				"keys"
+			],
+			[
+				"deb",
+				"debug_levels"
+			],
+			[
+				"debug",
+				"debug_lvls"
+			],
+			[
+				"Test",
+				"TestClassNewprint"
+			],
+			[
+				"key",
+				"keys\t(MarkdownPreview.py)"
+			],
+			[
+				"the_",
+				"the_class"
+			],
+			[
+				"num",
+				"numFiles"
+			],
+			[
+				"copyF",
+				"copyFilesWithProgress"
+			],
+			[
+				"Progr",
+				"ProgressBar"
+			],
+			[
+				"whz",
+				"whzHome"
+			],
+			[
+				"obje",
+				"object"
+			],
+			[
+				"Markdow",
+				"MarkdownPreview"
+			],
+			[
+				"Mar",
+				"MarkdownPreview"
+			],
+			[
+				"class",
+				"classname"
+			],
+			[
+				"basi",
+				"basicConfig"
+			],
+			[
+				"floa",
+				"float\t(styleMdb.css)"
+			],
+			[
+				"diagr",
+				"diagram_files"
+			],
+			[
+				"attribute_",
+				"attribute_region"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "main.c",
+			"settings":
+			{
+				"buffer_size": 4430,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "include/main.h",
+			"settings":
+			{
+				"buffer_size": 1584,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "linker/F28335.cmd",
+			"settings":
+			{
+				"buffer_size": 9488,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "F28335_ram_led.sublime-project",
+			"settings":
+			{
+				"buffer_size": 929,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "linker/28335_RAM_lnk.cmd",
+			"settings":
+			{
+				"buffer_size": 7242,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "/*\n//###########################################################################\n//\n// FILE:\tF28335_flash_prog.cmd\n//\n// TITLE:\tLinker Command File For F28335 Device\n//\n//###########################################################################\n// $TI Release: F28335 API Release V2.10 $\n// $Release Date: August 18, 2008 $\n//###########################################################################\n*/\n\n/* ======================================================\n// For Code Composer Studio V2.2 and later\n// ---------------------------------------\n// In addition to this memory linker command file, \n// add the header linker command file directly to the project. \n// The header linker command file is required to link the\n// peripheral structures to the proper locations within \n// the memory map.\n//\n// The header linker files are found in <base>\\DSP2833x_Headers\\cmd\n//   \n// For BIOS applications add:      DSP2833x_Headers_BIOS.cmd\n// For nonBIOS applications add:   DSP2833x_Headers_nonBIOS.cmd    \n========================================================= */\n\n/* ======================================================\n// For Code Composer Studio prior to V2.2\n// --------------------------------------\n// 1) Use one of the following -l statements to include the \n// header linker command file in the project. The header linker\n// file is required to link the peripheral structures to the proper \n// locations within the memory map                                    */\n\n/* Uncomment this line to include file only for non-BIOS applications */\n/* -l DSP2833x_Headers_nonBIOS.cmd */\n\n/* Uncomment this line to include file only for BIOS applications */\n/* -l DSP2833x_Headers_BIOS.cmd */\n\n/* 2) In your project add the path to <base>\\DSP2833x_headers\\cmd to the\n   library search path under project->build options, linker tab, \n   library search path (-i).\n/*========================================================= */\n\n/* Define the memory block start/length for the F28335  \n   PAGE 0 will be used to organize program sections\n   PAGE 1 will be used to organize data sections\n\n    Notes: \n          Memory blocks on F28335 are uniform (ie same\n          physical memory) in both PAGE 0 and PAGE 1.  \n          That is the same memory region should not be\n          defined for both PAGE 0 and PAGE 1.\n          Doing so will result in corruption of program \n          and/or data. \n          \n          L0/L1/L2 and L3 memory blocks are mirrored - that is\n          they can be accessed in high memory or low memory.\n          For simplicity only one instance is used in this\n          linker file. \n          \n          Contiguous SARAM memory blocks can be combined \n          if required to create a larger memory block. \n */\n\n\nMEMORY\n{\nPAGE 0:    /* Program Memory */\n           /* Memory (RAM/FLASH/OTP) blocks can be moved to PAGE1 for data allocation */\n\n   ZONE0       : origin = 0x004000, length = 0x001000     /* XINTF zone 0 */\n   RAML0       : origin = 0x008000, length = 0x001000     /* on-chip RAM block L0 */\n   RAML1       : origin = 0x009000, length = 0x001000     /* on-chip RAM block L1 */\n   RAML2       : origin = 0x00A000, length = 0x001000     /* on-chip RAM block L2 */\n   RAML3       : origin = 0x00B000, length = 0x001000     /* on-chip RAM block L3 */\n   ZONE6       : origin = 0x0100000, length = 0x100000    /* XINTF zone 6 */ \n   ZONE7A      : origin = 0x0200000, length = 0x00FC00    /* XINTF zone 7 - program space */ \n   FLASHH      : origin = 0x300000, length = 0x008000     /* on-chip FLASH */\n   FLASHG      : origin = 0x308000, length = 0x008000     /* on-chip FLASH */\n   FLASHF      : origin = 0x310000, length = 0x008000     /* on-chip FLASH */\n   FLASHE      : origin = 0x318000, length = 0x008000     /* on-chip FLASH */\n   FLASHD      : origin = 0x320000, length = 0x008000     /* on-chip FLASH */\n   FLASHC      : origin = 0x328000, length = 0x008000     /* on-chip FLASH */\n   FLASHA      : origin = 0x338000, length = 0x007F80     /* on-chip FLASH */\n   CSM_RSVD    : origin = 0x33FF80, length = 0x000076     /* Part of FLASHA.  Program with all 0x0000 when CSM is in use. */\n   BEGIN       : origin = 0x33FFF6, length = 0x000002     /* Part of FLASHA.  Used for \"boot to Flash\" bootloader mode. */\n   CSM_PWL     : origin = 0x33FFF8, length = 0x000008     /* Part of FLASHA.  CSM password locations in FLASHA */\n   OTP         : origin = 0x380400, length = 0x000400     /* on-chip OTP */\n   ADC_CAL     : origin = 0x380080, length = 0x000009     /* ADC_cal function in Reserved memory */\n   \n   IQTABLES    : origin = 0x3FE000, length = 0x000b50     /* IQ Math Tables in Boot ROM */\n   IQTABLES2   : origin = 0x3FEB50, length = 0x00008c     /* IQ Math Tables in Boot ROM */  \n   FPUTABLES   : origin = 0x3FEBDC, length = 0x0006A0     /* FPU Tables in Boot ROM */\n   ROM         : origin = 0x3FF27C, length = 0x000D44     /* Boot ROM */        \n   RESET       : origin = 0x3FFFC0, length = 0x000002     /* part of boot ROM  */\n   VECTORS     : origin = 0x3FFFC2, length = 0x00003E     /* part of boot ROM  */\n\nPAGE 1 :   /* Data Memory */\n           /* Memory (RAM/FLASH/OTP) blocks can be moved to PAGE0 for program allocation */\n           /* Registers remain on PAGE1                                                  */\n   \n   BOOT_RSVD   : origin = 0x000000, length = 0x000050     /* Part of M0, BOOT rom will use this for stack */\n   RAMM0       : origin = 0x000050, length = 0x0003B0     /* on-chip RAM block M0 */\n   RAMM1       : origin = 0x000400, length = 0x000400     /* on-chip RAM block M1 */\n   RAML4       : origin = 0x00C000, length = 0x001000     /* on-chip RAM block L1 */\n   RAML5       : origin = 0x00D000, length = 0x001000     /* on-chip RAM block L1 */\n   RAML6       : origin = 0x00E000, length = 0x001000     /* on-chip RAM block L1 */\n   RAML7       : origin = 0x00F000, length = 0x001000     /* on-chip RAM block L1 */\n   ZONE7B      : origin = 0x20FC00, length = 0x000400     /* XINTF zone 7 - data space */\n   FLASHB      : origin = 0x330000, length = 0x008000     /* on-chip FLASH */\n}\n\n/* Allocate sections to memory blocks.\n   Note:\n         codestart user defined section in DSP28_CodeStartBranch.asm used to redirect code \n                   execution when booting to flash\n         ramfuncs  user defined section to store functions that will be copied from Flash into RAM\n*/ \n \nSECTIONS\n{\n \n   /* Allocate program areas: */\n   /* The Flash API functions can be grouped together as shown below.\n      The defined symbols _Flash28_API_LoadStart, _Flash28_API_LoadEnd\n      and _Flash28_API_RunStart are used to copy the API functions out\n      of flash memory and into SARAM */\n\n   Flash28_API:\n   {\n        -lFlash28335_API_V210.lib(.econst) \n        -lFlash28335_API_V210.lib(.text)\n   }                   LOAD = FLASHD, \n                       RUN = RAML0,  \n                       LOAD_START(_Flash28_API_LoadStart),\n                       LOAD_END(_Flash28_API_LoadEnd),\n                       RUN_START(_Flash28_API_RunStart),\n                       PAGE = 0\n   .cinit              : > FLASHA      PAGE = 0\n   .pinit              : > FLASHA,     PAGE = 0\n/*  \n boot \t\t  > FLASHA PAGE = 0\n   {\n\t\trts2800_fpu32.lib<boot.obj> (.text)\n\n   }\n*/\n   .text               : > FLASHA      PAGE = 0\n   codestart           : > BEGIN       PAGE = 0\n   ramfuncs            : LOAD = FLASHD, \n                         RUN = RAML0, \n                         LOAD_START(_RamfuncsLoadStart),\n                         LOAD_END(_RamfuncsLoadEnd),\n                         RUN_START(_RamfuncsRunStart),\n                         PAGE = 0\n\n   csmpasswds          : > CSM_PWL     PAGE = 0\n   csm_rsvd            : > CSM_RSVD    PAGE = 0\n   \n   /* Allocate uninitalized data sections: */\n   .stack              : > RAMM1       PAGE = 1\n   .ebss               : > RAML4       PAGE = 1\n   .esysmem            : > RAMM1       PAGE = 1\n\n   /* Initalized sections go in Flash */\n   /* For SDFlash to program these, they must be allocated to page 0 */\n   .econst             : > FLASHA      PAGE = 0\n   .switch             : > FLASHA      PAGE = 0      \n\n   /* Allocate IQ math areas: */\n   IQmath              : > FLASHC      PAGE = 0                  /* Math Code */\n   IQmathTables     : > IQTABLES,  PAGE = 0, TYPE = NOLOAD \n   IQmathTables2    : > IQTABLES2, PAGE = 0, TYPE = NOLOAD \n   FPUmathTables    : > FPUTABLES, PAGE = 0, TYPE = NOLOAD \n         \n   /* Allocate DMA-accessible RAM sections: */\n   DMARAML4         : > RAML4,     PAGE = 1\n   DMARAML5         : > RAML5,     PAGE = 1\n   DMARAML6         : > RAML6,     PAGE = 1\n   DMARAML7         : > RAML7,     PAGE = 1\n   \n   /* Allocate 0x400 of XINTF Zone 7 to storing data */\n   ZONE7DATA        : > ZONE7B,    PAGE = 1\n\tExtDPRamData        : > ZONE0,    PAGE = 0\n\n\n   /* .reset is a standard section used by the compiler.  It contains the */ \n   /* the address of the start of _c_int00 for C Code.   /*\n   /* When using the boot ROM this section and the CPU vector */\n   /* table is not needed.  Thus the default type is set here to  */\n   /* DSECT  */ \n   .reset              : > RESET,      PAGE = 0, TYPE = DSECT\n   vectors             : > VECTORS     PAGE = 0, TYPE = DSECT\n   \n   /* Allocate ADC_cal function (pre-programmed by factory into TI reserved memory) */\n   .adc_cal     : load = ADC_CAL,   PAGE = 0, TYPE = NOLOAD\n\n}\n\n/*\n//===========================================================================\n// End of file.\n//===========================================================================\n*/\n\n",
+			"file": "linker/f28335_flash_prog_0.cmd",
+			"file_size": 9752,
+			"file_write_time": 131350431890920494,
+			"settings":
+			{
+				"buffer_size": 9543,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "--- /home/mainster/CODES_local/ccs7_workspace3/F28335_ram_led/linker/F28335.cmd Tue Nov  1 19:21:01 2016\n+++ /home/mainster/CODES_local/ccs7_workspace3/F28335_ram_led/linker/f28335_flash_prog_0.cmd    Mon Mar 27 01:06:29 2017\n@@ -1,15 +1,13 @@\n /*\n //###########################################################################\n //\n-// FILE:   F28335.cmd\n+// FILE:   F28335_flash_prog.cmd\n //\n // TITLE:  Linker Command File For F28335 Device\n //\n //###########################################################################\n-// $TI Release: F2833x/F2823x Header Files and Peripheral Examples V141 $\n-// $Release Date: November  6, 2015 $\n-// $Copyright: Copyright (C) 2007-2015 Texas Instruments Incorporated -\n-//             http://www.ti.com/ ALL RIGHTS RESERVED $\n+// $TI Release: F28335 API Release V2.10 $\n+// $Release Date: August 18, 2008 $\n //###########################################################################\n */\n \n@@ -127,8 +125,30 @@\n {\n  \n    /* Allocate program areas: */\n+   /* The Flash API functions can be grouped together as shown below.\n+      The defined symbols _Flash28_API_LoadStart, _Flash28_API_LoadEnd\n+      and _Flash28_API_RunStart are used to copy the API functions out\n+      of flash memory and into SARAM */\n+\n+   Flash28_API:\n+   {\n+        -lFlash28335_API_V210.lib(.econst) \n+        -lFlash28335_API_V210.lib(.text)\n+   }                   LOAD = FLASHD, \n+                       RUN = RAML0,  \n+                       LOAD_START(_Flash28_API_LoadStart),\n+                       LOAD_END(_Flash28_API_LoadEnd),\n+                       RUN_START(_Flash28_API_RunStart),\n+                       PAGE = 0\n    .cinit              : > FLASHA      PAGE = 0\n    .pinit              : > FLASHA,     PAGE = 0\n+/*  \n+ boot        > FLASHA PAGE = 0\n+   {\n+       rts2800_fpu32.lib<boot.obj> (.text)\n+\n+   }\n+*/\n    .text               : > FLASHA      PAGE = 0\n    codestart           : > BEGIN       PAGE = 0\n    ramfuncs            : LOAD = FLASHD, \n@@ -136,7 +156,6 @@\n                          LOAD_START(_RamfuncsLoadStart),\n                          LOAD_END(_RamfuncsLoadEnd),\n                          RUN_START(_RamfuncsRunStart),\n-                         LOAD_SIZE(_RamfuncsLoadSize),\n                          PAGE = 0\n \n    csmpasswds          : > CSM_PWL     PAGE = 0\n@@ -155,23 +174,7 @@\n    /* Allocate IQ math areas: */\n    IQmath              : > FLASHC      PAGE = 0                  /* Math Code */\n    IQmathTables     : > IQTABLES,  PAGE = 0, TYPE = NOLOAD \n-   \n-   /* Uncomment the section below if calling the IQNexp() or IQexp()\n-      functions from the IQMath.lib library in order to utilize the \n-      relevant IQ Math table in Boot ROM (This saves space and Boot ROM \n-      is 1 wait-state). If this section is not uncommented, IQmathTables2\n-      will be loaded into other memory (SARAM, Flash, etc.) and will take\n-      up space, but 0 wait-state is possible.\n-   */\n-   /*\n    IQmathTables2    : > IQTABLES2, PAGE = 0, TYPE = NOLOAD \n-   {\n-   \n-              IQmath.lib<IQNexpTable.obj> (IQmathTablesRam)\n-   \n-   }\n-   */\n-   \n    FPUmathTables    : > FPUTABLES, PAGE = 0, TYPE = NOLOAD \n          \n    /* Allocate DMA-accessible RAM sections: */\n@@ -182,6 +185,8 @@\n    \n    /* Allocate 0x400 of XINTF Zone 7 to storing data */\n    ZONE7DATA        : > ZONE7B,    PAGE = 1\n+   ExtDPRamData        : > ZONE0,    PAGE = 0\n+\n \n    /* .reset is a standard section used by the compiler.  It contains the */ \n    /* the address of the start of _c_int00 for C Code.   /*",
+			"settings":
+			{
+				"buffer_size": 3539,
+				"line_ending": "Unix",
+				"name": "EasyDiff: F28335.cmd -> f28335_flash_prog_0.cmd (Mon Mar 27 01:11:18 2017)",
+				"scratch": true
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/User/markdownChapters.sublime-build",
+					""
+				],
+				[
+					"Packages/User/mkDoxy.sublime-build",
+					""
+				],
+				[
+					"Packages/User/udev_reload.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				],
+				[
+					"Packages/User/markdownChapters.sublime-build",
+					""
+				],
+				[
+					"Packages/User/mkDoxy.sublime-build",
+					""
+				],
+				[
+					"Packages/User/udev_reload.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/User/c2000_gmake.sublime-build",
+					""
+				],
+				[
+					"Packages/User/c2000_gmake.sublime-build",
+					"Clean"
+				],
+				[
+					"Packages/User/c2000_gmake.sublime-build",
+					"Test"
+				]
+			],
+			[
+				"Packages/User/c2000_gmake.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/User/c2000_gmake.sublime-build",
+					""
+				],
+				[
+					"Packages/User/c2000_gmake.sublime-build",
+					"build"
+				],
+				[
+					"Packages/User/c2000_gmake.sublime-build",
+					"clean"
+				]
+			],
+			[
+				"Packages/User/c2000_gmake.sublime-build",
+				"build"
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "insta",
+		"selected_items":
+		[
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"cle",
+				"Clear Console"
+			],
+			[
+				"js",
+				"Pretty JSON: Format and Sort JSON"
+			],
+			[
+				"prv",
+				"PackageResourceViewer: Extract Package"
+			],
+			[
+				"keyma",
+				"Keymaps: Find a keymap for..."
+			],
+			[
+				"pack ena",
+				"Package Control: Enable Package"
+			],
+			[
+				"set syn c",
+				"Set Syntax: C"
+			],
+			[
+				"set syn mark",
+				"Set Syntax: Markdown Extended"
+			],
+			[
+				"beau",
+				"SublimeAStyleFormmatter: Format Current Selection"
+			],
+			[
+				"tri",
+				"Trimmer: Trim trailing whitespace."
+			],
+			[
+				"colo",
+				"Color Picker"
+			],
+			[
+				" anac lin",
+				"Anaconda: Disable linting on this file"
+			],
+			[
+				"anacon",
+				"Anaconda: Enable linting on this file"
+			],
+			[
+				"beat",
+				"SublimeAStyleFormmatter: Format Current Selection"
+			],
+			[
+				"set syn latex",
+				"Set Syntax: LaTeX"
+			],
+			[
+				"anac d",
+				"Anaconda: Disable linting on this file"
+			],
+			[
+				"set py",
+				"Set Syntax: Python"
+			],
+			[
+				"anaco",
+				"Anaconda: Disable linting on this file"
+			],
+			[
+				"trim",
+				"Trimmer: Trim trailing whitespace."
+			],
+			[
+				"trimm",
+				"Trimmer: Trim trailing whitespace."
+			],
+			[
+				"ana",
+				"Anaconda: Set Python interpreter"
+			],
+			[
+				"disab",
+				"Package Control: Disable Package"
+			],
+			[
+				"debu",
+				"Plugin Debugger: run debug_example (opens Debugger)"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"lore",
+				"Add some Lorem Gibson"
+			],
+			[
+				"prett",
+				"Pretty JSON: Format and Sort JSON"
+			],
+			[
+				"cl",
+				"Clear Console"
+			],
+			[
+				"set syn pyth",
+				"Set Syntax: Python"
+			],
+			[
+				"dia",
+				"Diagram: Generate Diagrams for Active View"
+			],
+			[
+				"clea",
+				"Clear Console"
+			],
+			[
+				"clear",
+				"Clear Console"
+			],
+			[
+				"set sy ic",
+				"Set Syntax: iCalendar"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"yum",
+				"yUML: Open Diagram in Browser"
+			],
+			[
+				"syntax uml",
+				"Set Syntax: yUML"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"synta per",
+				"Set Syntax: Perl"
+			],
+			[
+				"ena",
+				"Package Control: Enable Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"color",
+				"Color Picker"
+			],
+			[
+				"set ht",
+				"Set Syntax: HTML"
+			],
+			[
+				"run",
+				"Build With: C++ Single File - Run"
+			],
+			[
+				"url",
+				"Open URL"
+			],
+			[
+				"tras",
+				"DoxyDoxygen: Translate Selection To..."
+			],
+			[
+				"pa",
+				"Package Control: Disable Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ena",
+				"Package Control: Enable Package"
+			],
+			[
+				"goto",
+				"GotoLineEnhanced: Prompt goto line"
+			],
+			[
+				"disa pa",
+				"Package Control: Disable Package"
+			],
+			[
+				"Package Control: rem",
+				"Package Control: Remove Package"
+			],
+			[
+				"trans",
+				"DoxyDoxygen: Translate Selection To..."
+			],
+			[
+				"tra",
+				"DoxyDoxygen: Translate Selection To..."
+			],
+			[
+				"markd ",
+				"MarkdownEditing: New Reference"
+			],
+			[
+				"markdow url",
+				"MarkdownEditing: Fix Underlined Headers"
+			],
+			[
+				"set syn jso",
+				"Set Syntax: JSON"
+			],
+			[
+				"trans ",
+				"DoxyDoxygen: Translate Selection To..."
+			],
+			[
+				"col",
+				"Color Picker"
+			],
+			[
+				"syn bash",
+				"Set Syntax: Shell Script (Bash)"
+			],
+			[
+				"lor",
+				"Add some Lorem Gibson"
+			],
+			[
+				"lorem",
+				"Snippet: Lorem ipsum"
+			],
+			[
+				"loe",
+				"File: Locate"
+			],
+			[
+				"open",
+				"Open URL"
+			],
+			[
+				"markdown",
+				"Set Syntax: Markdown"
+			],
+			[
+				"toc",
+				"MarkdownTOC:Update TOC"
+			],
+			[
+				"set mar",
+				"Set Syntax: Markdown Extended"
+			],
+			[
+				"mark",
+				"Markdown HTML Preview"
+			],
+			[
+				"synta mark",
+				"Set Syntax: MultiMarkdown"
+			],
+			[
+				"markd",
+				"Markdown HTML Preview"
+			],
+			[
+				"tran",
+				"DoxyDoxygen: Translate Selection To..."
+			],
+			[
+				"set syn diff",
+				"Set Syntax: Diff"
+			],
+			[
+				"set sy lo",
+				"Set Syntax: log2"
+			],
+			[
+				"inden",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"subl syna",
+				"Plugin Development: Convert Syntax to .sublime-syntax"
+			],
+			[
+				"synta",
+				"Plugin Development: Convert Syntax to .sublime-syntax"
+			],
+			[
+				"set mult",
+				"Set Syntax: MultiMarkdown"
+			],
+			[
+				"set synmar",
+				"Set Syntax: Markdown Extended"
+			],
+			[
+				"shell",
+				"shell_mdmerge"
+			],
+			[
+				"shell_md",
+				"shell_mdmerge"
+			],
+			[
+				"mark pre",
+				"Markdown HTML Preview"
+			],
+			[
+				"mar",
+				"Markdown HTML Preview"
+			],
+			[
+				"md",
+				"shell_mdmerge"
+			],
+			[
+				"glue",
+				"Glue - Launch"
+			],
+			[
+				"Package Control: insta",
+				"Package Control: Install Package"
+			],
+			[
+				"disa",
+				"Table Editor: Disable for current syntax"
+			],
+			[
+				"mark prev",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"markdownEd",
+				"MarkdownEditing: Fold Level 4 Sections"
+			],
+			[
+				"syntax ma",
+				"Set Syntax: MATLAB"
+			],
+			[
+				"syntax c",
+				"Set Syntax: C"
+			],
+			[
+				"foot",
+				"MarkdownEditing: New Footnote"
+			],
+			[
+				"markdown link",
+				"Snippet: Markdown Hyperlink"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Disable Package"
+			],
+			[
+				"diag",
+				"Diagram: Generate Diagrams for Active View"
+			],
+			[
+				"add repo",
+				"Package Control: Add Repository"
+			],
+			[
+				"markdow",
+				"Markdown HTML Preview"
+			]
+		],
+		"width": 629.0
+	},
+	"console":
+	{
+		"height": 178.0,
+		"history":
+		[
+			"sublime.run_command('build', {\"choice_variant\": \"ff\"})",
+			"sublime.run_command('build', {\"choice_variant\": \"clean\"})",
+			"sublime.run_command('build', \"choice_variant\": \"clean\")",
+			"sublime.run_command('build', \"choice_variant\")",
+			"sublime.run_command('build', true)",
+			"sublime.run_command('build', \"select\": true)",
+			"sublime.run_command('build', \"select\", true)",
+			"sublime.reu_command('build', \"select\", true)",
+			"sublime.reu_command('build', \"select\": true)",
+			"sublime.log_commands(True)",
+			"sublime.run_command('build')",
+			"view.run_command('build')",
+			"view.run_command('build_with')",
+			"view.run_command('build')",
+			"view.run_command('insert_snippet', 'head.sublime-snippet')",
+			"p.sub('', 'Microsoft ist Word microsoft word doof')",
+			"p.sub('Microsoft ist Word microsoft word doof')",
+			"p = re.compile('(microsoft|word)', re.IGNORECASE)",
+			"p",
+			"p=m.sub('', 'Microsoft ist microsoft doof')",
+			"m=re.compile('microsoft',re.IGNORECASE)",
+			"re.compile('microsoft',re.IGNORECASE)",
+			"re.sub('microsoft', '', 'Microsoft ist microsoft doof',re.IGNORECASE)",
+			"pp(dir(re.sub))",
+			"pp(dir(re.sub)",
+			"re.sub('microsoft', '', 'Microsoft ist microsoft doof',re.CASEINSENSITIVE)",
+			"re.sub('microsoft', '', 'Microsoft ist microsoft doof')",
+			"re.sub('microsoft', 'Microsoft ist microsoft doof')",
+			"re.sub('microsoft', 'Microsoft ist microsoft doof)'",
+			"import re",
+			"os.path.basename('/media/data/ti/TMS320F28335_docs/wsprufz5a.pdf')",
+			"os.path.basename('/media/data/ti/TMS320F28335_docs/wsprufz5a')",
+			"os.path.basename('/media/data/ti/TMS320F28335_docs/w')",
+			"os.path.name('/media/data/ti/TMS320F28335_docs/w')",
+			"os.path.filename('/media/data/ti/TMS320F28335_docs/w')",
+			"list(filter(lambda x: '.pdf' in x, os.listdir('/media/data/ti/TMS320F28335_docs/w')))",
+			"import os",
+			"list(filter(lambda x: '.pdf' in x, os.listdir('/media/data/ti/TMS320F28335_docs/w')))",
+			"''.join(list(filter(lambda x: x in string.printable, myStr)))",
+			"''.join(list(filter(lambda x: x in string.printable, myStr))",
+			"str(filter(lambda x: x in string.printable, myStr))",
+			"list(filter(lambda x: x in string.printable, myStr))",
+			"filter(lambda x: x in string.printable, myStr)",
+			"myStr='sffgfg<3>waf<3>�\u0002�S��*\u0003fwwfsfs'",
+			"filter(lambda x: x in string.printable, myStr)",
+			"import string",
+			"type(f)",
+			"f=open('/tmp/file', 'w')",
+			"f=open('/tmp/file', 'c')",
+			"pp(dir(argparse))",
+			"pp(dir(argparse.File))",
+			"pp(dir(argparse.FileName))",
+			"pp(dir(argparse.FileType))",
+			"argparse.FileType",
+			"argparse.FileTypoe",
+			"pp(dir(argparse))",
+			"pp(dir(argparser))",
+			"from pprint import pprint as pp",
+			"pp(dir(argparser))",
+			"parser = argparse.ArgumentParser(description=__doc__,formatter_class=argparse.RawDescriptionHelpFormatter)",
+			"parser = argparse.ArgumentParser(description=__doc__,formatter_class=argparse.RawDescriptionHelpFormatter)\n",
+			"import argparse; from argparse import ArgumentTypeError as err",
+			"list(filter('.pdf', argsf))",
+			"list(filter('.pdf' in argsf))",
+			"list(filter(lambda x: '.pdf' in argsf))",
+			"list(filter(lambda x: '.pdf' in x argsf))",
+			"list(filter(lambda x: '.pdf' in x, argsf))",
+			"argsf='ddff.pdf'",
+			"args.f='ddff.pdf'",
+			"re.findall('<hr>', lst[0])",
+			"re.findall('<hrd>', lst[0])",
+			"re.findall('<hr>', lst[0])",
+			"re.match('<hr>', lst[0])",
+			"re.match('<hr>', lst)",
+			"re.find('<hr>', lst)",
+			"re.findall('<hr>', lst)",
+			"import re",
+			"re.findall('<hr>', lst)",
+			"'hr' in lst",
+			"'.*<hr>.*' in lst",
+			"'*<hr>*' in lst",
+			"lst",
+			"'<hr>' in lst",
+			"list(filter(lambda x: x.subs('<hr>','###'), lst))",
+			"list(filter(lambda x: x.replace('<hr>','###'), lst))",
+			"list(filter(lambda x: x.replace('<hr>'), lst))",
+			"list(filter(lambda x: x.replace('<hr>'), lst)]",
+			"list(filter(lambda x: x.replace('<hr>'), lst]",
+			"lst.subs()",
+			"lst.sub()",
+			"lst.replace()",
+			"lst=['<center><div style=\"width: 95%\"><hr><table style=\"width: 100%\"><tr>', '<center><div style=\"width: 95%\"><hr><table style=\"width: 100%\"><tr>']",
+			"lst=['<center><div style=\"width: 95%\"><hr><table style=\"width: 100%\"><tr>']",
+			"lst=['<center><div style=\"width: 95%\"><hr><table style=\"width: 100%\"><tr>',",
+			"ss.find(' sg.*')",
+			"ss",
+			"ss[10]",
+			"ss(10)",
+			"ss.find(' sg ')",
+			"ss.find('sg')",
+			"ss='sdfdssgdsg sg dsgd sdggddg'",
+			"len(m[0])",
+			"meta.update({m})",
+			"meta.update({m[0], m[1]})",
+			"meta.update(m[0], m[1])",
+			"m=['key', 'val']",
+			"meta=dict()",
+			"type(list())==type(k)",
+			"type(k)",
+			"k=['d']",
+			"type(list())",
+			"[print(r) for r in range(5)]",
+			"print(str(range(5)))",
+			"print(range(5))",
+			"range(5)",
+			"print(''.join(footerTemplate))",
+			"''.join(footerTemplate)",
+			"footerTemplate = [\n'\\n \\\n<footer style=\"vertical-align: bottom;\">\\n \\\n<table style=\"width: 100%\">\\n', \n'</table>\\n \\\n</footer>\\n' ]\n",
+			"    footerTemplate = [\n    '\\n \\\n    <footer style=\"vertical-align: bottom;\">\\n \\\n    <table style=\"width: 100%\">\\n', \n    '</table>\\n \\\n    </footer>\\n' ]",
+			"print(str(type(['dd']).__name__))",
+			"print(str(type(['dd']).name))",
+			"print(str(type(['dd'])).name)",
+			"print(str(type(['dd'])).__name__)",
+			"print(str(type(['dd'])))",
+			"print(footerTemplate.format(arg[0],arg[1],arg[2]))",
+			"arg=[ \\\n                    'Laborbericht ELT131 LAB 01',\n                    'Del Basso, Manuel',\n                    'Zwickau, WHZ, 16-03-2017']",
+			"arg=[[ \\\n                    'Laborbericht ELT131 LAB 01',\n                    'Del Basso, Manuel',\n                    'Zwickau, WHZ, 16-03-2017']",
+			"print(footerTemplate.format('dd','ff','gg'))"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/mainster/CODES_local/ccs7_workspace3/F28335_ram_led",
+		"/home/mainster/CODES_local/ccs7_workspace3/F28335_ram_led/linker"
+	],
+	"file_history":
+	[
+		"/media/data/CODES/ccs7_workspace3/MD_BSP_EXPLORER_F28335/DIMM100_pinout.md",
+		"/media/data/CODES/ccs7_workspace3/MD_BSP_EXPLORER_F28335/DIMM100_pinout.mmd",
+		"/tmp/calw",
+		"/home/mainster/scripts/vimsource.sh",
+		"/home/mainster/scripts/vimsource1.sh",
+		"/tmp/.fr-1J4gjX/Readme.txt",
+		"/home/mainster/CODES_local/ccs7_workspace3/F28335_ram_led/Debug/F28335_ram_led.hex",
+		"/media/data/CODES/ccs7_workspace3/F28027_led_sci_boot/Debug/F28027_led_sci_boot.hex",
+		"/home/mainster/CODES_local/ccs7_workspace3/F28335_ram_led/F28335_ram_led.sublime-project",
+		"/home/mainster/scripts/pdfTitleExtractor.py",
+		"/home/mainster/.config/sublime-text-3/Packages/User/snipsMdb/projectTemplate.sublime-snippet",
+		"/home/mainster/.config/sublime-text-3/Packages/Keymaps/cheat_sheet.hidden-tmLanguage",
+		"/home/mainster/.config/sublime-text-3/Packages/Keymaps/Default (Linux).sublime-keymap",
+		"/home/mainster/.config/sublime-text-3/Packages/Default/default.sublime-project",
+		"/home/mainster/.config/sublime-text-3/Packages/Keymaps/Main.sublime-menu",
+		"/opt/ti/controlSUITE/libs/utilities/boot_rom/2833x/2833x_2823x_boot_ROM_source.txt",
+		"/home/mainster/CODES_local/pythons/subprocess_clipboard.py",
+		"/tmp/.fr-JpMZHl/README.TXT",
+		"/media/data/CODES/ccs7_workspace3/README_C2000.mmd",
+		"/home/mainster/CODES_local/ccs7_workspace3/F28335_UART_SCI/main.c",
+		"/home/mainster/.config/sublime-text-3/Packages/User/TemplateProjectFile.sublime-project",
+		"/home/mainster/.config/sublime-text-3/Packages/User/snipsMdb/head.sublime-snippet",
+		"/home/mainster/CODES_local/ccs7_workspace3/F28335_UART_SCI/bo.txt",
+		"/home/mainster/CODES_local/ccs7_workspace3/F28335_UART_SCI/mainc2",
+		"/tmp/Lab9_2.txt",
+		"/home/mainster/CODES_local/ccs7_workspace3/F28335_UART_SCI/md.txt",
+		"/home/mainster/.config/sublime-text-3/Packages/User/snipsMdb/singleLineComment.sublime-snippet",
+		"/media/data/whz/reports/ELT131/ELT131_LAB_reports.sublime-project",
+		"/home/mainster/.config/sublime-text-3/Packages/User/snipsMdb/pylibs.sublime-snippet",
+		"/home/mainster/scripts/pdfTitleExtractor.sh",
+		"/media/data/whz/zki-script.sh",
+		"/media/data/whz/reports/ELT131/makePicsRel.sh",
+		"/tmp/ee/ELT131_LAB_01/ELT131_LAB_01.html",
+		"/media/data/whz/reports/ELT131/ELT131_LAB_01/ELT131_LAB_01.mmd",
+		"/home/mainster/.config/sublime-text-3/Packages/User/snipsMdb/pyScriptTemplate.sublime-snippet",
+		"/media/data/whz/reports/ELT131/ELT131_LAB_01/ELT131_LAB_01.html",
+		"/media/data/whz/reports/ELT131/ELT131_LAB_02/ELT131_LAB_02.mmd",
+		"/media/data/whz/reports/ELT131/ELT131_LAB_01/disasm_ram",
+		"/media/data/whz/reports/ELT131/ELT131_LAB_01/disasm_flash",
+		"/home/mainster/CODES_local/ccs7_workspace3/ELT131_LAB_01/main.c",
+		"/home/mainster/CODES_local/ccs7_workspace3/ELT131_LAB_02/source/main.c",
+		"/opt/ti/installers/bios_setuplinux_6_33_04_39.bin",
+		"/media/data/whz/reports/ELT131/picsInc/whz.jpg",
+		"/home/mainster/.config/sublime-text-3/Packages/User/snipsMdb/jsonDocSect.sublime-snippet",
+		"/home/mainster/.config/sublime-text-3/Packages/User/snipsMdb/hlines.sublime-snippet",
+		"/home/mainster/.config/sublime-text-3/Packages/User/snipsMdb/doxyGroups.sublime-snippet",
+		"/home/mainster/.config/sublime-text-3/Packages/User/snipsMdb/CfuncHead.sublime-snippet",
+		"/home/mainster/.config/sublime-text-3/Packages/Markdown Preview/helper.py",
+		"/home/mainster/.config/sublime-text-3/Packages/Markdown Preview/MarkdownPreview.py",
+		"/home/mainster/.config/sublime-text-3/Packages/User/MarkdownPreview.sublime-settings",
+		"/media/data/whz/reports/ELT131/ELT131_LAB_02/ELT131_LAB_02.html",
+		"/media/data/o2_Box_6431_Arcadyan_VGV7510KW22_zwickau/o2Box6431_bins/o2Box6431_python_try1_DECRYPTED.txt",
+		"/media/data/o2_Box_6431_Arcadyan_VGV7510KW22_zwickau/o2Box6431_bins/o2Box6431_delta_webuicfg_python_try1_DECRIPTED.diff",
+		"/media/data/o2_Box_6431_Arcadyan_VGV7510KW22_zwickau/decrypted.credentials.txt",
+		"/home/mainster/.config/sublime-text-3/Packages/User/SublimeAStyleFormatter.sublime-settings",
+		"/home/mainster/.config/sublime-text-3/Packages/User/asmComment.py",
+		"/home/mainster/.config/sublime-text-3/Packages/User/styleMdb.css",
+		"/media/data/whz/reports/ELT131/ELT131_LAB_01/markdown/ELT131_LAB_01.mmd",
+		"/media/data/whz/reports/ELT131/ELT131_LAB_01/mathjax.html",
+		"/media/data/knoteRest",
+		"/media/data/whz/reports/ELT131/ELT131_LAB_01.sublime-project",
+		"/home/mainster/.config/sublime-text-3/Packages/SublimeAStyleFormatter/SublimeAStyleFormatter.sublime-settings",
+		"/home/mainster/.config/sublime-text-3/Packages/User/pdflatex.sublime-build",
+		"/media/data/whz/reports/ELT131/ELT131_LAB_01/test.mmd",
+		"/media/data/whz/reports/ELT131/ELT131_LAB_01/ELT131_LAB_01.tex",
+		"/media/data/whz/reports/ELT131/ELT131_LAB_01.mmd",
+		"/media/data/whz/reports/ELT131/ELT131_LAB_01/ELT131_LAB_01.pdf",
+		"/home/mainster/.config/sublime-text-3/Packages/User/pandoc-markdown-to-word.sublime-build",
+		"/home/mainster/.config/sublime-text-3/Packages/User/pandoc-markdown-to-pdf.sublime-build",
+		"/home/mainster/.config/sublime-text-3/Packages/User/SideBarEnhancements/Open With/Side Bar.sublime-menu",
+		"/home/mainster/CODES_local/ccs6_workspaces/minirtos/Release/hellocfg.cmd",
+		"/media/data/whz/reports/ELT131/cpu_timer0_irq_handler.asm",
+		"/media/data/whz/reports/ELT131/ELT131_Lab_1.mmd",
+		"/media/data/whz/reports/ELT131/ELT131_LAB_1/ELT131_Lab_1.html",
+		"/media/data/SMathStudioDesktop.0_98_6179.Mono/smathstudio_desktop_mono",
+		"/media/whzWebspace/adchef",
+		"/tmp/.fr-7VG3o9/TMDSPREX28335-HWDevPackage[R5]/PeripheralExplorerBaseboardHWdevPkg/USB-JTAG[R2].sch",
+		"/media/data/ti/TMS320F28335_docs/TMS320C28x_DSP_CPU_and_Instruction_Set_Rev._F_.txt",
+		"/home/mainster/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
+		"/media/data/CODES/ccs6_workspaces/ELT131_F28335_workspace/ELT131_01/main.c",
+		"/media/data/CODES/ccs7_workspace2/ELT131_01/main.c",
+		"/media/data/CODES/ccs7_workspaces/ELT131_01/main.c",
+		"/media/data/whz/modulunterlagen/ELT131_Mikroprozessor-Betriebssysteme/2017/ELT131_Praktikum.pdf.bat",
+		"/home/mainster/.config/sublime-text-3/Packages/User/example_command.py",
+		"/usr/bin/vpnWhz2.sh",
+		"/media/data/whz/zki-script.sh.py",
+		"/media/data/whz/projectGalvoDocu/trytry.py",
+		"/home/mainster/scripts/VpnWhzOpenconnect.sh",
+		"/media/data/whz/projectGalvoDocu/merged.mmd",
+		"/media/data/whz/projectGalvoDocu/pics/UML-Diagrammhierarchie_Mdb.svg",
+		"/home/mainster/CODES_local/dia_diagram_workspace/pyumltest.py",
+		"/home/mainster/.pythonrc",
+		"/media/data/whz/projectGalvoDocu/projectGalvoDocu.sublime-project",
+		"/media/data/whz/projectGalvoDocu/svgCoord.py",
+		"/media/data/whz/projectGalvoDocu/pics/gnus2/gnu_flatten.svg",
+		"/home/mainster/.config/sublime-text-3/Packages/anaconda/Context.sublime-menu",
+		"/home/mainster/.config/sublime-text-3/Packages/Anaconda/Main.sublime-menu",
+		"/home/mainster/.config/sublime-text-3/Packages/anaconda/Main.sublime-menu",
+		"/home/mainster/.config/sublime-text-3/Packages/Anaconda/Context.sublime-menu",
+		"/home/mainster/.config/sublime-text-3/Packages/DoxyDoxygen (evolution)/Context.sublime-menu",
+		"/home/mainster/.config/sublime-text-3/Packages/DoxyDoxygen (evolution)/Main.sublime-menu",
+		"/home/mainster/.config/sublime-text-3/Packages/DoxyDoxygen (evolution)/*.menu",
+		"/opt/sublime_text/sublime_plugin.py",
+		"/opt/sublime_text/sublime.py",
+		"/media/data/CODES/dia_diagram_workspace/UML-Diagrammhierarchie_Mdb.py",
+		"/media/data/CODES/dia_diagram_workspace/UML-Diagrammhierarchie_Mdb.cxx",
+		"/media/data/CODES/pythons/lumyTest.py",
+		"/media/data/whz/projectGalvoDocu/pics/uml_diagrams_strukt.dia",
+		"/home/mainster/.config/sublime-text-3/Packages/Markdown/MultiMarkdown.sublime-syntax",
+		"/home/mainster/.config/sublime-text-3/Packages/Python/Python.sublime-syntax",
+		"/home/mainster/.config/sublime-text-3/Packages/Markdown Extended/Syntaxes/Markdown Extended.sublime-syntax",
+		"/home/mainster/.config/sublime-text-3/Packages/Markdown/Markdown.sublime-syntax",
+		"/home/mainster/.config/sublime-text-3/Packages/SmartMarkdown/Default.sublime-keymap",
+		"/tmp/.fr-kokbVJ/Readme.txt",
+		"/home/mainster/compiledStuff/pyNsource-1.61-src/src/pyNsourceGui.py",
+		"/media/data/CODES/papyrus_uml_workspace/firstUml/the2model.uml",
+		"/media/data/CODES/papyrus_uml_workspace/firstUml/theModel.uml",
+		"/home/mainster/.config/sublime-text-3/Packages/Markdown Preview/README.md",
+		"/home/mainster/.config/sublime-text-3/Packages/Markdown Preview/MarkdownPreview.sublime-settings",
+		"/media/data/whz/gcalcli_emv_pr",
+		"/tmp/tmp7xeowg.md",
+		"/tmp/newname",
+		"/home/mainster/.config/sublime-text-3/Packages/User/testpy",
+		"/home/mainster/.config/sublime-text-3/Packages/User/debug_example.py",
+		"/home/mainster/.config/sublime-text-3/Packages/Plugin Debugger/README.rst",
+		"/media/data/whz/projectGalvoDocu/test.py",
+		"/media/data/whz/treeInfo5",
+		"/tmp/term"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"\\| \\/ ",
+			"^\\| (.[^\\|]*)( {2,})",
+			" {2,}\\/",
+			"^\\|  \\/",
+			"^\\| (GPIO\\-[0-9]+)(.[^\\|]*)",
+			"48",
+			"49",
+			"PB",
+			"(\\{ ?\\\"keys)",
+			"subprocess",
+			">>> ",
+			"^.*\\/(.[^\\/]*)$",
+			".*GPIO_GP[BC].*\\n",
+			"([0-9]) ",
+			")\n",
+			"^",
+			" ",
+			"pics",
+			"50us_irq2irq",
+			"pics",
+			"^\\n",
+			"^(\\/\\*)|( \\*.+)\n",
+			"border-sty",
+			"footer",
+			"footIcon",
+			"header",
+			"details",
+			"location",
+			"Title",
+			"Del Bass",
+			"meta",
+			"0035",
+			"indent",
+			"\\\"true\\\"",
+			"(.*)",
+			"(.*)\\=(.*)",
+			"o",
+			"%",
+			"\\\\(begin|end)\\{shaded\\}",
+			"font",
+			"src=\"./",
+			"C:\\TI\\controlSUITE\\device_support\\f2833x\\v141\\DSP2833x_headers",
+			"jitters",
+			"   |",
+			"RB",
+			"ABORTI",
+			"Regio",
+			"self",
+			"asm",
+			"“",
+			"\\.+.*$",
+			"\\.+",
+			"\\\\",
+			"C:\\TI\\",
+			"\\/source\\/",
+			"\\\\",
+			"C:\\TI\\controlSUITE\\device_support\\f2833x\\v141\\DSP2833x_common",
+			"C\\:\\\\.*",
+			"codecs",
+			"\\\\",
+			"\\\\(.[^ \\(\\)]*)",
+			"    ",
+			" \\\\",
+			"entry",
+			",",
+			"\\n",
+			"#-",
+			"##",
+			"sett",
+			"\\s",
+			"import",
+			"WINDOW_SIZE",
+			"@startuml",
+			"get_replace_reg",
+			"create_temporary_copy",
+			"digram_file",
+			"os.path.splitext",
+			"splitext",
+			"osd",
+			"block",
+			"defaultAttrsDict",
+			"defAttrsDict",
+			"extract_diagram_attrs",
+			"gen_image_tag",
+			"attrsDict",
+			"imgStyle",
+			"imgAttrs",
+			"get_replace_reg",
+			"diagAttrs",
+			"extract_diagram_attr",
+			"first_line_after_block",
+			"extract_diagram_attr",
+			"gen_image_tag",
+			"extract_diagram_attr",
+			"UmlBlock",
+			"attr_reg",
+			"UmlBlock",
+			"attr_reg",
+			"gen_image_tag",
+			"set_diag",
+			"blk.get",
+			"self\\.region",
+			"attribute_dict",
+			"gen_image_tag",
+			"extract_diagram_attr",
+			"dprint",
+			"Debug\\(.*",
+			"sublime_diagram_plugin",
+			"(EMV I Pr V.)",
+			"10:00",
+			"gen_image_tag",
+			"extract_diagram_attr",
+			"gen_image_tag",
+			"blk_attr",
+			"extract_diagram_attr",
+			"Debug",
+			"##\\s+",
+			"InlineUmlDiagram",
+			"UmlBlock",
+			"gen_image_tag",
+			"imgTag",
+			"re.sub",
+			"strt",
+			"key",
+			"extract_diagram_attr",
+			"inlineAttrs",
+			"defaultAttrs",
+			"gen_image_tag"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"| ",
+			"| \\2\\1",
+			" /",
+			"|",
+			"| \\2 / \\1",
+			"\n\\1",
+			"sp",
+			"",
+			"\\1",
+			"",
+			"| \\1 ",
+			" * ",
+			"_",
+			"",
+			"footicon",
+			"true",
+			"\\t\"\\1\": true,",
+			"\\t\"\\1\": \"\\2\",",
+			"\\t\"\\1\": \"\\2\"",
+			"",
+			"src=\"./pics/",
+			"",
+			" * asm",
+			"\"",
+			"",
+			"/",
+			"",
+			"/",
+			"",
+			"/",
+			"\\",
+			"attrEntry",
+			", \\\n",
+			"\n",
+			"# ",
+			"#",
+			", ",
+			"",
+			"splitext",
+			"uml_block",
+			"defaultDict",
+			"defaultAttrsDict",
+			"attrsObj",
+			"imgStyleStr",
+			"imgAttrsStr",
+			"attrsDict",
+			"next_line",
+			"__attr_reg",
+			"self.blk_reg",
+			"get_attr_dict",
+			"",
+			"\\1 UHRZEIT?",
+			"13:30",
+			"",
+			"imgAttrs",
+			"imgTag",
+			"pair[0]",
+			"inlas",
+			"defas",
+			"defa",
+			"defaultAttrs",
+			"inlineAttrs",
+			"img_tag",
+			"defTag",
+			"gen_image_tag",
+			"img_attrs",
+			"img_tag",
+			"dprint",
+			",\\t'",
+			"",
+			"print(\\1)",
+			"print",
+			"",
+			"print",
+			"d.print",
+			"extract_diagram_attr",
+			"undo_inline_subst",
+			"attr_reg",
+			"self.attrs_dict",
+			"extract_inline_block_attr",
+			"default_style",
+			"blocks",
+			"self.view",
+			"preserve_ext",
+			"_FILE_",
+			"self.file",
+			"locate_code_blocks",
+			"dfile",
+			"srcFile",
+			" -->",
+			"diags",
+			"inline_diagram",
+			"regsEnd",
+			"regsStart",
+			"cRegs",
+			"uml",
+			"Regs",
+			"endCharNums",
+			"startCharNums",
+			"startOrEnd",
+			"end",
+			"\\t-",
+			"- ",
+			"\\1\n",
+			"\n",
+			"\\1\n",
+			"",
+			"x",
+			"pI",
+			"nRows",
+			"pGnuTrans",
+			" * ",
+			"nRows",
+			"{ \\1, \\2 },",
+			"<figcaption>ENTER CAPTION</figcaption>",
+			"<figcaption><yelBg>ENTER CAPTION</yelBg></figcaption>",
+			"<figure>\\1<figcaption></figcaption></figure>",
+			"incfile",
+			"{{\\1, \\2}, {\\3, \\4}}",
+			"<figure><img",
+			" floatr",
+			".floatl",
+			".floatr",
+			".botal",
+			".topal",
+			"\\1box",
+			".\\1",
+			"invEl"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "main.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4430,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3168,
+								3168
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1482.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "include/main.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1584,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1559,
+								1559
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "linker/F28335.cmd",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9488,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								333,
+								333
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Batch File/Batch File.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "F28335_ram_led.sublime-project",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 929,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								640,
+								640
+							]
+						],
+						"settings":
+						{
+							"auto_complete": true,
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "linker/28335_RAM_lnk.cmd",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 7242,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Batch File/Batch File.sublime-syntax",
+							"tab_size": 3,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 5,
+					"file": "linker/f28335_flash_prog_0.cmd",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 9543,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Batch File/Batch File.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3539,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"default_dir": "/home/mainster/CODES_local/ccs7_workspace3/F28335_ram_led",
+							"syntax": "Packages/Diff/Diff.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 39.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 21.0
+	},
+	"input":
+	{
+		"height": 29.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.583894672382,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.ShellCommand":
+	{
+		"height": 182.0
+	},
+	"output.anaconda_documentation":
+	{
+		"height": 154.0
+	},
+	"output.astyle_error_message":
+	{
+		"height": 0.0
+	},
+	"output.exec":
+	{
+		"height": 100.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.stino_panel":
+	{
+		"height": 88.0
+	},
+	"pinned_build_system": "Packages/User/c2000_gmake.sublime-build",
+	"project": "F28335_ram_led.sublime-project",
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": false,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"main",
+				"include/main.h"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 231.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
