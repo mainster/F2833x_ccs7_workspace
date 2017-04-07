@@ -41,7 +41,7 @@
 #include <stdint.h>
 #include "DSP28x_Project.h"
 #include "md_bsp_explorer.h"
-#include "md_globals.h"
+#include "md_globals_TEMPLATE.h"
 /* ----------------------------  Configuration  ---------------------------- */
 /* ---------------------------  Private typedefs  -------------------------- */
 /* --------------------------  Private functions  -------------------------- */

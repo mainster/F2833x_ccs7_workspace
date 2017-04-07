@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="xconfig_idle" version="" producerId="undefined">
+    <units>
+    </units>
+    <sources>
+        <srcFile name="package/cfg/idle_p28FP.c"/>
+    </sources>
+    <configscripts>
+        <srcFile name="/media/data/CODES/ccs7_workspace3/rtos_idle_logging_F28335/idle.cfg"/>
+    </configscripts>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/cfg/idle_p28FP.mak" src="package.bld"/>
+        <srcFile name="package/cfg/idle_p28FP.o28FP.dep" src="package/cfg/idle_p28FP.c"/>
+        <srcFile name="package/cfg/idle_p28FP.dep" src="package/cfg/idle_p28FP.cfg"/>
+        <srcFile name="package/cfg/idle.x28FP.mak" src="package.bld"/>
+        <srcFile name="package/rel/xconfig_idle.tar.dep" src="package/rel/xconfig_idle.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="ti.targets.C28_float"
+            version="ti.targets.C28_float{1,0,16.12,0"
+            rawVersion="16.12.0"
+            platform="ti.platforms.sim28xx"
+            isa="28FP"
+            suffix="28FP"
+            rootDir="/opt/ti/ccsv7/tools/compiler/ti-cgt-c2000_16.12.0.STS"
+            os="undefined"
+            rts="ti.targets.rts2800">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="large"/>
+        </target>
+    </targets>
+    <libraries>
+    </libraries>
+    <configurations>
+    <configuration name="idle"
+        pname="idle.p28FP"
+        target="ti.targets.C28_float"
+        platform="ti.platforms.tms320x28:TMS320F28335"
+        profile="release"
+        isPartial="false"
+        xCfgScript="package/cfg/idle_p28FP.cfg"
+        xCfgPrefix="package/cfg/idle_p28FP"
+        cfgScript="/media/data/CODES/ccs7_workspace3/rtos_idle_logging_F28335/idle.cfg"
+        cfgArgs="null"
+        />
+    </configurations>
+    <executables>
+    <executable name="idle"
+        pname="idle.x28FP"
+        target="ti.targets.C28_float"
+        platform="ti.platforms.tms320x28:TMS320F28335"
+        profile="release"
+        xCfgScript="package/cfg/idle_p28FP.cfg"
+        xCfgPrefix="package/cfg/idle_p28FP"
+        cfgScript="/media/data/CODES/ccs7_workspace3/rtos_idle_logging_F28335/idle.cfg"
+        cfgArgs="null"
+        />
+    </executables>
+    <tests>
+    <test exeName="idle.x28FP"
+        args=""
+        groupName="idle.x28FP"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="xconfig_idle"
+        pname="xconfig_idle.tar"
+        label="default"
+    >
+        <file name="package/package.bld.xml"/>
+        <file name="package/build.cfg"/>
+        <file name="package/package.xdc.inc"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>

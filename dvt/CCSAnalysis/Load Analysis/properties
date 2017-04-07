@@ -1,0 +1,7 @@
+#Tue, 21 Mar 2017 21:18:28 +0100
+#Ant properties
+#Tue Mar 21 21:18:28 CET 2017
+p.Version=1.0.0
+
+dvt.activity.name=RTOS Analyzer/Load Analysis
+dvt.factory.activity=${dvt.basepath}common/analysis/usecases/dvt/SA_LoadAnalysis.control.xml

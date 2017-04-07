@@ -1,0 +1,27 @@
+Flash vs RAM linker files:
+Notice that the blink_led project has two linker command files. F28335.cmd was used to
+compile the executable and 28335_RAM_lnk.cmd is excluded from building. Linker files link
+memory to program and data sections of the user application. The bootloader code for
+F28335.cmd is linked to FLASHA with the compiler section codestart, which is defined by the
+label BEGIN. Therefore, the start of program execution after the BootROM has executed will
+start at address 0x33FFF6. However with 28335_RAM_link.cmd the start address is at M0 which
+is a boot to SRAM and all compiler and data sections are linked to RAM. Also, F28335.cmd links
+compiler or program sections into flash.
+Functions that are required to run in RAM but are loaded into flash can use the CODE_SECTION
+pragma to copy them into RAM. F28335.cmd has a section ramfuncs which defines the load and
+run memory declarations in which the functions will load to (flash) and run from (RAM). Refer
+to http://www.ti.com/lit/an/spra958l/spra958l.pdf page 13 for an example. However for
+blink_led this section is not needed.
+Also uninitialized data sections should be linked to RAM but initialized sections should be
+loaded into flash. Therefore program constants should be stored in flash but heavily accessed
+constants should probably be transferred to RAM at run time due to performance concerns.
+Refer to section 4.6.1.1 in spra958l.pdf for an example. The compiler places all constants in the
+.econst section using the C language const type modifier.
+Blink_led requires the use of an additional linker file named DSP2833x_Headers_nonBIOS.cmd.
+This file is linked with the file search path described previously in 3.c.i.1. This file contains
+MEMORY and SECTIONS declarations for linking the peripheral register structures. This file
+places the peripheral structures used within the DSP2833x headerfiles into the correct memory
+mapped locations.
+Last, ignore /* Application uninitialized sections linked to RAM*/ CFFTdata# were arrays that
+needed memory allocated to them using the DATA_SECTION pragma. Refer to section 4.6.2 for
+an example.

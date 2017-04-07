@@ -41,6 +41,7 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include <DSP28x_Project.h>
+#include "md_globals.h"
 
 /* ----------------------------  Private defines  -------------------------- */
 /* Pin-out definitions */
@@ -83,11 +84,17 @@ struct GPAENC_DATA_REGS {
 };
 
 extern volatile struct GPAENC_DATA_REGS EncDataReg;
+extern volatile uint16_t encVal;
 
 /* ---------------------  Private function prototypes  --------------------- */
+#ifndef RTOS
+interrupt
+#endif
+void XINT2_EncLsb_isr(void);
 
 void ledLvl(struct GPIO_DATA_REGS dataReg);
 void MD_BSP_EncInit(void);
+void MD_BSP_XINT_EncInit(void);
 uint16_t MD_BSP_EncValue(void);
 
 /* ----------------------------  Private macros  --------------------------- */
@@ -112,6 +119,7 @@ uint16_t MD_BSP_EncValue(void);
 
 /* TODO: GPA/GPB */
 #define getButton(PBx) (GpioDataRegs.GPADAT.bit.PBx)
+
 
 /* ---------------------------  Private typedefs  -------------------------- */
 /* --------------------------  Private functions  -------------------------- */

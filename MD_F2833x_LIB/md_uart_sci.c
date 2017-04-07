@@ -35,9 +35,16 @@
    @endverbatim
  *
  */
-#include "md_uart_sci.h"
 #include <stdlib.h>
+#include "md_uart_sci.h"
 
+/**
+ * Transmit and receive buffers for serial communication.
+ * 
+ * TODO: Implement UART transceiver buffers based on TI-RTOS Queue-system.
+ *   - Inter-thread communication
+ *   - Queue (03-04-2017, WHZ, ELT131)
+ */
 char sciaRxBuff [SCI_RX_BUFF_SIZ];
 char sciaTxBuff [SCI_TX_BUFF_SIZ];
 char *pUartRxBuff = &sciaRxBuff[0];
@@ -45,6 +52,12 @@ char *pUartTxBuff = &sciaTxBuff[0];
 
 const char _EOL[] = { "\n" };
 
+/**
+ * @brief      Initialization of serial communication module A.
+ *
+ * @param[in]  F_CPU_MHZ   The SYSCLKOUT frequency in MHz.
+ * @param[in]  baudrate    The UART baudrate in baud.
+ */
 void MD_SCIA_Init (const float F_CPU_MHZ, const uint32_t baudrate) {
 	EALLOW;
 	GpioCtrlRegs.GPAMUX2.bit.GPIO28 = 1;        //!< GPIO28 alternate pin funtion: SCIA_Rx
@@ -121,6 +134,14 @@ void MD_SCIA_Init (const float F_CPU_MHZ, const uint32_t baudrate) {
 #endif
 }
 
+
+/**
+ * @brief      Simple digit to char converter.
+ *
+ * @param      number   The number 
+ * @param[in]  base     The base
+ * @return     character representation of number
+ */
 char makedigit (uint32_t *number, uint32_t base) {
 	static char map[] = "0123456789";
 	uint16_t ix;
@@ -132,9 +153,10 @@ char makedigit (uint32_t *number, uint32_t base) {
 }
 
 /**
- * @brief		Simple integral to string conversion method.
+ * @brief      Simple integral to string converter.
  *
- * 32-Bit_max:  = 4.29497e+09
+ * @param[in]  number   The number
+ * @return     Pointer to string representation of number.
  */
 const char *int2str (const uint32_t number) {
 	static char tmp[12] = { " " };
@@ -157,6 +179,13 @@ const char *int2str (const uint32_t number) {
 	}
 	*p = '\0';
 	return tmp;
+}
+
+
+retVal_t uartPutsp(char *str) {
+	retVal_t ret = _uartPuts(str, "\n");
+	str = NULL;
+	return ret;
 }
 
 retVal_t uartPuts(const char *str) {

@@ -9,7 +9,7 @@
  * @ide         Code Composer Studio Version: 7.1.0.00015 
  * @license		GNU GPL v3
  * 
- * @brief       TODO
+ * @brief       Provides low level functions for uart communication.   
  * 
    @verbatim
 
@@ -40,25 +40,33 @@
 #ifdef __cplusplus
  extern "C" {
 #endif
-
-/* Includes ------------------------------------------------------------------*/
+    
+/* -------------------------------  Includes  ------------------------------ */
 #include <stdint.h>
 #include <stdbool.h>
 #include <string.h>
 #include "DSP2833x_Device.h"
 
-/* Configuration -------------------------------------------------------------*/
+#ifdef RTOS
+#include <xdc/std.h>
+#include <xdc/runtime/System.h>
+#include <xdc/runtime/Error.h>
+#include <ti/sysbios/BIOS.h>
+#include <ti/sysbios/knl/Task.h>
+#endif
+/* ----------------------------  Configuration  ---------------------------- */
 #define SCI_RX_BUFF_SIZ   64
 #define SCI_TX_BUFF_SIZ   64
 
 #define SERVICE_RX_IRQ
 #define SERVICE_TX_IRQ
-//#undef 	SERVICE_RX_IRQ
-//#undef 	SERVICE_TX_IRQ
+//#undef    SERVICE_RX_IRQ
+//#undef    SERVICE_TX_IRQ
 
+/* --------------------------  External variables  ------------------------- */
 extern const char _EOL[];
 
-/* Private typedef -----------------------------------------------------------*/
+/* ---------------------------  Private typedefs  -------------------------- */
 typedef enum RetVal {
     ret_ok,
     ret_busy,
@@ -66,32 +74,30 @@ typedef enum RetVal {
     ret_striped,
 } retVal_t;
 
-/* Private define ------------------------------------------------------------*/
-#define MD_UART_SciaInit(__fcpuMhz, __baudrate) 	MD_SCIA_Init(__fcpuMhz, __baudrate)
-/* Private macro -------------------------------------------------------------*/
+/* ----------------------------  Private defines  -------------------------- */
+#define MD_UART_SciaInit(__fcpuMhz, __baudrate)     MD_SCIA_Init(__fcpuMhz, __baudrate)
+
+/* ----------------------------  Private macros  --------------------------- */
 #define uartGets()      (*_uartGets(-1))
 #define uartGetsn(n)    (*_uartGets(n))
 #define uartHasRxed()   (_uartRxedLine(-1))     //!< Returns static state
 #define uartSetRxed(x)  (_uartRxedLine(x))      //!< Updates and returns static state
 
-/* Private variables ---------------------------------------------------------*/
-
-/* Function prototypes -------------------------------------------------------*/
-
-void MD_SCIA_Init (const float _F_CPU_MHZ,
-                   const uint32_t baudrate);
-
+/* ---------------------  Private function prototypes  --------------------- */
+void MD_SCIA_Init (const float _F_CPU_MHZ, const uint32_t baudrate);
 char *_uartGets(const int maxChars);
 retVal_t _uartPuts(const char *str, const char *EOL);
 retVal_t uartPuts(const char *str);
+retVal_t uartPutsp(char *str);
 retVal_t uartPutsNoEOL(const char *str);
 int16_t _uartRxedLine(int16_t state);
 const char *int2str (const uint32_t number);
 char makedigit (uint32_t *number, uint32_t base);
 
+
 /**
  * Remove compiler directive __interrupt from function declaration
- * and definition if registered as TI_RTOS irq callback.
+ * and definition if used as TI_RTOS irq callback.
  */
 #ifndef RTOS
 interrupt

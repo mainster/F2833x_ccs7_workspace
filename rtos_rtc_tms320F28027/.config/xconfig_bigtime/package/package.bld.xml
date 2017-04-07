@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  This file conforms to the DTD xdc/bld/build.dtd -->
+<package name="xconfig_bigtime" version="" producerId="undefined">
+    <units>
+    </units>
+    <sources>
+        <srcFile name="package/cfg/bigtime_p28L.c"/>
+    </sources>
+    <configscripts>
+        <srcFile name="/media/data/CODES/ccs7_workspace3/rtos_rtc_tms320F28027/bigtime.cfg"/>
+    </configscripts>
+    <makefiles>
+        <srcFile name="package.mak" src="package.bld"/>
+        <srcFile name="package/package.xdc.dep" src="package.xdc"/>
+        <srcFile name="package/cfg/bigtime_p28L.mak" src="package.bld"/>
+        <srcFile name="package/cfg/bigtime_p28L.o28L.dep" src="package/cfg/bigtime_p28L.c"/>
+        <srcFile name="package/cfg/bigtime_p28L.dep" src="package/cfg/bigtime_p28L.cfg"/>
+        <srcFile name="package/cfg/bigtime.x28L.mak" src="package.bld"/>
+        <srcFile name="package/rel/xconfig_bigtime.tar.dep" src="package/rel/xconfig_bigtime.xdc.inc"/>
+    </makefiles>
+    <targets>
+        <target name="ti.targets.C28_large"
+            version="ti.targets.C28_large{1,0,16.12,0"
+            rawVersion="16.12.0"
+            platform="ti.platforms.sim28xx"
+            isa="28"
+            suffix="28L"
+            rootDir="/opt/ti/ccsv7/tools/compiler/ti-cgt-c2000_16.12.0.STS"
+            os="undefined"
+            rts="ti.targets.rts2800">
+            <model endian="little"
+                codeModel="undefined"
+                dataModel="large"/>
+        </target>
+    </targets>
+    <libraries>
+    </libraries>
+    <configurations>
+    <configuration name="bigtime"
+        pname="bigtime.p28L"
+        target="ti.targets.C28_large"
+        platform="ti.platforms.tms320x28:TMS320F28027"
+        profile="release"
+        isPartial="false"
+        xCfgScript="package/cfg/bigtime_p28L.cfg"
+        xCfgPrefix="package/cfg/bigtime_p28L"
+        cfgScript="/media/data/CODES/ccs7_workspace3/rtos_rtc_tms320F28027/bigtime.cfg"
+        cfgArgs="null"
+        />
+    </configurations>
+    <executables>
+    <executable name="bigtime"
+        pname="bigtime.x28L"
+        target="ti.targets.C28_large"
+        platform="ti.platforms.tms320x28:TMS320F28027"
+        profile="release"
+        xCfgScript="package/cfg/bigtime_p28L.cfg"
+        xCfgPrefix="package/cfg/bigtime_p28L"
+        cfgScript="/media/data/CODES/ccs7_workspace3/rtos_rtc_tms320F28027/bigtime.cfg"
+        cfgArgs="null"
+        />
+    </executables>
+    <tests>
+    <test exeName="bigtime.x28L"
+        args=""
+        groupName="bigtime.x28L"
+        refOutput="undefined"
+        refExitCode="0"
+        execArgs=""
+        />
+    </tests>
+    <releases relDir="package/rel/">
+    <release name="xconfig_bigtime"
+        pname="xconfig_bigtime.tar"
+        label="default"
+    >
+        <file name="package/package.bld.xml"/>
+        <file name="package/build.cfg"/>
+        <file name="package/package.xdc.inc"/>
+    </release>
+    </releases>
+    <repositories>
+    </repositories>
+</package>
