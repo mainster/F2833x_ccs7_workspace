@@ -58,7 +58,8 @@
 /* ----------------------------  Global macros  ---------------------------- */
 
 /* ---------------------  Global function prototypes  ---------------------- */
-
+ void onEncLsb_changed(void);
+ void onBtn_pressed(void);
 
 #ifdef __cplusplus
  }

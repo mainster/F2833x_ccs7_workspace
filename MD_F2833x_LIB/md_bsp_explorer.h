@@ -1,6 +1,6 @@
 /**
  * @file        md_bsp_explorer.h
- * @project		MD_BSP_EXPLORER_F28335
+ * @project		MD_F2833x_LIB
  *
  * @date        28 Mar 2017
  * @author      Manuel Del Basso (mainster)
@@ -9,7 +9,7 @@
  * @ide         Code Composer Studio Version: 7.1.0.00015
  * @license		GNU GPL v3
  *
- * @brief       Provides basic boardsupport for ti's explorer kit F28335.
+ * @brief       Provides basic board support for ti's explorer kit F28335.
  *
    @verbatim
 
@@ -38,63 +38,109 @@
 #define MD_BSP_EXPLORER_H_
 
 /* -------------------------------  Includes  ------------------------------ */
+#ifdef RTOS
+ #include <xdc/std.h>
+#endif
+
 #include <stdint.h>
 #include <stdbool.h>
 #include <DSP28x_Project.h>
 #include "md_globals.h"
 
 /* ----------------------------  Private defines  -------------------------- */
-/* Pin-out definitions */
+
+/**
+ * Board specific pin definitions
+ */
 #define LED1        GPIO9
 #define LED2        GPIO11
 #define LED3        GPIO34
 #define LED4        GPIO49
 #define LED_ERR		GPIO34
 
-/**
- * Hex Encoder
- * The position of the 4-bit hex encoder
- * sets the values of GPIOs 12-15
- */
-#define ENC_Bit0    GPIO12
-#define ENC_Bit1    GPIO13
-#define ENC_Bit2    GPIO14
-#define ENC_Bit3    GPIO15
+#define PB1		    GPIO17
+#define PB1_BIT		17
 
-#define PB1         GPIO17
-#define PB2         GPIO48
+#define PB1X        GPIO60
+#define PB1X_BIT	60
+
+/* Layout modified, PB2 wired as RESET button */
+//#define PB2         GPIO48
+
+/* ------------------------------------------------------------------------- */
+/* ------------------  Encoder shadow structures  -------------------------- */
+/* ------------------------------------------------------------------------- */
+/**
+ * Encoder GPIO macros
+ */
+#define  ENC_0    GPIO12
+#define  ENC_1    GPIO13
+#define  ENC_2    GPIO14
+#define  ENC_3    GPIO15
+
+#define  ENC_0    GPIO12
+#define  ENC_1    GPIO13
+#define  ENC_2    GPIO14
+#define  ENC_3    GPIO15
+
+#define  ENC_LSB  12
+
+#define  ENC_BIT0_MASK    (uint32_t)(1 << 12)
+#define  ENC_BIT1_MASK    (uint32_t)(1 << 13)
+#define  ENC_BIT2_MASK    (uint32_t)(1 << 14)
+#define  ENC_BIT3_MASK    (uint32_t)(1 << 15)
+
+/**
+ * Encoder GPIO bit mask (GPIO15...12)
+ */
+#define ENC_MASK 	(uint32_t)(ENC_BIT0_MASK | ENC_BIT1_MASK | ENC_BIT2_MASK | ENC_BIT3_MASK)
+#define ENC_MASKv2 	(uint32_t)(0xf << 12)
 
 /**
  * 4 bits to read hex encoded switch
  */
 struct GPAENC_BITS {
-   uint16_t ENC0:1;            // 0      GPIO12
-   uint16_t ENC1:1;            // 1      GPIO13
-   uint16_t ENC2:1;            // 2      GPIO14
-   uint16_t ENC3:1;            // 3      GPIO15
+   uint16_t ENC0:1;     // 0      GPIO12
+   uint16_t ENC1:1;     // 1      GPIO13
+   uint16_t ENC2:1;     // 2      GPIO14
+   uint16_t ENC3:1;		// 3      GPIO15
 };
 
 union GPAENC_REG {
 	uint16_t             all;
-	struct GPAENC_BITS  bit;
+	struct GPAENC_BITS   bit;
 };
 
 struct GPAENC_DATA_REGS {
 	union GPAENC_REG GPAENC;
 };
 
+/**
+ * Global shadow register
+ */
 extern volatile struct GPAENC_DATA_REGS EncDataReg;
+
+/**
+ * Global encoder value
+ */
 extern volatile uint16_t encVal;
 
 /* ---------------------  Private function prototypes  --------------------- */
-#ifndef RTOS
-interrupt
+#if defined(RTOS) || !defined(RTOS_ENC_XINT)
+__interrupt
 #endif
 void XINT2_EncLsb_isr(void);
 
-void ledLvl(struct GPIO_DATA_REGS dataReg);
+#if defined(RTOS) || !defined(RTOS_ENC_XINT)
+__interrupt
+#endif
+void XINT3_Btn_isr(void);
+
 void MD_BSP_EncInit(void);
+void MD_BSP_BtnInit(const short pinNo);
 void MD_BSP_XINT_EncInit(void);
+void MD_BSP_XINT_BtnInit(const short pinNo);
+
 uint16_t MD_BSP_EncValue(void);
 
 /* ----------------------------  Private macros  --------------------------- */
@@ -114,12 +160,11 @@ uint16_t MD_BSP_EncValue(void);
 #define _ledLvlB(LEDx, LVL)   GpioDataRegs.GPBDAT.bit.LEDx = LVL
 #define _ledTglB(LEDx)        GpioDataRegs.GPBTOGGLE.bit.LEDx = 1
 #define errorLed(LVL)		  _ledLvlB(LED_ERR, ~LVL)
-#define errorLed_on()		  _ledLvlB(LED_ERR, 1)
+#define errorLed_on()		  _ledLvlB(LED_ERR, 0)
 #define errorLed_off()		  _ledLvlB(LED_ERR, 1)
 
 /* TODO: GPA/GPB */
 #define getButton(PBx) (GpioDataRegs.GPADAT.bit.PBx)
-
 
 /* ---------------------------  Private typedefs  -------------------------- */
 /* --------------------------  Private functions  -------------------------- */

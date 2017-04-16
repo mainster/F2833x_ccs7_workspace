@@ -1,6 +1,6 @@
 /**
  * @file        md_epwm.h
- * @project		ELT131_LAB_03_RTOS_v2
+ * @project		MD_F2833x_LIB
  *
  * @date        31 Mar 2017
  * @author      Manuel Del Basso (mainster)
@@ -9,7 +9,7 @@
  * @ide         Code Composer Studio Version: 7.1.0.00015
  * @license		GNU GPL v3
  *
- * @brief       Provides initialisation and configuration methods for ePWM.
+ * @brief       Provides initialization and configuration methods for ePWM.
  *
    @verbatim
 

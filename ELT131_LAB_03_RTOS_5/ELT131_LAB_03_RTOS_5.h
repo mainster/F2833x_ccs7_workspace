@@ -2,12 +2,14 @@
  * @file        ELT131_LAB_03_RTOS_5.h
  * @project		ELT131_LAB_03_RTOS_5
  *
- * @date        5 Apr 2017
+ * @date        10 Apr 2017
  * @author      Manuel Del Basso (mainster)
  * @email       manuel.delbasso@gmail.com
  *
  * @ide         Code Composer Studio Version: 7.1.0.00015
  * @license		GNU GPL v3
+ *
+ * @brief       DESCRIPTION
  *
    @verbatim
 
@@ -69,15 +71,30 @@
 		EDIS;
 
 /* ---------------------  Private function prototypes  --------------------- */
-void xInt1Init(void);
-
+void tsk_idle_UartEnc(void);
 /**
  * Remove compiler directive __interrupt from function declaration
  * and definition if registered as TI_RTOS irq callback.
  */
-#if  !defined(RTOS) || defined(ZERO_LATENCY_XINT1)
+#ifndef RTOS
+interrupt
+#endif
+void GPIO1_isr(void);
+
+#ifndef RTOS
 interrupt
 #endif
 void XINT1_GPIO1_isr(void);
+
+#ifndef RTOS
+interrupt
+#endif
+void CPU_TIM0_isr(void);
+
+interrupt void ZLI_XINT1_fxn(void);
+
+/* --------------------------  External variables  ------------------------- */
+extern uint32_t hbTicks;
+
 
 #endif /* MAIN_H_ */

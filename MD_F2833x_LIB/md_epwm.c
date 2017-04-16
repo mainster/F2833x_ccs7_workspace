@@ -1,6 +1,6 @@
 /**
  * @file        md_epwm.c
- * @project		ELT313_LAB_03_RTOS_v2
+ * @project		MD_F2833x_LIB
  *
  * @date        29 Mar 2017
  * @author      Manuel Del Basso (mainster)

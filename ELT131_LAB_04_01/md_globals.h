@@ -49,7 +49,6 @@
 #define ON 			1
 #define OFF 		0
 
-#define F_CPU	150e6L
 /* --------------------------  Global variables  --------------------------- */
 
 /* ----------------------------  Configuration  ---------------------------- */
@@ -59,7 +58,9 @@
 /* ----------------------------  Global macros  ---------------------------- */
 
 /* ---------------------  Global function prototypes  ---------------------- */
-void onEncLsb_changed(void);
+void onEncLsb_changed(UArg arg);
+void onBtn_pressed(void);
+
 
 #ifdef __cplusplus
  }

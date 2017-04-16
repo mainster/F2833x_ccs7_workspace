@@ -2,7 +2,7 @@
  * @file        ELT131_LAB_03_RTOS_5.c
  * @project		ELT131_LAB_03_RTOS_5
  *
- * @date        5 Apr 2017
+ * @date        10 Apr 2017
  * @author      Manuel Del Basso (mainster)
  * @email       manuel.delbasso@gmail.com
  *
@@ -37,6 +37,8 @@
 #include <ti/sysbios/BIOS.h>
 #include <ti/sysbios/knl/Task.h>
 
+#include <ti/sysbios/family/c28/Hwi.h>
+
 #include <stdint.h>
 #include <DSP28x_Project.h>
 #include <ELT131_LAB_03_RTOS_5.h>
@@ -54,13 +56,19 @@ extern uint16_t RamfuncsLoadSize;
 uint32_t  epwmFreqs[] = { 100, 200, 2e3, 20e3, 200e3 };
 
 /**
- * Global value of last encoder query.
+ * Idle message buffer + pointer
  */
-uint16_t  encVal = 0;
+char idleMsgBuff[32];
+char *pIdleMsg = NULL;
 
+/**
+ * String constants
+ */
+const char sEncMsg[] = { "New ENC value: " };
+const char sEpwmFreq[] = { "ePWM frequency: " };
 
 /*
- * ===================== main of ELT313_LAB_03_RTOS_v2 =====================
+ * ===================== main of ELT131_LAB_03_RTOS_5 =====================
  * Predefined symbols:
  * 	- RTOS_DISPATCHER			//!< Removes all user access instructions to the PIE
  * 	- RTOS
@@ -85,18 +93,113 @@ void main() {
 	 * EINT;                   //!< Enable Global Interrupts
 	 */
     gpioInit();
-    xInt1Init();
     gpioXintInit();
 
     MD_BSP_LedInit();
     MD_BSP_EncInit();
 
+    InitCpuTimers();
+    ConfigCpuTimer(&CpuTimer0, 150, 50000);		//!< Heart beat 50ms
+
     encVal = (sizeof(epwmFreqs)/sizeof(uint32_t) > MD_BSP_EncValue())
     		? MD_BSP_EncValue() : 2;			//!< Read in initial encoder value
 
-    MD_EPWM1_Init(epwmFreqs[encVal], 150e6);	//!< Init/Start signal ePWM1A
+    MD_EPWM1_Init(epwmFreqs[encVal], 150e6);	//!< Configure/Start signal ePWM1A
+
+    /**
+     * From http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/bios/
+     * sysbios/6_45_01_29/exports/bios_6_45_01_29/docs/cdoc/index.html
+     *
+     * DETAILS: plug hooks up the specified function as the branch target for a hardware interrupt
+     * (fielded by the CPU) at the vector address corresponding to intNum. plug does not enable the
+     * interrupt. Use Hwi_enableIER to enable specific interrupts. This API can plug the full set of
+     * vectors supported by the PIE (0-127)
+     */
+    Hwi_plug(35,(Hwi_PlugFuncPtr) ZLI_XINT1_fxn);
+
+    /**
+     * Enable interrupts in a PIE group
+     * DETAILS:
+     * Atomically enable PIE interrupts in a single PIE group according to supplied PIEIER bitmask
+     *
+     * Bits16 Hwi_enablePIEIER(UInt groupNum, Bits16 pieMask);
+     *
+     * groupNum - PIE group number
+     * pieMask - PIEIER enable mask for group
+     *
+     * RETURNS
+     * Previous PIEIER settings bitmask
+     *
+	 * (Referenced from sprufb0b)
+	 * Step a. Disable global interrupts (INTM = 1).
+	 * Step b. Set the PIEIERx.y bits
+	 * Step c. Wait 5 cycles (see explanation in code)
+	 * Step d. Clear the CPU IFRx bits for the peripheral group
+	 * Step e. Clear the PIEACKx bit for the peripheral group.
+	 * Step f. Enable global interrupts (INTM = 0).
+     */
+    Hwi_enablePIEIER(1, 8);
+    Hwi_enableInterrupt(1);
+
     errorLed_off();
     BIOS_start();        						//!< ENI and start SYS/BIOS idle
+}
+
+/**
+ * @brief      Zero-latency interrupt callback handler for external IRQ.
+ *
+ * @note       From ELT131_Praktikum.pdf page 61: "Zero latency IER mask = 1 will allow all
+ *             interrupts from Group INT1 to bypass SYSBIOS."
+ */
+interrupt void ZLI_XINT1_fxn(void) {
+	GpioDataRegs.GPASET.bit.GPIO2 = 1; 			//!< Rising edge at GPIO2
+	for(uint16_t i=0;i<10;i++)
+		asm(" NOP");
+	GpioDataRegs.GPACLEAR.bit.GPIO2 = 1; 		//!< Falling edge at GPIO2
+
+	/**
+	 * SYS/BIOS expects to manage all the interrupt related hardware initializations.
+	 * User code should not manipulate the PIE registers, nor initialize the PIE vector
+	 * table. Furthermore, the user should not manually manipulate the IER and IFR
+	 * registers. Interrupts are globally enabled within the BIOS_start() function
+	 * called at the end of main(). Enabling global interrupts prior to that can
+	 * lead to fatal application behavior!
+	 *
+	 * In case of bypassing SYS/BIOS...
+	 *     Hwi_enablePIEIER(1,8);
+	 *     Hwi_enableInterrupt(1);
+	 *
+	 * ... the BIOS interrupt dispatcher doesn't take care about
+	 * 		a) ... this specific IRQ?
+	 * 		b) ... all IRQs generated from this GROUP?
+	 */
+	PieCtrlRegs.PIEACK.bit.ACK1 = 1;
+}
+
+/**
+ * @brief      Idle task.
+ *
+ *             Idle task to query encoder GPIOs and reconfigure ePWM1 frequency,
+ *             flagging an error LED if encoder value >sizeof(epwmFreqs)/
+ *             sizeof(uint32_t) and to initiate Tx-IRQ driven SCIA transmission. 
+ */
+void tsk_idle_UartEnc(void) {
+	uint32_t _encVal = MD_BSP_EncValue();
+	if ((encVal != _encVal) &&
+			(_encVal < sizeof(epwmFreqs)/sizeof(uint32_t))) {
+		encVal = _encVal;
+		MD_EPWM1_freqConfig(epwmFreqs[encVal], 150e6);
+
+		pIdleMsg = strcpy(&idleMsgBuff[0], "epwm freq: ");
+		strcat(pIdleMsg, int2str(epwmFreqs[encVal]));
+	}
+
+	errorLed( (encVal < sizeof(epwmFreqs)/sizeof(uint32_t) ? 0 : 1) );
+
+	if (pIdleMsg != NULL) {
+		uartPuts(pIdleMsg);
+		pIdleMsg = NULL;
+	}
 }
 
 /**
@@ -129,40 +232,29 @@ void XINT1_GPIO1_isr(void) {
 		asm(" NOP");
 	GpioDataRegs.GPACLEAR.bit.GPIO2 = 1; 	//!< falling edge at GPIO2
 
-#if !defined(RTOS_DISPATCHER) || defined(ZERO_LATENCY_XINT1)
+#ifndef RTOS_DISPATCHER
     PieCtrlRegs.PIEACK.bit.ACK4 = 1;		//!< Ack interrupt service
 #endif
 }
 
 /**
- * @brief      External interrupt 1 initialization
+ * @brief		Hook function to implement private method that is invoked by
+ * 				MD_BSP_EXPLORER IRQ handler XINT2_EncLsb_isr
  */
-void xInt1Init(void) {
-    /**
-     * Enable Xint1 in the PIE: Group 1 interrupt 4
-     */
-    PieCtrlRegs.PIECTRL.bit.ENPIE = 1;          //!< Enable the PIE block
-    PieCtrlRegs.PIEIER1.bit.INTx4 = 1;          //!< Enable PIE Group 1 INT4
-    IER |= M_INT1;                              //!< Enable CPU int1
+void onEncLsb_changed(void) {
+	MD_EPWM1_freqConfig(epwmFreqs[encVal], F_CPU);
+}
 
-    /**
-     * Configure GPIO
-     */
-    EALLOW;
-    GpioCtrlRegs.GPAMUX1.bit.GPIO1 = 0;         //!< Mux as GPIO
-    GpioCtrlRegs.GPADIR.bit.GPIO1 = 0;          //!< Set to input
-    GpioCtrlRegs.GPAQSEL1.bit.GPIO1 = 0;        //!< Xint1 Synch to SYSCLKOUT only
-    GpioCtrlRegs.GPACTRL.bit.QUALPRD1 = 0x08;   //!< Qual period = SYSCLKOUT/x
-    GpioIntRegs.GPIOXINT1SEL.bit.GPIOSEL = 1;   //!< XINT1 is GPIO0
-    EDIS;
+/**
+ * @brief      Timer0 IRQ callback handler
+ */
+void CPU_TIM0_isr(void) {
+    int i = 0;
+    do asm("  NOP");
+    while (--i);
 
-    /**
-     * Configure and enable XINT1
-     */
-    EALLOW;
-    PieVectTable.XINT1 = &XINT1_GPIO1_isr;            //!< Register callback handler
-    EDIS;
-    XIntruptRegs.XINT1CR.bit.POLARITY = 0;      //!< Falling edge interrupt
-    XIntruptRegs.XINT1CR.bit.ENABLE = 1;        //!< Enable XINT1
+#ifndef RTOS_DISPATCHER
+    PieCtrlRegs.PIEACK.bit.ACK7 = 1;		//!< Ack interrupt service
+#endif
 }
 

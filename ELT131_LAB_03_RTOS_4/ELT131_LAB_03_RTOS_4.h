@@ -1,13 +1,15 @@
 /**
- * @file        ELT131_LAB_03_RTOSv2.h
- * @project		ELT313_LAB_03_RTOS_v2
+ * @file        ELT131_LAB_03_RTOS_4.h
+ * @project		ELT131_LAB_03_RTOS_4
  *
- * @date        29 Mar 2017
+ * @date        10 Apr 2017
  * @author      Manuel Del Basso (mainster)
  * @email       manuel.delbasso@gmail.com
  *
  * @ide         Code Composer Studio Version: 7.1.0.00015
  * @license		GNU GPL v3
+ *
+ * @brief       DESCRIPTION
  *
    @verbatim
 

@@ -1,8 +1,8 @@
 /**
- * @file        ELT131_LAB_03_RTOSv2.c
- * @project		ELT131_LAB_03_RTOS_v2
+ * @file        ELT131_LAB_03_RTOS_3.c
+ * @project		ELT131_LAB_03_RTOS_3
  *
- * @date        30 Mar 2017
+ * @date        29 Mar 2017
  * @author      Manuel Del Basso (mainster)
  * @email       manuel.delbasso@gmail.com
  *
@@ -58,10 +58,6 @@ void uartPutsByTask(char *str);
  */
 uint32_t  epwmFreqs[] = { 100, 200, 2e3, 20e3, 200e3 };
 
-/**
- * Global value of last encoder query.
- */
-uint16_t  encVal = 0;
 
 /**
  * Idle message buffer + pointer
@@ -112,19 +108,9 @@ void main() {
 
     InitCpuTimers();
     ConfigCpuTimer(&CpuTimer0, 150, 50000);		//!< Heart beat 50ms
-//    PieCtrlRegs.PIEIER1.bit.INTx7 = 1;
-
 
     encVal = (sizeof(epwmFreqs)/sizeof(uint32_t) > MD_BSP_EncValue())
     		? MD_BSP_EncValue() : 2;			//!< Read in initial encoder value
-
-//	pIdleMsg = strcpy(&idleMsgBuff[0], "Initial epwm freq: ");
-//	strcat(pIdleMsg, int2str(epwmFreqs[encVal]));
-//	uartPutsp(pIdleMsg);
-
-	pIdleMsg = strcpy(&idleMsgBuff[0], "Initial enc value: ");
-	strcat(pIdleMsg, int2str(MD_BSP_EncValue()));
-	uartPutsp(pIdleMsg);
 
     MD_EPWM1_Init(epwmFreqs[encVal], 150e6);	//!< Init/Start signal ePWM1A
 //    CpuTimer0Regs.TCR.bit.TSS = 0;  			//!< Timer Start/Stop
@@ -224,6 +210,10 @@ void XINT1_GPIO1_isr(void) {
 #endif
 }
 
+void onEncLsb_changed(void) {
+	MD_EPWM1_freqConfig(epwmFreqs[encVal], F_CPU);
+}
+
 /**
  * @brief      Timer0 IRQ callback handler
  */
@@ -232,6 +222,7 @@ void CPU_TIM0_isr(void) {
     do asm("  NOP");
     while (--i);
 
+    PieCtrlRegs.PIEACK.bit.ACK7 = 1;		//!< Ack interrupt service
 #ifndef RTOS_DISPATCHER
     PieCtrlRegs.PIEACK.bit.ACK7 = 1;		//!< Ack interrupt service
 #endif

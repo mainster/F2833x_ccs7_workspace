@@ -1,6 +1,6 @@
 /**
  * @file        md_uart_sci.h
- * @project		F28335_UART_SCI
+ * @project		MD_F2833x_LIB
  * 
  * @date        29 Mar 2017
  * @author      Manuel Del Basso (mainster)
@@ -9,7 +9,9 @@
  * @ide         Code Composer Studio Version: 7.1.0.00015 
  * @license		GNU GPL v3
  * 
- * @brief       Provides low level functions for uart communication.   
+ * @brief       Implementation of interrupt driven UART interface via
+ *              TMS320F28335 SCI module. Provides low level functions
+ *              for uart communication.
  * 
    @verbatim
 
@@ -99,14 +101,14 @@ char makedigit (uint32_t *number, uint32_t base);
  * Remove compiler directive __interrupt from function declaration
  * and definition if used as TI_RTOS irq callback.
  */
-#ifndef RTOS
+//#ifndef RTOS
 interrupt
-#endif
+//#endif
 void MD_SCIA_Rx_irq(void);
 
-#ifndef RTOS
+//#ifndef RTOS
 interrupt
-#endif
+//#endif
 void MD_SCIA_Tx_irq(void);
 
 

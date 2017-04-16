@@ -54,7 +54,6 @@
 								</option>
 								<option id="com.ti.ccstudio.buildDefinitions.C2000_16.12.compilerID.DEFINE.523384881" name="Pre-define NAME (--define, -D)" superClass="com.ti.ccstudio.buildDefinitions.C2000_16.12.compilerID.DEFINE" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="${COM_TI_RTSC_TIRTOSC2000_SYMBOLS}"/>
-									<listOptionValue builtIn="false" value="ZERO_LATENCY_XINT1"/>
 									<listOptionValue builtIn="false" value="RTOS_DISPATCHER"/>
 									<listOptionValue builtIn="false" value="RTOS"/>
 									<listOptionValue builtIn="false" value="xdc__strict"/>

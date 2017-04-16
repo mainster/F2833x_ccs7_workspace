@@ -1,8 +1,8 @@
 /**
- * @file        ELT131_LAB_03_RTOSv2.c
- * @project		ELT131_LAB_03_RTOS_v2
+ * @file        ELT131_LAB_03_RTOS_4.c
+ * @project		ELT131_LAB_03_RTOS_4
  *
- * @date        30 Mar 2017
+ * @date        10 Apr 2017
  * @author      Manuel Del Basso (mainster)
  * @email       manuel.delbasso@gmail.com
  *
@@ -74,12 +74,6 @@ char *pIdleMsg = NULL;
 const char sEncMsg[] = { "New ENC value: " };
 const char sEpwmFreq[] = { "ePWM frequency: " };
 
-/**
- * Global value of last encoder query.
- */
-uint16_t  encVal = 0;
-
-
 /*
  * ===================== main of ELT313_LAB_03_RTOS_v2 =====================
  * Predefined symbols:
@@ -119,9 +113,9 @@ void main() {
     encVal = (sizeof(epwmFreqs)/sizeof(uint32_t) > MD_BSP_EncValue())
     		? MD_BSP_EncValue() : 2;			//!< Read in initial encoder value
 
-	pIdleMsg = strcpy(&idleMsgBuff[0], "Initial epwm freq: ");
-	strcat(pIdleMsg, int2str(epwmFreqs[encVal]));
-	uartPutsp(pIdleMsg);
+//	pIdleMsg = strcpy(&idleMsgBuff[0], "Initial epwm freq: ");
+//	strcat(pIdleMsg, int2str(epwmFreqs[encVal]));
+//	uartPutsp(pIdleMsg);
 
     MD_EPWM1_Init(epwmFreqs[encVal], 150e6);	//!< Init/Start signal ePWM1A
 //    CpuTimer0Regs.TCR.bit.TSS = 0;  			//!< Timer Start/Stop
@@ -223,6 +217,10 @@ void XINT1_GPIO1_isr(void) {
 #ifndef RTOS_DISPATCHER
     PieCtrlRegs.PIEACK.bit.ACK4 = 1;		//!< Ack interrupt service
 #endif
+}
+
+void onEncLsb_changed(void) {
+	MD_EPWM1_freqConfig(epwmFreqs[encVal], F_CPU);
 }
 
 /**

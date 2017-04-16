@@ -1,6 +1,6 @@
 /**
  * @file        md_uart_sci.c
- * @project		F28335_UART_SCI
+ * @project		MD_F2833x_LIB
  *
  * @date        28 Mar 2017
  * @author      Manuel Del Basso (mainster)
@@ -8,9 +8,6 @@
  *
  * @ide         Code Composer Studio Version: 7.1.0.00015
  * @license		GNU GPL v3
- *
- * @brief       Implementation of interrupt driven UART interface via
- *              TMS320F28335 SCI module.
  *
    @verbatim
 

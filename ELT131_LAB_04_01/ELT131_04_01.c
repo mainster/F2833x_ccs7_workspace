@@ -1,13 +1,15 @@
 /**
- * @file        ELT131_LAB_03_RTOSv2.c
- * @project		ELT131_LAB_03_RTOS_v2
+ * @file        ELT131_03_03.c
+ * @project		TEMPLATE_RTOS_03_03
  *
- * @date        30 Mar 2017
+ * @date        11 Apr 2017
  * @author      Manuel Del Basso (mainster)
  * @email       manuel.delbasso@gmail.com
  *
  * @ide         Code Composer Studio Version: 7.1.0.00015
  * @license		GNU GPL v3
+ *
+ * @brief       DESCRIPTION
  *
    @verbatim
 
@@ -34,210 +36,132 @@
  */
 #include <xdc/std.h>
 #include <xdc/runtime/System.h>
+#include <xdc/runtime/Log.h>
+#include <xdc/runtime/Error.h>
+
 #include <ti/sysbios/BIOS.h>
 #include <ti/sysbios/knl/Task.h>
+#include <ti/sysbios/knl/Swi.h>
+#include <ti/sysbios/knl/Clock.h>
 
 #include <DSP28x_Project.h>
-#include <ti/sysbios/knl/Swi.h>
-#include "DSP2833x_GlobalPrototypes.h"
-#include <stdint.h>
-#include "ELT131_04_01.h"
+#include "md_epwm.h"
 #include "md_bsp_explorer.h"
+#include "md_uart_sci.h"
+
+extern const Swi_Handle SWI_XINT1;
+extern const Clock_Handle CLK_SINGLE;
+extern uint16_t RamfuncsLoadSize;
 
 /**
- * Externals
+ * Configure GPIOs
  */
-extern uint16_t RamfuncsLoadSize;
-extern const Swi_Handle SWI_XINT1;
+#define gpioInit()    EALLOW; \
+        GpioCtrlRegs.GPADIR.bit.GPIO2 = 1; \
+        GpioCtrlRegs.GPAMUX1.bit.GPIO2 = 0; \
+        EDIS;
 
-#ifdef RTOS
-retVal_t tskUartPuts(const char *str);
-void uartPutsByTask(char *str);
-#endif
+/**
+ * Init external interrupts
+ *
+ * - GPIO1 Set as external interrupt src
+ */
+#define gpioXintInit()    EALLOW; \
+        GpioCtrlRegs.GPADIR.bit.GPIO1 = 0; \
+        GpioCtrlRegs.GPAPUD.bit.GPIO1 = 1; \
+        GpioIntRegs.GPIOXINT1SEL.bit.GPIOSEL = 1; \
+        XIntruptRegs.XINT1CR.bit.ENABLE = 1; \
+        XIntruptRegs.XINT1CR.bit.POLARITY = 0; \
+		EDIS;
 
-void SWI_XINT1_fxn(void);
-
+volatile uint32_t theValue = 0;
+volatile int16_t theDelta = 1;
 /**
  * ePWM frequency values
  */
 uint32_t  epwmFreqs[] = { 100, 200, 2e3, 20e3, 200e3 };
 
-/**
- * Idle message buffer + pointer
- */
-char idleMsgBuff[32];
-char *pIdleMsg = NULL;
-
-/**
- * String constants
- */
-const char sEncMsg[] = { "New ENC value: " };
-const char sEpwmFreq[] = { "ePWM frequency: " };
-
-/**
- * Global value of last encoder query.
- */
-extern volatile uint16_t  encVal;
+uint16_t swiDelay = 10;
+volatile short multiplier = 20;
 
 
 /*
- * ===================== main of ELT313_LAB_03_RTOS_v2 =====================
- * Predefined symbols:
- * 	- RTOS_DISPATCHER			//!< Removes all user access instructions to the PIE
- * 	- RTOS
+ * ===================== main of ELT131_LAB_04_01 =====================
  */
-void main() {
-    InitSysCtrl();				//!< Initialize the F28335-CPU
-#ifdef FLASH
-	//!< Initialize the FLASH
-    memcpy(&RamfuncsRunStart, &RamfuncsLoadStart, (unsigned long)(&RamfuncsLoadSize));
-    InitFlash();
-#endif
-    /**
- 	 * SYS/BIOS expects to manage all the interrupt related hardware initializations.
- 	 * User code should not manipulate the PIE registers, nor initialize the PIE vector
-  	 * table. Furthermore, the user should not manually manipulate the IER and IFR
-	 * registers. Interrupts are globally enabled within the BIOS_start() function
-	 * called at the end of main(). Enabling global interrupts prior to that can
-	 * lead to fatal application behavior
-	 *
-	 * InitPieCtrl();          //!< Initialize PIE control registers
-	 * InitPieVectTable();     //!< Initialize PIE vector table
-	 * EINT;                   //!< Enable Global Interrupts
-	 */
+void main(void) {
+    InitSysCtrl();									//!< Initialize the F28335-CPU
+    memcpy(&RamfuncsRunStart, &RamfuncsLoadStart,
+    		(unsigned long)(&RamfuncsLoadSize));
+    InitFlash();									//!< Initialize the flash
+
     gpioInit();
     gpioXintInit();
-    MD_UART_SciaInit(150, 115200);
 
     MD_BSP_LedInit();
     MD_BSP_EncInit();
+    MD_BSP_BtnInit(PB1X_BIT);
 
-    InitCpuTimers();
-    ConfigCpuTimer(&CpuTimer0, 150, 50000);		//!< Heart beat 50ms
-//    PieCtrlRegs.PIEIER1.bit.INTx7 = 1;
-
+    /* Read in initial encoder value */
     encVal = (sizeof(epwmFreqs)/sizeof(uint32_t) > MD_BSP_EncValue())
-    		? MD_BSP_EncValue() : 2;			//!< Read in initial encoder value
+    		? MD_BSP_EncValue() : 2;
 
-	pIdleMsg = strcpy(&idleMsgBuff[0], "Initial epwm freq: ");
-	strcat(pIdleMsg, int2str(epwmFreqs[encVal]));
-	uartPutsp(pIdleMsg);
-
-    MD_EPWM1_Init(epwmFreqs[encVal], 150e6);	//!< Init/Start signal ePWM1A
-//    CpuTimer0Regs.TCR.bit.TSS = 0;  			//!< Timer Start/Stop
+    MD_EPWM1_Init(2e3, 150e6);			//!< Init/Start signal ePWM1A
     errorLed_off();
     BIOS_start();        						//!< ENI and start SYS/BIOS idle
 }
 
 
-#if defined(RTOS) && defined(RTOS_DYNAMIC_TASK)
-void uartPutsByTask(char *str) {
-	Task_Params taskParams;
-	Task_Handle tskUartBusy;
-	Error_Block eb;
-	Error_init(&eb);
-
-	/**
-	 * Create a task with priority 10.
-	 */
-	Task_Params_init(&taskParams);
-	taskParams.stackSize = 512;
-	taskParams.priority = 10;
-
-	tskUartBusy = Task_create((Task_FuncPtr)tskUartPuts(str), &taskParams, &eb);
-	if (tskUartBusy == NULL)
-		System_abort("Task create failed");
-}
-
-retVal_t tskUartPuts(const char *str) {
-	/* DEADLOCK */
-	while (_uartPuts(str, "\n") != ret_ok);;
-}
-
-#endif
-
-/**
- * sizeof(epwmFreqs) = 5 so mask out encVal > 4:	encVal & 0x04
- */
-
-/**
- * @brief      Idle task.
- *
- *             Idle task to query encoder GPIOs and reconfigure ePWM1 frequency,
- *             flagging an error LED if encoder value >sizeof(epwmFreqs)/
- *             sizeof(uint32_t) and to initiate Tx-IRQ driven SCIA transmission. 
- */
-void tsk_idle_UartEnc(void) {
-	uint32_t _encVal = MD_BSP_EncValue();
-	if ((encVal != _encVal) &&
-			(_encVal < sizeof(epwmFreqs)/sizeof(uint32_t))) {
-		encVal = _encVal;
-		MD_EPWM1_freqConfig(epwmFreqs[encVal], 150e6);
-
-		pIdleMsg = strcpy(&idleMsgBuff[0], "epwm freq: ");
-		strcat(pIdleMsg, int2str(epwmFreqs[encVal]));
-	}
-
-	errorLed( (encVal < sizeof(epwmFreqs)/sizeof(uint32_t) ? 0 : 1) );
-
-	if (pIdleMsg != NULL) {
-		uartPuts(pIdleMsg);
-		pIdleMsg = NULL;
-	}
-}
-
-/**
- * http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/bios/
- * sysbios/6_33_04_39/exports/bios_6_33_04_39/docs/cdoc/index.html
- *
- * PIE interrupts
- * The peripheral interrupt expansion (PIE) block multiplexes 96 interrupts into
- * 12 CPU interrupts. The PIE vector table includes entries for each of these 96
- * interrupts. The relationship between Group number (x), IRQ number (y) and the
- * unique "interrupt number" (IRQ_ID), needed for TI-RTOS Hwi module is given as:
- *
- * IRQ_ID(x,y) = 8*(x-1) + 31 + y
- *
- * E.g. EPWM6_INT has INT(3,6):
- * IRQ_ID(EPWM6_INT) = 16 + 31 + 6 = 53
- *
- * ELT131_Praktikum.pdf
- * First assume that INT numbers 0-31 are “reserved” or “taken”. Now look at the
- * table on page 124 and start counting (from the right) at 32 with INT1.1.
- * INT1.2 would be 33…and so on…making INT1.4 = 35.
- */
-
-void SWI_XINT1_fxn(void) {
-	GpioDataRegs.GPASET.bit.GPIO2 = 1; 		//!< Rising edge at GPIO2
-	for(int i=0;i<10;i++)
-		asm(" NOP");
-	GpioDataRegs.GPACLEAR.bit.GPIO2 = 1; 	//!< falling edge at GPIO2
-}
-
 /**
  * @brief      XINT1 GPIO1 IRQ handler
  */
 void XINT1_GPIO1_isr(void) {
+//	for(int i=0; i<theValue; i++)
+//		asm(" NOP");
 	Swi_post(SWI_XINT1);
-
-#ifndef RTOS_DISPATCHER
-    PieCtrlRegs.PIEACK.bit.ACK4 = 1;		//!< Ack interrupt service
-#endif
+//	theValue++;
 }
 
 /**
- * @brief      Timer0 IRQ callback handler
+ * @brief      SWI XINT1 IRQ handler
  */
-void CPU_TIM0_isr(void) {
-    int i = 0;
-    do asm("  NOP");
-    while (--i);
-
-#ifndef RTOS_DISPATCHER
-    PieCtrlRegs.PIEACK.bit.ACK7 = 1;		//!< Ack interrupt service
-#endif
+void SWI_XINT1_fxn(void) {
+	GpioDataRegs.GPASET.bit.GPIO2 = 1; 		//!< Rising edge at GPIO2
+	for(int i=0; i<swiDelay + encVal * multiplier; i++)
+		asm(" NOP");
+	GpioDataRegs.GPACLEAR.bit.GPIO2 = 1; 	//!< falling edge at GPIO2
 }
 
-void onEncLsb_changed(void) {
-	MD_EPWM1_freqConfig(epwmFreqs[encVal], F_CPU);
+void debounced(UArg arg) {
+	errorLed_on();
+
+}
+
+/**
+ * @brief		Hook function for encoder lsb XINT2 irq.
+ */
+void onEncLsb_changed(UArg arg) {
+//	MD_EPWM1_freqConfig(epwmFreqs[encVal], F_CPU);
+	_ledLvlA(LED1, encVal & 0x01);
+
+	if (! arg)
+		Clock_start(CLK_SINGLE);
+	else {
+		encVal = MD_BSP_EncValue();
+		Log_info1("SWI_DELAY: %d\n", swiDelay + encVal * multiplier);
+		errorLed_on();
+	    uartPuts("Debounced\n");
+	}
+}
+
+/**
+ * @brief		Hook function for PB1 XINT3 irq.
+ */
+void onBtn_pressed(void) {
+	if ((encVal & 0x01) && (swiDelay < /*SWI_DELAY_MAX*/1e3))
+		swiDelay += 1;
+
+	if (! (encVal & 0x01) && (swiDelay > 0))
+		swiDelay -= 1;
+
+	Log_info1("SWI_DELAY: %d\n", swiDelay);
 }
