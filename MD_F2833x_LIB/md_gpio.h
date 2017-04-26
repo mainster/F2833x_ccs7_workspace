@@ -53,8 +53,8 @@
    @verbatim
     ------------------------------------------------------------------------
 	MD_GPIO_TypeDef_t MD_Gpios[] = {
-		{ LED_RED_A, 		MD_GPIO34, GPIO_Mode_OUT, GPIO_OType_PP, MD_GPIO_PuPd_NOPULL, GPIO_OFF },
-		{ DBG_TIMING_PE2, 	MD_GPIO1,  GPIO_Mode_IN,  GPIO_OType_OD, MD_GPIO_PuPd_UP, GPIO_OFF },
+		{ LED_RED_A, 		MD_GPIO34, GPIO_Mode_OUT, GPIO_OType_PP, MD_GPIO_PuRe_NOPULL, GPIO_OFF },
+		{ DBG_TIMING_PE2, 	MD_GPIO1,  GPIO_Mode_IN,  GPIO_OType_OD, MD_GPIO_PuRe_UP, GPIO_OFF },
 	};
 
 	extern MD_GPIO_TypeDef_t MD_GPIO_TypeDef;
@@ -76,6 +76,55 @@
    @endverbatim
  *
  */
+
+/**
+ *     Table 6-18:     GPIO-A Mux Peripheral Selection Matrix (TI doc SPRS439)
+ *     
+ *     +----------+--------------+----------------+--------------+--------------+
+ *     | GPAMUX1  | Mode_IN/OUT  |   Mode_AF_1    |  Mode_AF_2   |  Mode_AF_3   |
+ *     | GPAQSEL1 | GPAMUX1 = 0  |  GPAMUX1 = 1   | GPAMUX1 = 2  | GPAMUX1 = 3  |
+ *     +----------+--------------+----------------+--------------+--------------+
+ *     |   1,  0  | GPIO0 (I/O)  | EPWM1A (O)     | reserv       | reserv       |
+ *     |   3,  2  | GPIO1 (I/O)  | EPWM1B (O)     | ECAP6  (I/O) | MFSRB  (I/O) |
+ *     |   5,  4  | GPIO2 (I/O)  | EPWM2A (O)     | reserv       | reserv       |
+ *     |   7,  6  | GPIO3 (I/O)  | EPWM2B (O)     | ECAP5  (I/O) | MCLKRB (I/O) |
+ *     |   9,  8  | GPIO4 (I/O)  | EPWM3A (O)     | reserv       | reserv       |
+ *     |  11, 10  | GPIO5 (I/O)  | EPWM3B (O)     | MFSRA  (I/O) | ECAP1  (I/O) |
+ *     |  13, 12  | GPIO6 (I/O)  | EPWM4A (O)     | EPWMSYNI (I) | EPWMSYNO (O) |
+ *     |  15, 14  | GPIO7 (I/O)  | EPWM4B (O)     | MCLKRA (I/O) | ECAP2  (I/O) |
+ *     |  17, 16  | GPIO8 (I/O)  | EPWM5A (O)     | CANTXB   (O) | ADCSOCAO (O) |
+ *     |  19, 18  | GPIO9 (I/O)  | EPWM5B (O)     | SCITXDB  (O) | ECAP3  (I/O) |
+ *     |  21, 20  | GPIO10 (I/O) | EPWM6A (O)     | CANRXB   (I) | ADCSOCBO (O) |
+ *     |  23, 22  | GPIO11 (I/O) | EPWM6B (O)     | SCIRXDB  (I) | ECAP4  (I/O) |
+ *     |  25, 24  | GPIO12 (I/O) | TZ1 (I)        | CANTXB   (O) | MDXB     (O) |
+ *     |  27, 26  | GPIO13 (I/O) | TZ2 (I)        | CANRXB   (I) | MDRB     (I) |
+ *     |  29, 28  | GPIO14 (I/O) | TZ3 (I)/XHOLD  | SCITXDB  (O) | MCLKXB (I/O) |
+ *     |  31, 30  | GPIO15 (I/O) | TZ4 (I)/XHOLDA | SCIRXDB  (I) | MFSXB  (I/O) |
+ *     +----------+--------------+----------------+--------------+--------------+
+ *     
+ *     +----------+--------------+----------------+--------------+--------------+
+ *     | GPAMUX2  | Mode_IN/OUT  |   Mode_AF_1    |  Mode_AF_2   |  Mode_AF_3   |
+ *     | GPAQSEL2 | GPAMUX2 = 0  |  GPAMUX2 = 1   | GPAMUX2 = 2  | GPAMUX2 = 3  |
+ *     +----------+--------------+----------------+--------------+--------------+
+ *     |   1,  0  | GPIO16 (I/O) | SPISIMOA (I/O) | CANTXB   (O) | TZ5      (I) |
+ *     |   3,  2  | GPIO17 (I/O) | SPISOMIA (I/O) | CANRXB   (I) | TZ6      (I) |
+ *     |   5,  4  | GPIO18 (I/O) | SPICLKA  (I/O) | SCITXDB  (O) | CANRXA   (I) |
+ *     |   7,  6  | GPIO19 (I/O) | SPISTEA  (I/O) | SCIRXDB  (I) | CANTXA   (O) |
+ *     |   9,  8  | GPIO20 (I/O) | EQEP1A   (I)   | MDXA     (O) | CANTXB   (O) |
+ *     |  11, 10  | GPIO21 (I/O) | EQEP1B   (I)   | MDRA     (I) | CANRXB   (I) |
+ *     |  13, 12  | GPIO22 (I/O) | EQEP1S   (I/O) | MCLKXA (I/O) | SCITXDB  (O) |
+ *     |  15, 14  | GPIO23 (I/O) | EQEP1I   (I/O) | MFSXA  (I/O) | SCIRXDB  (I) |
+ *     |  17, 16  | GPIO24 (I/O) | ECAP1    (I/O) | EQEP2A   (I) | MDXB     (O) |
+ *     |  19, 18  | GPIO25 (I/O) | ECAP2    (I/O) | EQEP2B   (I) | MDRB     (I) |
+ *     |  21, 20  | GPIO26 (I/O) | ECAP3    (I/O) | EQEP2I (I/O) | MCLKXB (I/O) |
+ *     |  23, 22  | GPIO27 (I/O) | ECAP4    (I/O) | EQEP2S (I/O) | MFSXB  (I/O) |
+ *     |  25, 24  | GPIO28 (I/O) | SCIRXDA  (I)   |         XZCS6 (O)           |
+ *     |  27, 26  | GPIO29 (I/O) | SCITXDA  (O)   |         XA19  (O)           |
+ *     |  29, 28  | GPIO30 (I/O) | CANRXA   (I)   |         XA18  (O)           |
+ *     |  31, 30  | GPIO31 (I/O) | CANTXA   (O)   |         XA17  (O)           |
+ *     +----------+--------------+----------------+-----------------------------+
+ * 
+ */
 #ifndef MD_GPIO_H
 #define MD_GPIO_H
 
@@ -92,7 +141,7 @@
  *             For HAL drivers compatibility
  */
 typedef enum {
-    MD_GPIO0 = 0, MD_GPIO1,  MD_GPIO2,  MD_GPIO3,  MD_GPIO4,  MD_GPIO5,  MD_GPIO6,  MD_GPIO7,
+    MD_GPIO0=0,MD_GPIO1,  MD_GPIO2,  MD_GPIO3,  MD_GPIO4,  MD_GPIO5,  MD_GPIO6,  MD_GPIO7,
     MD_GPIO8,  MD_GPIO9,  MD_GPIO10, MD_GPIO11, MD_GPIO12, MD_GPIO13, MD_GPIO14, MD_GPIO15,
     MD_GPIO16, MD_GPIO17, MD_GPIO18, MD_GPIO19, MD_GPIO20, MD_GPIO21, MD_GPIO22, MD_GPIO23,
     MD_GPIO24, MD_GPIO25, MD_GPIO26, MD_GPIO27, MD_GPIO28, MD_GPIO29, MD_GPIO30, MD_GPIO31,
@@ -109,10 +158,12 @@ typedef enum {
  * @brief      GPIO Configuration Mode enumeration
  */
 typedef enum {
-    GPIO_Mode_IN   = 0x00, /*!< GPIO Input Mode */
-    GPIO_Mode_OUT  = 0x01, /*!< GPIO Output Mode */
-    GPIO_Mode_AF   = 0x02, /*!< GPIO Alternate function Mode */
-    GPIO_Mode_AN   = 0x03  /*!< GPIO Analog Mode */
+    GPIO_Mode_ANIN  = 0x00, 	/*!< GPIO analog input mode */
+    GPIO_Mode_AF1   = 0x01, 	/*!< GPIO alternate function mode 1 */
+    GPIO_Mode_AF2   = 0x02, 	/*!< GPIO alternate function mode 2 */
+    GPIO_Mode_AF3   = 0x03, 	/*!< GPIO alternate function mode 3 */
+    GPIO_Mode_IN   	= 0x04, 	/*!< GPIO input mode */
+    GPIO_Mode_OUT  	= 0x05 		/*!< GPIO output mode */
 } MD_GPIOMode_t;
 
 /**
@@ -127,10 +178,10 @@ typedef enum {
  * @brief      GPIO pull resistors enumeration
  */
 typedef enum {
-    MD_GPIO_PuPd_NOPULL = 0x00, /*!< No pull resistor */
-    MD_GPIO_PuPd_UP = 0x01,     /*!< Pull up resistor enabled */
-    MD_GPIO_PuPd_DOWN = 0x02    /*!< Pull down resistor enabled */
-} MD_GPIOPuPd_t;
+    GPIO_PuENA 	= 0,    //!< Pull up resistor enabled
+    GPIO_PuDIS 	= 1 	//!< Pull up resistor disabled
+//  GPIO_PuPd_DOWN = 0x02    /*!< Pull down resistor enabled */
+} MD_GPIOPuRe_t;
 
 /**
  * @brief      GPIO Output Maximum frequency enumeration
@@ -156,11 +207,11 @@ typedef enum {
  */
 typedef struct MD_GPIO_TypeDef {
     MD_GPIOName_t   _GPIO_Name;       //!< GPIO name
-    MD_GPIOPin_t    _GPIO_Pin;        //!< GPIO pin address.
-    MD_GPIOMode_t   _GPIO_Mode;       //!< GPIO mode.
-    MD_GPIOOType_t  _GPIO_OType;      //!< GPIO output type.
-    MD_GPIOPuPd_t   _GPIO_PuPd;       //!< GPIO pull resistor.
-    MD_GPIOState_t  _GPIO_InitVal;       //!< Initial GPIO state
+    MD_GPIOPin_t    _GPIO_Pin;        //!< GPIO pin number
+    MD_GPIOMode_t   _GPIO_Mode;       //!< Mode, alternate function
+    MD_GPIOOType_t  _GPIO_OType;      //!< Driver output type.
+    MD_GPIOPuRe_t   _GPIO_PuRe;       //!< GPIO pull resistor.
+    MD_GPIOState_t  _GPIO_InitVal;    //!< GPIO initial state
 } MD_GPIO_TypeDef_t;
 
 //extern MD_GPIO_TypeDef_t MD_Gpios[];
@@ -168,7 +219,7 @@ typedef struct MD_GPIO_TypeDef {
 void MD_GPIO_InitAll(void);
 void MD_GPIO_Init(MD_GPIOName_t Name, MD_GPIOPin_t Pin, 
                   MD_GPIOMode_t Mode, MD_GPIOOType_t DriverType, 
-                  MD_GPIOPuPd_t PuPd, MD_GPIOState_t InitVal);
+                  MD_GPIOPuRe_t PuPd, MD_GPIOState_t InitVal);
 void MD_GPIO_Switch(MD_GPIOName_t name, MD_GPIOState_t newState);
 void MD_GPIO_On(MD_GPIOName_t name);
 void MD_GPIO_Off(MD_GPIOName_t name);
@@ -183,13 +234,13 @@ void MD_GPIO_Toggle(MD_GPIOName_t name);
  * @param      GPIO_OType   Select GPIO Output type. This parameter can be a value of @ref
  *                          MD_GPIO_OType_t enumeration
  * @param      GPIO_PuPd    Select GPIO pull resistor. This parameter can be a value of @ref
- *                          MD_GPIO_PuPd_t enumeration
+ *                          MD_GPIO_PuRe_t enumeration
  * @param      GPIO_Speed   Select GPIO speed. This parameter can be a value of @ref MD_GPIO_Speed_t
  *                          enumeration
  * @param      Alternate    Alternate function you will use
  */
 // void MD_GPIO_InitAlternate(GPIO_t* GPIOx, uint16_t GPIO_Pin, MD_GPIO_OType_t GPIO_OType, 
-//                            MD_GPIO_PuPd_t GPIO_PuPd, MD_GPIO_Speed_t GPIO_Speed, uint8_t Alternate);
+//                            MD_GPIO_PuRe_t GPIO_PuPd, MD_GPIO_Speed_t GPIO_Speed, uint8_t Alternate);
 
 /**
  * @brief      Deinitializes pin(s)
@@ -257,10 +308,10 @@ void MD_GPIO_Toggle(MD_GPIOName_t name);
  * @param      GPIO_Pin    Select GPIO pin(s). You can select more pins with | (OR) operator to set
  *                         them as output
  * @param      GPIO_PuPd   Pull resistor option. This parameter can be a value of @ref
- *                         MD_GPIO_PuPd_t enumeration
+ *                         MD_GPIO_PuRe_t enumeration
  * @retval     None        { description }
  */
-// void MD_GPIO_SetPullResistor(GPIO_t* GPIOx, uint16_t GPIO_Pin, MD_GPIO_PuPd_t GPIO_PuPd);
+// void MD_GPIO_SetPullResistor(GPIO_t* GPIOx, uint16_t GPIO_Pin, MD_GPIO_PuRe_t GPIO_PuPd);
 
 /**
  * @brief      Sets pin(s) low

@@ -42,46 +42,63 @@ void MD_GPIO_InitAll(void) {
 	EALLOW;
 
 	for (int idx = 0; idx < sizeof(MD_Gpios) / sizeof(MD_Gpios[0]); idx++) {
-		uint16_t PIN_NO = (uint16_t) MD_Gpios[idx]._GPIO_Pin;
+		uint16_t PinNum = (uint16_t)MD_Gpios[idx]._GPIO_Pin;
 
-		if (PIN_NO > MD_GPIO63) {
-			if (MD_Gpios[idx]._GPIO_Mode == GPIO_Mode_IN)
-				GpioCtrlRegs.GPCDIR.all &= ~((uint16_t)(1 << PIN_NO-(uint16_t)MD_GPIO64));
+		if (PinNum > MD_GPIO63) {
 			if (MD_Gpios[idx]._GPIO_Mode == GPIO_Mode_OUT)
-				GpioCtrlRegs.GPCDIR.all |= (uint16_t)(1 << PIN_NO-(uint16_t)MD_GPIO64);
+				GpioCtrlRegs.GPCDIR.all |= (uint16_t)(1 << PinNum-(uint16_t)MD_GPIO64);
+			if (MD_Gpios[idx]._GPIO_Mode == GPIO_Mode_IN)
+				GpioCtrlRegs.GPCDIR.all &= ~((uint16_t)(1 << PinNum-(uint16_t)MD_GPIO64));
 
 			if (MD_Gpios[idx]._GPIO_InitVal == GPIO_ON)
-				GpioDataRegs.GPCSET.all = (uint16_t)(1 << PIN_NO-(uint16_t)MD_GPIO64);
+				GpioDataRegs.GPCSET.all = (uint16_t)(1 << PinNum-(uint16_t)MD_GPIO64);
 			else
-				GpioDataRegs.GPCCLEAR.all = (uint16_t)(1 << PIN_NO-(uint16_t)MD_GPIO64);
+				GpioDataRegs.GPCCLEAR.all = (uint16_t)(1 << PinNum-(uint16_t)MD_GPIO64);
 
 			continue;
 		}
 
-		if ((PIN_NO <= MD_GPIO63) && (PIN_NO > MD_GPIO31)) {
+		if ((PinNum <= MD_GPIO63) && (PinNum > MD_GPIO31)) {
 			if (MD_Gpios[idx]._GPIO_Mode == GPIO_Mode_IN)
-				GpioCtrlRegs.GPBDIR.all &= ~((uint16_t)(1 << PIN_NO-(uint16_t)MD_GPIO32));
+				GpioCtrlRegs.GPBDIR.all &= ~((uint16_t)(1 << PinNum-(uint16_t)MD_GPIO32));
 			if (MD_Gpios[idx]._GPIO_Mode == GPIO_Mode_OUT)
-				GpioCtrlRegs.GPBDIR.all |= (uint16_t)(1 << PIN_NO-(uint16_t)MD_GPIO32);
+				GpioCtrlRegs.GPBDIR.all |= (uint16_t)(1 << PinNum-(uint16_t)MD_GPIO32);
 
 			if (MD_Gpios[idx]._GPIO_InitVal == GPIO_ON)
-				GpioDataRegs.GPBSET.all = (uint16_t)(1 << PIN_NO-(uint16_t)MD_GPIO32);
+				GpioDataRegs.GPBSET.all = (uint16_t)(1 << PinNum-(uint16_t)MD_GPIO32);
 			else
-				GpioDataRegs.GPBCLEAR.all = (uint16_t)(1 << PIN_NO-(uint16_t)MD_GPIO32);
+				GpioDataRegs.GPBCLEAR.all = (uint16_t)(1 << PinNum-(uint16_t)MD_GPIO32);
 
 			continue;
 		}
 
-		if (PIN_NO < MD_GPIO32) {
+		if (PinNum < MD_GPIO32) {
+			uint16_t PinMode = (uint16_t) MD_Gpios[idx]._GPIO_Mode;
+
+			switch (MD_Gpios[idx]._GPIO_Mode) {
+				case GPIO_Mode_OUT:
+					GpioCtrlRegs.GPADIR.all |=  ((uint32_t)(1 << PinNum-(uint16_t)MD_GPIO0)); break;
+
+				case GPIO_Mode_IN:
+					GpioCtrlRegs.GPADIR.all &= ~((uint16_t)(1 << PinNum-(uint16_t)MD_GPIO0)); break;
+
+				case GPIO_Mode_AF3:
+				case GPIO_Mode_AF2:
+				case GPIO_Mode_AF1:
+					(PinNum < MD_GPIO16) ?
+							(GpioCtrlRegs.GPAMUX1.all |= ((uint32_t)PinMode << 2*(PinNum-(uint16_t)MD_GPIO0))) :
+							(GpioCtrlRegs.GPAMUX2.all |= ((uint32_t)PinMode << 2*(PinNum-(uint16_t)MD_GPIO0))); break;
+			}
+
 			if (MD_Gpios[idx]._GPIO_Mode == GPIO_Mode_IN)
-				GpioCtrlRegs.GPADIR.all &= ~((uint16_t)(1 << PIN_NO-(uint16_t)MD_GPIO0));
+				GpioCtrlRegs.GPADIR.all &= ~((uint16_t)(1 << PinNum-(uint16_t)MD_GPIO0));
 			if (MD_Gpios[idx]._GPIO_Mode == GPIO_Mode_OUT)
-				GpioCtrlRegs.GPADIR.all |= (uint16_t)(1 << PIN_NO-(uint16_t)MD_GPIO0);
+				GpioCtrlRegs.GPADIR.all |= (uint16_t)(1 << PinNum-(uint16_t)MD_GPIO0);
 
 			if (MD_Gpios[idx]._GPIO_InitVal == GPIO_ON)
-				GpioDataRegs.GPASET.all = (uint16_t)(1 << PIN_NO-(uint16_t)MD_GPIO0);
+				GpioDataRegs.GPASET.all = (uint16_t)(1 << PinNum-(uint16_t)MD_GPIO0);
 			else
-				GpioDataRegs.GPACLEAR.all = (uint16_t)(1 << PIN_NO-(uint16_t)MD_GPIO0);
+				GpioDataRegs.GPACLEAR.all = (uint16_t)(1 << PinNum-(uint16_t)MD_GPIO0);
 
 			continue;
 		}
@@ -101,7 +118,7 @@ void MD_GPIO_InitAll(void) {
  */
 void MD_GPIO_Init(MD_GPIOName_t Name, MD_GPIOPin_t Pin, 
                   MD_GPIOMode_t Mode, MD_GPIOOType_t DriverType, 
-                  MD_GPIOPuPd_t PuPd, MD_GPIOState_t InitVal) {
+                  MD_GPIOPuRe_t PuRe, MD_GPIOState_t InitVal) {
 }
 
 /**
@@ -121,14 +138,14 @@ void MD_GPIO_Switch(MD_GPIOName_t name, MD_GPIOState_t newState) {
  * @param[in]  name   GPIO name enumerated by MD_GPIOName_t
  */
 void MD_GPIO_On(MD_GPIOName_t name) {
-	uint16_t PIN_NO = (uint16_t) MD_Gpios[name]._GPIO_Pin;
+	uint16_t PinNum = (uint16_t) MD_Gpios[name]._GPIO_Pin;
 
-	if (PIN_NO > MD_GPIO63)
-		GpioDataRegs.GPCSET.all = (uint16_t)(1 << PIN_NO-(uint16_t)MD_GPIO64);
-	if ((PIN_NO <= MD_GPIO63) && (PIN_NO > MD_GPIO31))
-		GpioDataRegs.GPBSET.all = (uint16_t)(1 << PIN_NO-(uint16_t)MD_GPIO32);
-	if (PIN_NO < MD_GPIO32)
-		GpioDataRegs.GPASET.all = (uint16_t)(1 << PIN_NO-(uint16_t)MD_GPIO0);
+	if (PinNum > MD_GPIO63)
+		GpioDataRegs.GPCSET.all = (uint16_t)(1 << PinNum-(uint16_t)MD_GPIO64);
+	if ((PinNum <= MD_GPIO63) && (PinNum > MD_GPIO31))
+		GpioDataRegs.GPBSET.all = (uint16_t)(1 << PinNum-(uint16_t)MD_GPIO32);
+	if (PinNum < MD_GPIO32)
+		GpioDataRegs.GPASET.all = (uint16_t)(1 << PinNum-(uint16_t)MD_GPIO0);
 }
 
 /**
@@ -136,14 +153,14 @@ void MD_GPIO_On(MD_GPIOName_t name) {
  * @param[in]  name   GPIO name enumerated by MD_GPIOName_t
  */
 void MD_GPIO_Off(MD_GPIOName_t name) {
-	uint16_t PIN_NO = (uint16_t) MD_Gpios[name]._GPIO_Pin;
+	uint16_t PinNum = (uint16_t) MD_Gpios[name]._GPIO_Pin;
 
-	if (PIN_NO > MD_GPIO63)
-		GpioDataRegs.GPCCLEAR.all = (uint16_t)(1 << PIN_NO-(uint16_t)MD_GPIO64);
-	if ((PIN_NO <= MD_GPIO63) && (PIN_NO > MD_GPIO31))
-		GpioDataRegs.GPBCLEAR.all = (uint16_t)(1 << PIN_NO-(uint16_t)MD_GPIO32);
-	if (PIN_NO < MD_GPIO32)
-		GpioDataRegs.GPACLEAR.all = (uint16_t)(1 << PIN_NO-(uint16_t)MD_GPIO0);
+	if (PinNum > MD_GPIO63)
+		GpioDataRegs.GPCCLEAR.all = (uint16_t)(1 << PinNum-(uint16_t)MD_GPIO64);
+	if ((PinNum <= MD_GPIO63) && (PinNum > MD_GPIO31))
+		GpioDataRegs.GPBCLEAR.all = (uint16_t)(1 << PinNum-(uint16_t)MD_GPIO32);
+	if (PinNum < MD_GPIO32)
+		GpioDataRegs.GPACLEAR.all = (uint16_t)(1 << PinNum-(uint16_t)MD_GPIO0);
 }
 
 /**
@@ -151,14 +168,14 @@ void MD_GPIO_Off(MD_GPIOName_t name) {
  * @param[in]  name   The name
  */
 void MD_GPIO_Toggle(MD_GPIOName_t name) {
-	uint16_t PIN_NO = (uint16_t) MD_Gpios[name]._GPIO_Pin;
+	uint16_t PinNum = (uint16_t) MD_Gpios[name]._GPIO_Pin;
 
-	if (PIN_NO > MD_GPIO63)
-		GpioDataRegs.GPCTOGGLE.all = (uint16_t)(1 << PIN_NO-(uint16_t)MD_GPIO64);
-	if ((PIN_NO <= MD_GPIO63) && (PIN_NO > MD_GPIO31))
-		GpioDataRegs.GPBTOGGLE.all = (uint16_t)(1 << PIN_NO-(uint16_t)MD_GPIO32);
-	if (PIN_NO < MD_GPIO32)
-		GpioDataRegs.GPATOGGLE.all = (uint16_t)(1 << PIN_NO-(uint16_t)MD_GPIO0);
+	if (PinNum > MD_GPIO63)
+		GpioDataRegs.GPCTOGGLE.all = (uint16_t)(1 << PinNum-(uint16_t)MD_GPIO64);
+	if ((PinNum <= MD_GPIO63) && (PinNum > MD_GPIO31))
+		GpioDataRegs.GPBTOGGLE.all = (uint16_t)(1 << PinNum-(uint16_t)MD_GPIO32);
+	if (PinNum < MD_GPIO32)
+		GpioDataRegs.GPATOGGLE.all = (uint16_t)(1 << PinNum-(uint16_t)MD_GPIO0);
 }
 
 
@@ -167,7 +184,7 @@ void MD_GPIO_Toggle(MD_GPIOName_t name) {
 
 
 // void MD_GPIO_Init(MD_GPIOName_t Name, MD_GPIOPin_t Pin, MD_GPIOMode_t Mode,
-//                   MD_GPIOOType_t DriverType, MD_GPIOPuPd_t PuPd, MD_GPIOState_t InitVal);
+//                   MD_GPIOOType_t DriverType, MD_GPIOPuRe_t PuPd, MD_GPIOState_t InitVal);
 // 	/* Check input */
 // 	if (GPIO_Pin == 0x00) {
 // 		return;
@@ -180,7 +197,7 @@ void MD_GPIO_Toggle(MD_GPIOName_t name) {
 // 	MD_GPIO_INT_Init(GPIOx, GPIO_Pin, GPIO_Mode, GPIO_OType, GPIO_PuPd, GPIO_Speed);
 // }
 
-// void MD_GPIO_InitAlternate(GPIO_t* GPIOx, uint16_t GPIO_Pin, MD_GPIO_OType_t GPIO_OType, MD_GPIO_PuPd_t GPIO_PuPd, MD_GPIO_Speed_t GPIO_Speed, uint8_t Alternate) {
+// void MD_GPIO_InitAlternate(GPIO_t* GPIOx, uint16_t GPIO_Pin, MD_GPIO_OType_t GPIO_OType, MD_GPIO_PuRe_t GPIO_PuPd, MD_GPIO_Speed_t GPIO_Speed, uint8_t Alternate) {
 // 	uint32_t pinpos;
 
 // 	/* Check input */
@@ -274,7 +291,7 @@ void MD_GPIO_Toggle(MD_GPIOName_t name) {
 // 	}
 // }
 
-// void MD_GPIO_SetPullResistor(GPIO_t* GPIOx, uint16_t GPIO_Pin, MD_GPIO_PuPd_t GPIO_PuPd) {
+// void MD_GPIO_SetPullResistor(GPIO_t* GPIOx, uint16_t GPIO_Pin, MD_GPIO_PuRe_t GPIO_PuPd) {
 // 	uint8_t pinpos;
 	
 // 	/* Go through all pins */
@@ -337,7 +354,7 @@ void MD_GPIO_Toggle(MD_GPIOName_t name) {
 // 	RCC->AHB1ENR &= ~(1 << MD_GPIO_GetPortSource(GPIOx));
 // }
 
-// void MD_GPIO_INT_Init(GPIO_t* GPIOx, uint16_t GPIO_Pin, MD_GPIO_Mode_t GPIO_Mode, MD_GPIO_OType_t GPIO_OType, MD_GPIO_PuPd_t GPIO_PuPd, MD_GPIO_Speed_t GPIO_Speed) {
+// void MD_GPIO_INT_Init(GPIO_t* GPIOx, uint16_t GPIO_Pin, MD_GPIO_Mode_t GPIO_Mode, MD_GPIO_OType_t GPIO_OType, MD_GPIO_PuRe_t GPIO_PuPd, MD_GPIO_Speed_t GPIO_Speed) {
 // 	uint8_t pinpos;
 // 	uint8_t ptr = MD_GPIO_GetPortSource(GPIOx);
 	

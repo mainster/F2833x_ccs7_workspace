@@ -103,7 +103,7 @@ uint16_t ILI934x_INT_CalledFromPuts = 0;
 
 /* Private functions */
 void MD_ILI934x_InitLCD(void);
-void MD_ILI934x_SendData(uint8_t data);
+void MD_ILI934x_SendData(uint16_t data);
 void MD_ILI934x_SendCommand(uint8_t data);
 void MD_ILI934x_Delay(volatile unsigned int delay);
 void MD_ILI934x_SetCursorPosition(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2);
@@ -267,7 +267,7 @@ void MD_ILI934x_SendCommand(uint8_t data) {
     ILI934x_CS_SET;
 }
 
-void MD_ILI934x_SendData(uint8_t data) {
+void MD_ILI934x_SendData(uint16_t data) {
     ILI934x_WRX_SET;
     ILI934x_CS_RESET;
     MD_SPI_Send(ILI934x_SPI, data);
