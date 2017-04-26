@@ -33,69 +33,37 @@
 
    @endverbatim
  *
+ *
+   @verbatim
+
+	ILI934x			TMS320F2833x			DESCRIPTION
+	----------------------------------------------------------------------
+	SDO (MOSI)		GPIO16, SPI_SIMO_A		SPI master out
+	SDI (MISO)		GPIO17, SPI_SOMI_A		SPI master in (not used yet)
+	SCK (SCLK)		GPIO18, SPI_CLK_A		SPI clock line
+	nCS (nCS)		GPIO19, SPI_STE_A		SPI slave transmit enable
+	WRx (D/C)		GPIO0					Data/Command register select
+
+	RESET        	10k HW pullup 			Reset ILI934x
+	LED        		680R HW pullup 			Backlight
+	VCC          	+3.3V					Positive power supply
+	GND          	GND          			Ground
+
+   @endverbatim
+ *
  */
 #ifndef MD_ILI934x_H
 #define MD_ILI934x_H 100
 
-/**
- * @addtogroup MD_TMS320F2833x_Libraries
- * @{
- */
-
-/**
- * @defgroup MD_ILI934x
- * @brief    ILI934x library for TMS320F2833x SPI based communication.
- * @{
- *
- *
-@verbatim
-ILI934x		TMS320F2833x    	DESCRIPTION
-		
-CS          GPIO19 (SPISTEA)	Chip select / SPI Slave transmit enable
-SCK         GPIO18 (SPICLKA)	Serial clock line
-MISO,SOMI 	GPIO17 (SPISOMIA)	LCD data out (Not used)
-MOSI,SIMO  	GPIO16 (SPISIMOA)  	LCD data input
-WRX,D/C   	GPIO1 (GPIO)		Data/Command register select
-RESET       10k pullup         	Reset ILI934x
-LED			680R to VCC
-VCC			+3V3
-GND			GND
-@endverbatim
- *		
- * Pin defines can be overloaded in md_globals.h file
- *		
-@verbatim
-//Default SPI used is SPI5. Check my SPI library for other pinouts
-#define ILI934x_SPI           SPI5
-#define ILI934x_SPI_PINS      MD_SPI_PinsPack_1
-		
-//Default CS pin. Edit this in your defines.h file
-#define ILI934x_CS_PORT       GPIOC
-#define ILI934x_CS_PIN        GPIO_PIN_2
-		
-//Default D/C (or WRX) pin. Edit this in your defines.h file
-#define ILI934x_WRX_PORT      GPIOD
-#define ILI934x_WRX_PIN       GPIO_PIN_13
-@endverbatim
- *
- * To disable RESET pin, add line below to md_globals.h
- * Pull-up ILI934x RESET pin to VCC by HW resistor.
- *	
-@verbatim
-//!< Disable usage of RESET pin
-#define ILI934x_USE_RST_PIN			0
-@endverbatim
- *
- */
-#include "stm32f4xx.h"
-#include "stm32f4xx_rcc.h"
-#include "stm32f4xx_gpio.h"
+//#include "stm32f4xx.h"
+//#include "stm32f4xx_rcc.h"
+//#include "stm32f4xx_gpio.h"
 #include "md_globals.h"
 #include "md_fonts.h"
-#include "md_gpio.h"
-#include "tm_stm32f4_spi.h"
-#include "tm_stm32f4_dma.h"
-#include "tm_stm32f4_spi_dma.h"
+//#include "md_gpio.h"
+//#include "tm_stm32f4_spi.h"
+//#include "tm_stm32f4_dma.h"
+//#include "tm_stm32f4_spi_dma.h"
 
 /**
  * @defgroup MD_ILI934x_Macros
@@ -103,37 +71,37 @@ GND			GND
  * @{
  */
 
-/**
- * @brief  This SPI pins are used on STM32F429-Discovery board
- */
-#ifndef ILI934x_SPI
-#define ILI934x_SPI           SPI5
-#define ILI934x_SPI_PINS      MD_SPI_PinsPack_1
-#endif
-
-/**
- * @brief  CS PIN for SPI, used as on STM32F429-Discovery board
- */
-#ifndef ILI934x_CS_PIN
-#define ILI934x_CS_PORT       GPIOC
-#define ILI934x_CS_PIN        GPIO_PIN_2
-#endif
-
-/**
- * @brief  WRX PIN for data/command, used as on STM32F429-Discovery board
- */
-#ifndef ILI934x_WRX_PIN
-#define ILI934x_WRX_PORT      GPIOD
-#define ILI934x_WRX_PIN       GPIO_PIN_13
-#endif
-
-/**
- * @brief  RESET for LCD
- */
-#ifndef ILI934x_RST_PIN
-#define ILI934x_RST_PORT      GPIOD
-#define ILI934x_RST_PIN       GPIO_PIN_12
-#endif
+///**
+// * @brief  This SPI pins are used on STM32F429-Discovery board
+// */
+//#ifndef ILI934x_SPI
+//#define ILI934x_SPI           SPI5
+//#define ILI934x_SPI_PINS      MD_SPI_PinsPack_1
+//#endif
+//
+///**
+// * @brief  CS PIN for SPI, used as on STM32F429-Discovery board
+// */
+//#ifndef ILI934x_CS_PIN
+//#define ILI934x_CS_PORT       GPIOC
+//#define ILI934x_CS_PIN        GPIO_PIN_2
+//#endif
+//
+///**
+// * @brief  WRX PIN for data/command, used as on STM32F429-Discovery board
+// */
+//#ifndef ILI934x_WRX_PIN
+//#define ILI934x_WRX_PORT      GPIOD
+//#define ILI934x_WRX_PIN       GPIO_PIN_13
+//#endif
+//
+///**
+// * @brief  RESET for LCD
+// */
+//#ifndef ILI934x_RST_PIN
+//#define ILI934x_RST_PORT      GPIOD
+//#define ILI934x_RST_PIN       GPIO_PIN_12
+//#endif
 
 /* LCD settings */
 #define ILI934x_WIDTH        240

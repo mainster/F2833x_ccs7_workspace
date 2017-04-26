@@ -1,6 +1,6 @@
 /**
  * @file        md_globals.h
- * @project		ELT131_LAB_03_NON-OS
+ * @project		MD_GPIO_LIB_F2833x
  *
  * @date        6 Apr 2017
  * @author      Manuel Del Basso (mainster)
@@ -37,7 +37,9 @@
 
 /* -------------------------------  Includes  ------------------------------ */
 #include <stdint.h>
-//#include "md_gpio.h"
+#include <DSP28x_Project.h>
+//#include "md_fonts.h"
+#include "md_ili934x.h"
 
 #ifdef __cplusplus
  extern "C" {
@@ -51,22 +53,38 @@
 #define OFF 		0
 
 /* --------------------------  Global variables  --------------------------- */
-//extern MD_GPIO_TypeDef_t MD_Gpios[];
-typedef enum {
-	LED_RED_A         = 0,    //!< LED
-	DBG_TIMING_PE2    = 1,    //!< Not used!
-} MD_GPIOName_t;
-
 
 /* ----------------------------  Configuration  ---------------------------- */
+typedef enum {
+	LED_RED = 0,    		//!< Red LED at GPIO34
+	ILI934x_WRx_PIN,
+	ILI934x_nCS_PIN,
+	ILI934x_SCK_PIN,
+	ILI934x_SDI_PIN,
+	ILI934x_SDO_PIN,
+	DBG_TIMING_PE2  		//!< Not used!
+} MD_GPIOName_t;
 
 /* ---------------------------  Global typedefs  --------------------------- */
 
 /* ----------------------------  Global macros  ---------------------------- */
+#define StartCpuTimer(x) CpuTimer##x.RegsAddr->TCR.bit.TSS = 0
+#define StopCpuTimer(x) CpuTimer##x.RegsAddr->TCR.bit.TSS = 1
 
 /* ---------------------  Global function prototypes  ---------------------- */
+void MD_ConfigCpuTimer(struct CPUTIMER_VARS *Timer, float Freq, float Period);
 void onEncLsb_changed(void);
 void onBtn_pressed(void);
+
+#ifndef RTOS
+__interrupt
+#endif
+void XINT2_EncLsb_isr(void);
+
+#ifndef RTOS
+__interrupt
+#endif
+void CPU_TIM0_isr(void);
 
 #ifdef __cplusplus
  }

@@ -1,6 +1,6 @@
 /**
- * @file        gpio_config.h
- * @project		ILI9341_F28335_v1
+ * @file        md_config.h
+ * @project		MD_F2833x_LIB
  * 
  * @date        26 Apr 2017
  * @author      Manuel Del Basso (mainster)
@@ -43,33 +43,62 @@
 
 /* -------------------------------  Includes  ------------------------------ */
 
-/* ----------------------------  Configuration  ---------------------------- */
-
 /* ---------------------------  Private typedefs  -------------------------- */
-//extern MD_GPIO_TypeDef_t MD_GPIO_TypeDef;
+extern MD_GPIO_TypeDef_t MD_GPIO_TypeDef;
+
+/* ----------------------------  Configuration  ---------------------------- */
+MD_GPIO_TypeDef_t MD_Gpios[] = {
+	{ LED_RED,			MD_GPIO34, GPIO_Mode_OUT, GPIO_OType_PP, MD_GPIO_PuPd_NOPULL, GPIO_OFF },
+	{ ILI934x_WRx_PIN,	MD_GPIO0,  GPIO_Mode_OUT, GPIO_OType_PP, MD_GPIO_PuPd_NOPULL, GPIO_OFF },
+	{ ILI934x_nCS_PIN,	MD_GPIO19, GPIO_Mode_AF,  GPIO_OType_PP, MD_GPIO_PuPd_UP, 	  GPIO_OFF },
+	{ ILI934x_SCK_PIN,	MD_GPIO18, GPIO_Mode_AF,  GPIO_OType_PP, MD_GPIO_PuPd_NOPULL, GPIO_OFF },
+	{ ILI934x_SDI_PIN,	MD_GPIO17, GPIO_Mode_IN,  GPIO_OType_OD, MD_GPIO_PuPd_UP, 	  GPIO_OFF },
+	{ ILI934x_SDO_PIN,	MD_GPIO16, GPIO_Mode_AF,  GPIO_OType_PP, MD_GPIO_PuPd_NOPULL, GPIO_OFF },
+	{ DBG_TIMING_PE2, 	MD_GPIO1,  GPIO_Mode_IN,  GPIO_OType_OD, MD_GPIO_PuPd_UP, 	  GPIO_OFF },
+};
+
+
+/**
+ * @brief  This SPI pins are used on STM32F429-Discovery board
+ */
+//#ifndef ILI934x_SPI
+//#define ILI934x_SPI           SPI5
+//#define ILI934x_SPI_PINS      MD_SPI_PinsPack_1
+//#endif
+//
+///**
+// * @brief  CS PIN for SPI, used as on STM32F429-Discovery board
+// */
+//#ifndef ILI934x_CS_PIN
+//#define ILI934x_CS_PORT       GPIOC
+//#define ILI934x_CS_PIN        GPIO_PIN_2
+//#endif
+//
+///**
+// * @brief  WRX PIN for data/command, used as on STM32F429-Discovery board
+// */
+//#ifndef ILI934x_WRX_PIN
+//#define ILI934x_WRX_PORT      GPIOD
+//#define ILI934x_WRX_PIN       GPIO_PIN_13
+//#endif
+//
+///**
+// * @brief  RESET for LCD
+// */
+//#ifndef ILI934x_RST_PIN
+//#define ILI934x_RST_PORT      GPIOD
+//#define ILI934x_RST_PIN       GPIO_PIN_12
+//#endif
 
 /* ----------------------------  Private macros  --------------------------- */
 
 /* --------------------------  Private functions  -------------------------- */
 
 /* --------------------------  Private variables  -------------------------- */
-//typedef enum MD_GPIOName {
-//	LED_RED_A         = 0,    //!< LED
-//	DBG_TIMING_PE2    = 1,    //!< Not used!
-//} MD_GPIOName_t;
-
-extern MD_GPIO_TypeDef_t MD_GPIO_TypeDef;
-
-MD_GPIO_TypeDef_t MD_Gpios[] = {
-	{ LED_RED_A, 		MD_GPIO34, GPIO_Mode_OUT, GPIO_OType_PP, MD_GPIO_PuPd_NOPULL, GPIO_OFF },
-	{ DBG_TIMING_PE2, 	MD_GPIO1,  GPIO_Mode_IN,  GPIO_OType_OD, MD_GPIO_PuPd_UP, GPIO_OFF },
-};
-
 
 /* ----------------------------  Private defines  -------------------------- */
 
 /* ---------------------  Private function prototypes  --------------------- */
-
 
 #ifdef __cplusplus
  }

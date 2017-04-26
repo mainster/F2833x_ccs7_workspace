@@ -1,8 +1,8 @@
 /**
- * @file        hello.c
+ * @file        main.c
  * @project		ILI9341_F28335_v1
  *
- * @date        25 Apr 2017
+ * @date        26 Apr 2017
  * @author      Manuel Del Basso (mainster)
  * @email       manuel.delbasso@gmail.com
  *
@@ -36,18 +36,15 @@
  */
 #include <stdio.h>
 #include <stdint.h>
-#include "main.h"
+#include "md_globals.h"
 #include "md_gpio.h"
 
-#undef FLASH
 
-void MD_ConfigCpuTimer(struct CPUTIMER_VARS *Timer, float Freq, float Period);
-#define StartCpuTimer(x) CpuTimer##x.RegsAddr->TCR.bit.TSS = 0
-#define StopCpuTimer(x) CpuTimer##x.RegsAddr->TCR.bit.TSS = 1
+#undef FLASH
 uint16_t ctr = 0;
 
 /*
- * ===================== main of ILI9341_F28335_v1 =====================
+ * ===================== main of MD_GPIO_LIB_F2833x =====================
  */
 void main(void) {
     InitSysCtrl();			//!< (...) SYSCLKOUT = 150MHz (F_CPU)
@@ -85,7 +82,7 @@ void MD_ConfigCpuTimer(struct CPUTIMER_VARS *Timer, float Freq, float Period) {
 void CPU_TIM0_isr(void) {
 	if (++ctr > 10) {
 		ctr = 0;
-		MD_GPIO_Toggle(LED_RED_A);
+		MD_GPIO_Toggle(LED_RED);
 	}
 
 #ifndef RTOS_DISPATCHER
