@@ -1,4 +1,6 @@
 dvt/*
+**/*.sublime-workspace
+Example_2833xSci_Echoback
 # Created by https://www.gitignore.io/api/c
 
 .jxbrowser-data
