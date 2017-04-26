@@ -71,13 +71,10 @@ char *pIdleMsg = NULL;
 const char sEncMsg[] = { "New ENC value: " };
 const char sEpwmFreq[] = { "ePWM frequency: " };
 
-
-
-
 /*
- * ===================== main of ELT313_LAB_03_RTOS_v2 =====================
+ * ===================== main of ELT313_LAB_03_RTOS_3 =====================
  * Predefined symbols:
- * 	- RTOS_DISPATCHER			//!< Removes all user access instructions to the PIE
+ * 	- RTOS_DISPATCHER			//!< Removes all user write instructions to the PIE
  * 	- RTOS
  */
 void main() {

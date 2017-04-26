@@ -1,0 +1,1656 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"in",
+				"inline-block"
+			],
+			[
+				"posit",
+				"object-position"
+			],
+			[
+				"margin",
+				"margin-bottom"
+			],
+			[
+				"app",
+				"approximately"
+			],
+			[
+				"ELT131_LAB_03_",
+				"ELT131_LAB_03_02"
+			],
+			[
+				"ELT",
+				"ELT131_LAB_03/\tDir"
+			],
+			[
+				"ram",
+				"ram_flash_overlayed_50ns.png\tFile"
+			],
+			[
+				"de",
+				"debug_context_restore_b.png\tFile"
+			],
+			[
+				"c",
+				"constant"
+			],
+			[
+				"co",
+				"comment"
+			],
+			[
+				"flash_ram_performance",
+				"flash_ram_performance.jpg\tFile"
+			],
+			[
+				"cont",
+				"control"
+			],
+			[
+				"Tim",
+				"TimeLoc"
+			],
+			[
+				"Ev",
+				"EventClass"
+			],
+			[
+				"Eve",
+				"Event"
+			],
+			[
+				"Da",
+				"Data1"
+			],
+			[
+				"exec_graph_scope",
+				"exec_graph_scope_2.png\tFile"
+			],
+			[
+				"padd",
+				"padding-left"
+			],
+			[
+				"inlie",
+				"inline-block"
+			],
+			[
+				"exec_graph_",
+				"exec_graph_scope.png\tFile"
+			],
+			[
+				"sett",
+				"settingsPrjSpec〔variable〕"
+			],
+			[
+				"env",
+				"env_var〔argument〕"
+			],
+			[
+				"expa",
+				"expanded_var〔function〕"
+			],
+			[
+				"v",
+				"verify2.png\tFile"
+			],
+			[
+				"conf",
+				"configured"
+			],
+			[
+				"200",
+				"200kHz"
+			],
+			[
+				"marg",
+				"margin-left"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"os_hwi_",
+				"os_hwi_latency_100Hz_100ns.png\tFile"
+			],
+			[
+				"non-os_flash_jitter_",
+				"non-os_flash_jitter_100Hz_50ns.png\tFile"
+			],
+			[
+				"non-os_flash_",
+				"non-os_flash_jitter_100Hz_50ns.png\tFile"
+			],
+			[
+				"ELT131",
+				"ELT131_LAB_03_01.c\tFile"
+			],
+			[
+				"EL",
+				"ELT131_LAB_03_RTOS_3.c"
+			],
+			[
+				"ELT131_LAB_04",
+				"ELT131_LAB_04_01/\tDir"
+			],
+			[
+				"keyR",
+				"keyRegs"
+			],
+			[
+				"os_zl",
+				"os_zli_jitter_100Hz_50ns.png\tFile"
+			],
+			[
+				"ru",
+				"running"
+			],
+			[
+				"os_swi_no_200kHz_100ns_v2",
+				"os_swi_no_200kHz_100ns_v2_because.png\tFile"
+			],
+			[
+				"os_jitter_swi_2",
+				"os_jitter_swi_200Hz_100ns.png\tFile"
+			],
+			[
+				"cf",
+				"app.cfg\tFile"
+			],
+			[
+				"ELT131_LAB_03_RTOS",
+				"ELT131_LAB_03_RTOS_3.c\tFile"
+			],
+			[
+				"p",
+				"os_jitter_2kHz_idle_is_enc_100ns.png\tFile"
+			],
+			[
+				"os_jitter_100Hz_idle_is_enc",
+				"os_jitter_100Hz_idle_is_enc_100ns.png\tFile"
+			],
+			[
+				"os_jitter_100",
+				"os_jitter_100Hz_idle_is_NONE_100ns.png\tFile"
+			],
+			[
+				"os",
+				"os_jitter_2kHz_idle_is_NONE_100ns.png\tFile"
+			],
+			[
+				"mdi",
+				"mdimg\tmdImage"
+			],
+			[
+				"os_irq_jitter_idle_is_",
+				"os_irq_jitter_idle_is_enc.png\tFile"
+			],
+			[
+				"lab",
+				"lab3_os_irq_jitter_idle_is_enc_base100ns.png\tFile"
+			],
+			[
+				"la",
+				"latency"
+			],
+			[
+				"remo",
+				"remove"
+			],
+			[
+				"find",
+				"findall"
+			],
+			[
+				"attrsRe",
+				"attrsRegStr_"
+			],
+			[
+				"attr",
+				"attrsStr〔variable〕"
+			],
+			[
+				"keyReg",
+				"keyRegStr"
+			],
+			[
+				"hasAtt",
+				"hasAttrs"
+			],
+			[
+				"hasAt",
+				"hasAttrs"
+			],
+			[
+				"hasA",
+				"hasAttrs"
+			],
+			[
+				"has",
+				"hasattr〔function〕"
+			],
+			[
+				"head",
+				"headhlines\theadhlines"
+			],
+			[
+				"main",
+				"main_03_p1.c\tFile"
+			],
+			[
+				"margi",
+				"margin-top"
+			],
+			[
+				"SH",
+				"SHORTSRC.c\tFile"
+			],
+			[
+				"cod",
+				"codeLines"
+			],
+			[
+				"md",
+				"mdFileDirname"
+			],
+			[
+				"backgr",
+				"background-color"
+			],
+			[
+				"shad",
+				"box-shadow"
+			],
+			[
+				"orig",
+				"orig_viewport\tstatement"
+			],
+			[
+				"md_",
+				"md_epwm.c\tFile"
+			],
+			[
+				"ELT131_LAB_03",
+				"ELT131_LAB_03_NON-OS/\tDir"
+			],
+			[
+				"sel",
+				"self.blk_reg"
+			],
+			[
+				"sour",
+				"sourceFile〔variable〕"
+			],
+			[
+				"repl",
+				"replace"
+			],
+			[
+				"so",
+				"sourceFile〔variable〕"
+			],
+			[
+				"read",
+				"readlines〔function〕"
+			],
+			[
+				"Code",
+				"CodeImport〔class〕"
+			],
+			[
+				"code",
+				"codeblock"
+			],
+			[
+				"keyRe",
+				"keyRegs〔variable〕"
+			],
+			[
+				"key",
+				"keywordReg"
+			],
+			[
+				"Co",
+				"CodeImport〔class〕"
+			],
+			[
+				"blk",
+				"blkObj〔variable〕"
+			],
+			[
+				"attrRe",
+				"attrRegs"
+			],
+			[
+				"code_i",
+				"code_import_tag〔argument〕"
+			],
+			[
+				"fin",
+				"find"
+			],
+			[
+				"catt",
+				"cattrs_"
+			],
+			[
+				"interse",
+				"intersects"
+			],
+			[
+				"full",
+				"full_lines〔argument〕"
+			],
+			[
+				"CodeImport",
+				"CodeImportBlock"
+			],
+			[
+				"str",
+				"strip"
+			],
+			[
+				"cat",
+				"cattrLines"
+			],
+			[
+				"blo",
+				"blocks"
+			],
+			[
+				"next",
+				"next_line〔variable〕"
+			],
+			[
+				"att",
+				"attrs"
+			],
+			[
+				"subs",
+				"substr"
+			],
+			[
+				"extra",
+				"extract_blocks"
+			],
+			[
+				"bo",
+				"boxed"
+			],
+			[
+				"non-os_flash_jitter_at_",
+				"non-os_flash_jitter_at_2e3.png\tFile"
+			],
+			[
+				"non-OS",
+				"non-os_flash_jitter_at_30.png\tFile"
+			],
+			[
+				"d",
+				"Directory"
+			],
+			[
+				"defin",
+				"defined"
+			],
+			[
+				"Dis",
+				"disassembly"
+			],
+			[
+				"PC",
+				"PC-USB"
+			],
+			[
+				"au",
+				"auto"
+			],
+			[
+				"bord",
+				"border-style"
+			],
+			[
+				"bor",
+				"border"
+			],
+			[
+				"inl",
+				"inline"
+			],
+			[
+				"foot",
+				"footIcon\tstatement"
+			],
+			[
+				"aut",
+				"author\tstatement"
+			],
+			[
+				"loca",
+				"location\tstatement"
+			],
+			[
+				"form",
+				"format\tfunction"
+			],
+			[
+				"del",
+				"delete"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"foo",
+				"footerTemplate"
+			],
+			[
+				"mod",
+				"modifiedStr\tfunction"
+			],
+			[
+				"htm",
+				"html\tstatement"
+			],
+			[
+				"art",
+				"article_footer"
+			],
+			[
+				"ali",
+				"text-align"
+			],
+			[
+				"he",
+				"header\tTag"
+			],
+			[
+				"align",
+				"vertical-align"
+			],
+			[
+				"becom",
+				"become"
+			],
+			[
+				"CPU",
+				"CPU-Load"
+			],
+			[
+				"font",
+				"font-style"
+			],
+			[
+				"thr",
+				"thread"
+			],
+			[
+				"thre",
+				"threads"
+			],
+			[
+				"whi",
+				"Which"
+			],
+			[
+				"cente",
+				"centered"
+			],
+			[
+				"jitter_",
+				"jitter_flash.bmp\tFile"
+			],
+			[
+				"7_1",
+				"7_1_perc.bmp\tFile"
+			],
+			[
+				"sr",
+				"strx\tstatement"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/User/markdownChapters.sublime-build",
+					""
+				],
+				[
+					"Packages/User/mkDoxy.sublime-build",
+					""
+				],
+				[
+					"Packages/User/udev_reload.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				],
+				[
+					"Packages/User/markdownChapters.sublime-build",
+					""
+				],
+				[
+					"Packages/User/mkDoxy.sublime-build",
+					""
+				],
+				[
+					"Packages/User/udev_reload.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "lore",
+		"selected_items":
+		[
+			[
+				"lore",
+				"Add some Lorem Gibson"
+			],
+			[
+				"colo",
+				"Color Picker"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"trim",
+				"Trimmer: Trim trailing whitespace."
+			],
+			[
+				"set syn mult",
+				"Set Syntax: MultiMarkdown"
+			],
+			[
+				"set syn gene",
+				"Set Syntax: Generic Config"
+			],
+			[
+				"set syn c",
+				"Set Syntax: C"
+			],
+			[
+				"trimm",
+				"Trimmer: Trim trailing whitespace."
+			],
+			[
+				"cle",
+				"Clear Console"
+			],
+			[
+				"clear",
+				"Clear Console"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"enab",
+				"Package Control: Enable Package"
+			],
+			[
+				"col",
+				"Color Picker"
+			],
+			[
+				"set syn mark",
+				"Set Syntax: Markdown Extended"
+			],
+			[
+				"set syna c",
+				"Set Syntax: C"
+			],
+			[
+				"prv",
+				"PackageResourceViewer: Extract Package"
+			],
+			[
+				"tri",
+				"Trimmer: Trim trailing whitespace."
+			],
+			[
+				"disable ",
+				"Package Control: Disable Package"
+			],
+			[
+				"prv ",
+				"PackageResourceViewer: Extract Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				" anac lin",
+				"Anaconda: Disable linting on this file"
+			],
+			[
+				"anacon",
+				"Anaconda: Enable linting on this file"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"beat",
+				"SublimeAStyleFormmatter: Format Current Selection"
+			],
+			[
+				"set syn latex",
+				"Set Syntax: LaTeX"
+			],
+			[
+				"anac d",
+				"Anaconda: Disable linting on this file"
+			],
+			[
+				"set py",
+				"Set Syntax: Python"
+			],
+			[
+				"anaco",
+				"Anaconda: Disable linting on this file"
+			],
+			[
+				"ana",
+				"Anaconda: Set Python interpreter"
+			],
+			[
+				"disab",
+				"Package Control: Disable Package"
+			],
+			[
+				"debu",
+				"Plugin Debugger: run debug_example (opens Debugger)"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"prett",
+				"Pretty JSON: Format and Sort JSON"
+			],
+			[
+				"cl",
+				"Clear Console"
+			],
+			[
+				"set syn pyth",
+				"Set Syntax: Python"
+			],
+			[
+				"dia",
+				"Diagram: Generate Diagrams for Active View"
+			],
+			[
+				"clea",
+				"Clear Console"
+			],
+			[
+				"set sy ic",
+				"Set Syntax: iCalendar"
+			],
+			[
+				"yum",
+				"yUML: Open Diagram in Browser"
+			],
+			[
+				"syntax uml",
+				"Set Syntax: yUML"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"synta per",
+				"Set Syntax: Perl"
+			],
+			[
+				"ena",
+				"Package Control: Enable Package"
+			],
+			[
+				"color",
+				"Color Picker"
+			],
+			[
+				"set ht",
+				"Set Syntax: HTML"
+			],
+			[
+				"run",
+				"Build With: C++ Single File - Run"
+			],
+			[
+				"url",
+				"Open URL"
+			],
+			[
+				"tras",
+				"DoxyDoxygen: Translate Selection To..."
+			],
+			[
+				"pa",
+				"Package Control: Disable Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ena",
+				"Package Control: Enable Package"
+			],
+			[
+				"goto",
+				"GotoLineEnhanced: Prompt goto line"
+			],
+			[
+				"disa pa",
+				"Package Control: Disable Package"
+			],
+			[
+				"Package Control: rem",
+				"Package Control: Remove Package"
+			],
+			[
+				"trans",
+				"DoxyDoxygen: Translate Selection To..."
+			],
+			[
+				"tra",
+				"DoxyDoxygen: Translate Selection To..."
+			],
+			[
+				"markd ",
+				"MarkdownEditing: New Reference"
+			],
+			[
+				"markdow url",
+				"MarkdownEditing: Fix Underlined Headers"
+			],
+			[
+				"set syn jso",
+				"Set Syntax: JSON"
+			],
+			[
+				"trans ",
+				"DoxyDoxygen: Translate Selection To..."
+			],
+			[
+				"syn bash",
+				"Set Syntax: Shell Script (Bash)"
+			],
+			[
+				"lor",
+				"Add some Lorem Gibson"
+			],
+			[
+				"lorem",
+				"Snippet: Lorem ipsum"
+			],
+			[
+				"loe",
+				"File: Locate"
+			],
+			[
+				"open",
+				"Open URL"
+			],
+			[
+				"markdown",
+				"Set Syntax: Markdown"
+			],
+			[
+				"toc",
+				"MarkdownTOC:Update TOC"
+			],
+			[
+				"set mar",
+				"Set Syntax: Markdown Extended"
+			],
+			[
+				"mark",
+				"Markdown HTML Preview"
+			],
+			[
+				"synta mark",
+				"Set Syntax: MultiMarkdown"
+			],
+			[
+				"markd",
+				"Markdown HTML Preview"
+			],
+			[
+				"tran",
+				"DoxyDoxygen: Translate Selection To..."
+			],
+			[
+				"set syn diff",
+				"Set Syntax: Diff"
+			],
+			[
+				"set sy lo",
+				"Set Syntax: log2"
+			],
+			[
+				"inden",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"subl syna",
+				"Plugin Development: Convert Syntax to .sublime-syntax"
+			],
+			[
+				"synta",
+				"Plugin Development: Convert Syntax to .sublime-syntax"
+			],
+			[
+				"set mult",
+				"Set Syntax: MultiMarkdown"
+			],
+			[
+				"set synmar",
+				"Set Syntax: Markdown Extended"
+			],
+			[
+				"shell",
+				"shell_mdmerge"
+			],
+			[
+				"shell_md",
+				"shell_mdmerge"
+			],
+			[
+				"mark pre",
+				"Markdown HTML Preview"
+			],
+			[
+				"mar",
+				"Markdown HTML Preview"
+			],
+			[
+				"md",
+				"shell_mdmerge"
+			],
+			[
+				"glue",
+				"Glue - Launch"
+			],
+			[
+				"Package Control: insta",
+				"Package Control: Install Package"
+			],
+			[
+				"disa",
+				"Table Editor: Disable for current syntax"
+			],
+			[
+				"mark prev",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"markdownEd",
+				"MarkdownEditing: Fold Level 4 Sections"
+			],
+			[
+				"syntax ma",
+				"Set Syntax: MATLAB"
+			],
+			[
+				"syntax c",
+				"Set Syntax: C"
+			],
+			[
+				"foot",
+				"MarkdownEditing: New Footnote"
+			],
+			[
+				"markdown link",
+				"Snippet: Markdown Hyperlink"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Disable Package"
+			],
+			[
+				"diag",
+				"Diagram: Generate Diagrams for Active View"
+			],
+			[
+				"add repo",
+				"Package Control: Add Repository"
+			],
+			[
+				"markdow",
+				"Markdown HTML Preview"
+			]
+		],
+		"width": 629.0
+	},
+	"console":
+	{
+		"height": 220.0,
+		"history":
+		[
+			"from tabulate import tabulate",
+			"import tabulate",
+			"dir(tabulate)",
+			"os.path.join('/media/data/CODES/ccs7_workspace/dvt/AnalysisSolutionsTemp/AnalysisSolution1492041736539', 'Execution#0/data.csv')",
+			"os.path.join('/media/data/CODES/ccs7_workspace/dvt/AnalysisSolutionsTemp/AnalysisSolution1492041736539/', 'Execution#0/data.csv')",
+			"os.path.join('/media/data/CODES/ccs7_workspace/dvt/AnalysisSolutionsTemp/AnalysisSolution1492041736539/', '/Execution#0/data.csv')",
+			"os",
+			"[os.path.getatime(os.path.join(dat[0],d)) for d in dirs]",
+			"[os.path.getatime(d) for d in dirs]",
+			"dirs=os.listdir(dat[0])",
+			"os.listdir(dat[0])",
+			"os.path.getatime(dat[0])",
+			"os.path(dat[0])",
+			"import os",
+			"dat = [\"/media/data/CODES/ccs7_workspace/dvt/AnalysisSolutionsTemp/\", \"/Execution#0/data.csv\"]\n",
+			"sp",
+			"import subprocess as sp",
+			"from subprocess import subprocess as sp",
+			"ss.get('settings')",
+			"ss.get('build_systems')",
+			"ss.get()",
+			"get(ss)",
+			"len(ss)",
+			"dir(ss)",
+			"ss",
+			"ss=sublime.load_settings(\"ELT131_LAB_reports.sublime-project\")",
+			"sublime.load_settings(\"ELT131_LAB_reports.sublime-project\")",
+			"sublime.load_settings('${project}..')",
+			"sublime.load_settings('${project}..').has(\"font_size\")",
+			"sublime.load_settings('${project}').has(\"font_size\")",
+			"sublime.load_settings('${project}').has(\"settings\")",
+			"dir(sublime.load_settings('${project}')).has(\"settings\")",
+			"dir(sublime.load_settings('${project}'))",
+			"dir(sublime.load_settings('${project}')",
+			"sublime.load_settings('${project}')",
+			"sublime.load_settings('${project}').get(\"specific_style.cssdd\")",
+			"sublime.load_settings('${project}').get(\"specific_style.css\")",
+			"sublime.load_settings('${project}')",
+			"sublime.load_settings('${project}'))",
+			"sublime.load_settings(expanded_var(self.view, '${project}'))",
+			"window",
+			"sublime.window",
+			"sublime.windo",
+			"sublime",
+			"sublime.expand_variables('${project_name}', window.extract_variables())",
+			"window.extract_variables()['project_name']",
+			"window.extract_variables()",
+			"sublime.extract_variables()",
+			"extract_variables()",
+			"list(filter(lambda x: 'comment.block.html' not in view.scope_name(x.begin()), keyRegs))",
+			"list(filter(lambda x: 'comment.block.html' in view.scope_name(x.begin()), keyRegs))",
+			"list(filter(lambda x: 'comment.block.html' in view.scope_name(x.begin()), x in keyRegs))",
+			"['comment.block.html' in view.scope_name(k.begin()) for k in keyRegs]",
+			"keyRegs",
+			"list(filter(lambda x: 'comment.block.html' in view.scope_name(x.begin()), x in keyRegs))",
+			"list(filter(lambda x: 'comment.block.html' in view.scope_name(x.begin()), for x in keyRegs))",
+			"list(filter(lambda x: 'comment.block.html' in view.scope_name(x.begin()), keyRegs))",
+			"list(filter(lambda x: 'comment.block.html' in self.view.scope_name(x.begin()), keyRegs))",
+			"['comment.block.html' in view.scope_name(k.begin()) for k in keyRegs]",
+			"keyRegs = [view.line(keyr) for keyr in view.find_all(ATTRPREFIXES[0])]",
+			"['comment.block.html' in view.scope_name(k.begin()) for k in keyRegs]",
+			"'comment.block.html' in view.scope_name(keyRegs[0].begin())",
+			"'comment.block.html' in view.scope_name(keyRegs[0])",
+			"keyRegs",
+			"keyRegs = [view.line(keyr) for keyr in view.find_all(ATTRPREFIXES[0])]",
+			"keyRegs",
+			"keyRegs = [view.line(keyr) for keyr in view.find_all(ATTRPREFIXES[0])]",
+			"ATTRPREFIXES=['@codeimport:', '@codeimport_nocomments']",
+			"keyRegs",
+			"keyRegs=[sublime.Region(r) for r in _keyRegs]",
+			"_keyRegs=[(2504, 2565), (2690, 2740), (10434, 10494), (10629, 10689), (10815, 10880), (11006, 11071), (11413, 11458), (16035, 16095), (16230, 16290), (16599, 16644), (19267, 19327), (19462, 19522), (19831, 19876)]",
+			"keyRegs",
+			"keyRegs[0]",
+			"keyRegs=[sublime.Region(r) for r in keyRegs]",
+			"keyRegs[0]",
+			"'comment.block.html' in view.scope_name(keyRegs[0])",
+			"'comment.block.html' in view.scope_name(keyRegs[0].begin())",
+			"'comment.block.html' in self.view.scope_name(keyRegs[0].begin())",
+			"keyRegs=[(2504, 2565), (2690, 2740), (10434, 10494), (10629, 10689), (10815, 10880), (11006, 11071), (11413, 11458), (16035, 16095), (16230, 16290), (16599, 16644), (19267, 19327), (19462, 19522), (19831, 19876)]",
+			"view.scope_name(view.sel()[0].begin())",
+			"view.scope_name(200)",
+			"view.scope_name(20)",
+			"view.scope_name(view.sel()[0].begin())",
+			"view.scope_name(view.sel()[0])",
+			"view.scope_name()",
+			"view.get_regions()",
+			"view.meta_info()",
+			"pp(dir(view))",
+			"from pprint import pprint as pp",
+			"print (view.syntax_name(view.sel()[0].b))",
+			"sublime.log_commands(False)",
+			"sublime.log_commands(True)",
+			"dir(sublime)",
+			"dd(sublime)",
+			"sublime.logs_record(True)",
+			"sublime.logs_enable(True)",
+			"'var Boot = xdc.useModule('ti.catalog.c2800.init.Boot');'",
+			"re.sub('^\\/\\/.*\\n', '', code, re.MULTILINE)",
+			"re.sub('^\\/\\/.*', '', code, re.MULTILINE)",
+			"re.sub('^\\/\\/.*$', '', code)",
+			"re.sub('^\\/\\/.*$', '', code, re.MULTILINE)",
+			"re.sub('^/\\/.*$', '', code, re.MULTILINE)",
+			"re.sub('^ *\\/\\/.*$', '', code, re.MULTILINE)",
+			"re.sub('^ *\\/\\/.*\\n', '', code, re.MULTILINE)",
+			"re.sub(' *\\/\\/.*\\n', '', code, re.MULTILINE)",
+			"re.sub(' *\\/\\/.*\\n', '', code, re.ALL)",
+			"re.sub(' *\\/\\/.*\\n', '', code)",
+			"re.sub('\\s*\\/\\/.*\\n', '', code)",
+			"re.sub('^ *\\/\\/.*\\n', '', code)",
+			"re.sub('^[\\s ]*\\/\\/.*\\n', '', code)",
+			"re.sub('^\\s*\\/\\/.*\\n', '', code)",
+			"re.sub('^\\s*\\/\\/.*$', '', code)",
+			"print(re.sub('^\\s*\\/\\/', '', code))",
+			"print(re.sub('^\\s*\\/\\/', '', code)",
+			"code",
+			"re.sub('^\\s*\\/\\/', '', code)",
+			"import re",
+			"re.sub('^\\s*\\/\\/', '', code)",
+			"code='// hallocode\\n  // hallocode'",
+			"re.sub('\\n{2,}','\\n',code)",
+			"re.sub('\\n\\n','\\n',code)",
+			"import re",
+			"re.sub('\\n\\n','\\n',code)",
+			"print(code)",
+			"code='hallo, thisis\\nthe code\\n\\nwhich we shold\\n\\n\\nagainst multiple\\nnewlines and\\n\\nsubst'",
+			"pp(dir(re))",
+			"pp(p)",
+			"p=re.compile('\\*')"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/media/data/CODES/ccs7_workspace/MD_F2833x_LIB"
+	],
+	"file_history":
+	[
+		"/media/data/ti/TMS320F28335_docs/tms320f28335.txt",
+		"/media/data/CODES/ccs7_workspace/ILI9341/tm_stm32f4_ili9341/tm_stm32f4_ili9341.c",
+		"/media/data/whz/reports/ELT131/ELT131_LAB_03/ELT131_LAB_03_RTOS_3/ELT131_LAB_03_RTOS_3.c",
+		"/media/data/whz/reports/ELT131/ELT131_LAB_03/ELT131_LAB_03_RTOS_4/app.cfg",
+		"/media/data/whz/reports/ELT131/ELT131_LAB_03/ELT131_LAB_03.mmd",
+		"/media/mainster/EC31-210E/unbetitelt.txt",
+		"/media/mainster/EC31-210E/Datei",
+		"/media/data/operatingsystems/WINDOWS.7.ULTIMATE.x64.64BIT.RETAIL.GERMAN.BY.SERKAN-PREDATOR/readme.nfo",
+		"/media/data/whz/reports/ELT131/ELT131_LAB_03/ELT131_LAB_03.html",
+		"/home/mainster/.config/sublime-text-3/Packages/User/MarkdownPreview.sublime-settings",
+		"/home/mainster/.config/sublime-text-3/Packages/User/hexmap.sublime-syntax",
+		"/media/data/whz/reports/ELT131/ELT131_LAB_03/ELT131_LAB_03_NON-OS/ELT131_LAB_03_01.h",
+		"/home/mainster/.config/sublime-text-3/Packages/User/Log.sublime-syntax",
+		"/home/mainster/.config/sublime-text-3/Packages/User/log2.sublime-syntax",
+		"/home/mainster/.config/sublime-text-3/Packages/Markdown Preview/MarkdownPreview.py",
+		"/media/data/whz/reports/ELT131/ELT131_LAB_04/styleMdb_ELT131_LAB_04.css",
+		"/opt/ti/controlSUITE/device_support/f2833x/v141/DSP2833x_examples_ccsv5/flash_f28335/Example_2833xFlash.c",
+		"/media/data/CODES/LTspiceWorkspace/LTSpice_projects/RT/PID1.asc",
+		"/media/data/CODES/LTspiceWorkspace/ini_files/LTspiceXVII_multilibs.ini",
+		"/tmp/list",
+		"/home/mainster/.wine/drive_c/users/mainster/Application Data/LTspiceXVII.ini",
+		"/home/mainster/CODES_local/LTspiceWorkspace/README.md",
+		"/home/mainster/CODES_local/LTspiceWorkspace/ini_files/LTspiceXVII_multilibs.ini",
+		"/home/mainster/CODES_local/LTSpice_projects/ini_files/LTspiceIV_ORIG.ini",
+		"/tmp/untit.cfg",
+		"/tmp/untitled.cfg",
+		"/media/data/whz/reports/ELT131/ELT131_LAB_03/ELT131_LAB_03_RTOS_3/ELT131_LAB_03_RTOS_3.h",
+		"/media/data/ti/TMS320F28335_docs/2248.gpio_lcd.h",
+		"/media/data/whz/reports/ELT131/ELT131_LAB_03/ELT131_LAB_03_RTOS_3/MD_F2833x_LIB/md_bsp_explorer.h",
+		"/opt/ti/controlSUITE/libs/utilities/boot_rom/2802x/2802x_boot_rom_v2_0/source/Parallel_Boot.c",
+		"/opt/Distr_Cadence/видео установки.txt",
+		"/opt/Distr_Cadence/README",
+		"/media/data/whz/reports/ELT131/ELT131_LAB_04/ELT131_LAB_04.mmd",
+		"/home/mainster/CODES_local/pythons/subprocess_clipboard.py",
+		"/home/mainster/CODES_local/pythons/serial_pyserial.py~",
+		"/home/mainster/CODES_local/pythons/serial_pyserial.py",
+		"/home/mainster/CODES_local/pythons/serialConfigLater.py",
+		"/home/mainster/CODES_local/pythons/serialConfig.py",
+		"/home/mainster/CODES_local/pythons/saleSys.pyc",
+		"/home/mainster/CODES_local/pythons/saleSys.py",
+		"/home/mainster/CODES_local/pythons/moveCopyWithProgressBar.py",
+		"/home/mainster/CODES_local/pythons/generateHeaderSeps.py",
+		"/home/mainster/CODES_local/pythons/customerExample.pyc",
+		"/home/mainster/.config/sublime-text-3/Packages/User/SideBarEnhancements/Open With/Side Bar.sublime-menu",
+		"/home/mainster/CODES_local/pythons/wrapperForPrint.py",
+		"/home/mainster/CODES_local/pythons/ccsUiaAnalyzer.py",
+		"/media/data/credentials_ZW",
+		"/home/mainster/.config/sublime-text-3/Packages/User/snipsMdb/pyTemplate.sublime-snippet",
+		"/home/mainster/.config/sublime-text-3/Packages/User/snipsMdb/pyScriptTemplate.sublime-snippet",
+		"/home/mainster/.config/sublime-text-3/Packages/SideBarEnhancements/SideBarAPI.py",
+		"/home/mainster/.config/sublime-text-3/Packages/SideBarEnhancements/SideBar.py",
+		"/media/data/whz/reports/ELT131/styleMdb_ELT131_reports.css",
+		"/media/data/whz/reports/ELT131/ELT131_LAB_reports.sublime-project",
+		"/media/data/whz/reports/ELT131/ELT131_LAB_03/ELT131_LAB_03_RTOS_5/app.cfg",
+		"/media/data/whz/reports/ELT131/ELT131_LAB_04/ELT131_LAB_04_01/ELT131_04_01.c",
+		"/tmp/nsmail-2.asc",
+		"/tmp/nsmail-1.asc",
+		"/media/data/whz/reports/ELT131/ELT131_LAB_03/ELT131_LAB_03_RTOS_5/ELT131_LAB_03_RTOS_5.c",
+		"/home/mainster/.config/sublime-text-3/Packages/Markdown Preview/mathjax.html",
+		"/media/data/whz/reports/ELT131/ELT131_LAB_03/MD_F2833x_LIB/md_uart_sci.h",
+		"/media/data/whz/reports/ELT131/ELT131_LAB_03/ELT131_LAB_03_RTOS_v2/ELT131_LAB_03_RTOSv2.c",
+		"/media/data/whz/reports/ELT131/ELT131_LAB_03/MD_F2833x_LIB/md_uart_sci.c",
+		"/home/mainster/&",
+		"/tmp/README.txt",
+		"/media/data/whz/reports/ELT131/ELT131_LAB_03/pics/os_swi_no_200kHz_100ns_v2_because.svg",
+		"/home/mainster/.config/sublime-text-3/Packages/Open URL/open_url.py",
+		"/media/data/CODES/ccs7_workspace/MD_F2833x_LIB/documentation/PIEINT_vectTable.md",
+		"/home/mainster/.config/sublime-text-3/Packages/User/mdImage.sublime-snippet",
+		"/media/data/whz/modulunterlagen/ETechnik_tree",
+		"/media/data/whz/reports/ELT131/ELT131_LAB_03/SHORTSRC.c",
+		"/home/mainster/.config/sublime-text-3/Packages/User/headhlines.sublime-snippet",
+		"/home/mainster/.config/sublime-text-3/Packages/User/snipsMdb/CfuncHead.sublime-snippet",
+		"/home/mainster/.config/sublime-text-3/Packages/User/snipsMdb/head.sublime-snippet",
+		"/home/mainster/.config/sublime-text-3/Packages/User/snipsMdb/hlines.sublime-snippet",
+		"/media/data/whz/reports/ELT131/ELT131_LAB_03/pics/non-os_flash_jitter_at_200.png",
+		"/media/data/whz/reports/ELT131/ELT131_LAB_03/ELT131_LAB_03_NON-OS/main.c",
+		"/home/mainster/.config/sublime-text-3/Packages/BufferScroll/BufferScroll.py",
+		"/home/mainster/.config/sublime-text-3/Packages/User/try.py",
+		"/home/mainster/.config/sublime-text-3/Packages/User/PythonBreakpoints.sublime-settings",
+		"/home/mainster/.config/sublime-text-3/Packages/Python Breakpoints/PythonBreakpoints.sublime-settings",
+		"/home/mainster/.config/sublime-text-3/Packages/Python Breakpoints/Default (Linux).sublime-keymap",
+		"/media/data/whz/reports/ELT131/ELT131_LAB_03/ELT131_LAB_03_NON-OS/main.h",
+		"/media/data/whz/reports/ELT131/MD_F2833x_LIB/md_epwm.c",
+		"/media/data/whz/reports/ELT131/MD_F2833x_LIB/md_epwm.h",
+		"/media/data/CODES/ccs7_workspace/.gitignore",
+		"/home/mainster/.config/sublime-text-3/Packages/Terminal/Terminal.py",
+		"/home/mainster/.config/sublime-text-3/Packages/Terminal/Terminal.sublime-settings",
+		"/media/data/knoteRest",
+		"/home/mainster/.config/sublime-text-3/Packages/Keymaps/Default (Linux).sublime-keymap",
+		"/home/mainster/.config/sublime-text-3/Packages/ShellCommand/ShellCommand.py",
+		"/home/mainster/.config/sublime-text-3/Packages/Terminal/Terminal.sh",
+		"/home/mainster/.config/sublime-text-3/Packages/terminal/Terminal.py",
+		"/home/mainster/.config/sublime-text-3/Packages/User/Terminal.sublime-settings",
+		"/home/mainster/.config/sublime-text-3/Packages/ShellCommand/VariableSubstitution.py",
+		"/home/mainster/.config/sublime-text-3/Packages/ShellCommand/SublimeHelper.py",
+		"/home/mainster/.config/sublime-text-3/Packages/ShellCommand/OsShell.py",
+		"/home/mainster/.config/sublime-text-3/Packages/Open URL/example.py",
+		"/media/data/ti/_TMDSPREX28335-HWDevPackage[R5]/PeripheralExplorerBaseboardHWdevPkg/PeripheralExplorer-R5.sch",
+		"/media/data/ti/_TMDSPREX28335-HWDevPackage[R5]/PeripheralExplorerBaseboardHWdevPkg/USB-JTAG[R2].sch",
+		"/media/data/ti/TMS320F28335_docs/F28335controlCARD HWDevPkg ZJZ [R2.2]/TEX25dwg/README.TXT",
+		"/home/mainster/.config/sublime-text-3/Packages/User/snipsMdb/pylibs.sublime-snippet",
+		"/home/mainster/scripts/pdfTitleExtractor.sh",
+		"/home/mainster/scripts/pdfTitleExtractor.py",
+		"/media/data/whz/zki-script.sh",
+		"/media/data/whz/reports/ELT131/makePicsRel.sh",
+		"/tmp/ee/ELT131_LAB_01/ELT131_LAB_01.html",
+		"/media/data/whz/reports/ELT131/ELT131_LAB_01/ELT131_LAB_01.mmd",
+		"/media/data/whz/reports/ELT131/ELT131_LAB_01/ELT131_LAB_01.html",
+		"/media/data/whz/reports/ELT131/ELT131_LAB_02/ELT131_LAB_02.mmd",
+		"/media/data/whz/reports/ELT131/ELT131_LAB_01/disasm_ram",
+		"/media/data/whz/reports/ELT131/ELT131_LAB_01/disasm_flash",
+		"/home/mainster/CODES_local/ccs7_workspace3/ELT131_LAB_01/main.c",
+		"/home/mainster/CODES_local/ccs7_workspace3/ELT131_LAB_02/source/main.c",
+		"/opt/ti/installers/bios_setuplinux_6_33_04_39.bin",
+		"/media/data/whz/reports/ELT131/picsInc/whz.jpg",
+		"/home/mainster/.config/sublime-text-3/Packages/User/snipsMdb/jsonDocSect.sublime-snippet",
+		"/home/mainster/.config/sublime-text-3/Packages/User/snipsMdb/doxyGroups.sublime-snippet",
+		"/home/mainster/.config/sublime-text-3/Packages/Markdown Preview/helper.py",
+		"/media/data/whz/reports/ELT131/ELT131_LAB_02/ELT131_LAB_02.html",
+		"/media/data/o2_Box_6431_Arcadyan_VGV7510KW22_zwickau/o2Box6431_bins/o2Box6431_python_try1_DECRYPTED.txt",
+		"/media/data/o2_Box_6431_Arcadyan_VGV7510KW22_zwickau/o2Box6431_bins/o2Box6431_delta_webuicfg_python_try1_DECRIPTED.diff",
+		"/media/data/o2_Box_6431_Arcadyan_VGV7510KW22_zwickau/decrypted.credentials.txt",
+		"/home/mainster/.config/sublime-text-3/Packages/User/SublimeAStyleFormatter.sublime-settings",
+		"/home/mainster/.config/sublime-text-3/Packages/User/asmComment.py",
+		"/home/mainster/.config/sublime-text-3/Packages/User/styleMdb.css",
+		"/media/data/whz/reports/ELT131/ELT131_LAB_01/markdown/ELT131_LAB_01.mmd",
+		"/media/data/whz/reports/ELT131/ELT131_LAB_01/mathjax.html",
+		"/media/data/whz/reports/ELT131/ELT131_LAB_01.sublime-project"
+	],
+	"find":
+	{
+		"height": 22.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"spi",
+			".*30",
+			"(GPIO[0-9]{2} \\w+ \\w+ \\w+) ([0-9][0-9] [A-Z][0-9] [A-Z][0-9])",
+			"context_res",
+			"picsTry1/",
+			"fn",
+			"According to the",
+			"Measurement results  ",
+			"Measurement results documentation",
+			"add the oscill",
+			"rgba(56,56,56,0.38)",
+			"box-shadow",
+			".6em !important",
+			"^",
+			"summary",
+			"details",
+			"<\\/details>\\n+>",
+			"<\\/details>\\n+\\#",
+			"<!-- <div style=\"height: 1em;\"></div> -->\n",
+			"<!-- <div style=\"height: 1em;\"></div> -->",
+			" foldable",
+			"<div style=\"height: 1em;\"></div>",
+			"./pics/whz.png",
+			"part 3",
+			"(hwi)",
+			"fnCodeExec",
+			"|   |",
+			"\\|$",
+			"\");",
+			"asm(\"  ",
+			"^",
+			".[^ |]*$",
+			"^(.[^ ]* )(.[^ ]* )(.* )",
+			"([0-9]{2}) bits",
+			",",
+			"<p>",
+			"<div style=\"padding-top: 5px;\" markdown=1>",
+			"div",
+			"<div style=\"padding-top: 15px;\" markdown=1>",
+			"<div style=\"padding-top: .5em;\" markdown=1>",
+			"<div style=\"padding-top: .75em;\">",
+			"/home/mainster/CODES_local/matlab_workspace/",
+			"raw",
+			"forma",
+			"tit",
+			"\\\\\\\\",
+			"\\/tmp\\/",
+			"\\/",
+			"\\=.*",
+			"tile",
+			"Interrupt latency and jitter __non-OS__",
+			"__Zero latency__ interrupt (latency|jitter) @([0-9]+k?Hz) of ZLI __RTOS__ setup",
+			"__Zero latency__ interrupt (latency|jitter) of ZLI __RTOS__ setup",
+			"Interrupt (latency|jitter) of SWI __RTOS__ setup",
+			"Interrupt (latency|jitter) of HWI __RTOS__ setup",
+			"SWI",
+			"in order to",
+			"Uint([0-9]+)  ",
+			"Uint([0-9]+) ",
+			"Uint([0-9]+)",
+			"_tmp_",
+			"dat",
+			"__Q:__ ",
+			"\\_\\_A\\:\\_\\_ ",
+			"\\_\\_Q\\:\\_\\_ (.*)",
+			"window",
+			"sublime.expand_variables",
+			"",
+			"\\/\\/\\!< ",
+			"ns",
+			"</details>",
+			"\\$\\\\si\\\\\\{(.[^\\\\]*)\\\\\\}\\$",
+			"\\$\\\\si\\\\\\{(.*)\\\\\\}\\$",
+			"50ns",
+			"(figure class=\"oszi\")",
+			"</figure></a>",
+			"<a href=\"\\.\\/.*.png\" target=\"_blank\">",
+			"Interrupt latency and jitter",
+			"Interrupt latency and latency ",
+			"jitter",
+			"<h4 class=\"sphd",
+			"oszi",
+			"\\.\\/picsTry1",
+			"50ns",
+			"latency",
+			"jitter",
+			"of ",
+			"jitter",
+			"latency",
+			"500ns",
+			"latency",
+			"HWI",
+			"pics",
+			"main_03",
+			"lambda",
+			"”",
+			"“",
+			"_+$",
+			"",
+			"Jitter",
+			"(>.* )@([0-9]+)(k?Hz) (.[^<]*)",
+			"(>.* )@([0-9]+)(k?Hz)(.[^<]*)",
+			"(>.* @)([0-9]+)(k?Hz)(.[^<]*)",
+			"(>.*@)([0-9]+)(k?Hz)",
+			"TI\\_RTOS",
+			"Part ([0-5])\\: (.[^#]*)",
+			"^",
+			" *\\*\\/\n\n\\/\\*",
+			" *\\*\\/\n \n\\/\\*",
+			" *\\*\\/\n\\/\\*",
+			" *\\*\\/\n ",
+			" *\\*\\/",
+			"ELT131_LAB_03_RTOSv2",
+			"ELT131_LAB_03_RTOS_v2",
+			"hasAttrs",
+			"</boxed>",
+			"<boxed>",
+			"summary",
+			"\\}\\{",
+			"\\si",
+			"([0-9]+)\\\\si",
+			"\\Si",
+			"([^\\\\])}",
+			"[^\\\\]}",
+			"{",
+			"[(\\{\\})]",
+			"\\si",
+			"adjacentRows"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"\n| \\1 | \\2 |",
+			"",
+			"Measurement results ",
+			"Measurement results",
+			"#B3B3B3;",
+			"//",
+			"</details>\n<div></div>\n\n>",
+			"</details>\n<div></div>\n\n#",
+			"",
+			"<!-- <div style=\"height: 1em;\"></div> -->",
+			"|",
+			"|\\1|\\2|\\3|",
+			"\\1-bits",
+			"\nPUSH ",
+			"<p markdown=1>",
+			"",
+			"<div style=\"padding-top: 15px;\" markdown=1>",
+			"<div style=\"padding-top: .25em;\" markdown=1>",
+			"<div style=\"padding-top: .5em;\" markdown=1>",
+			"",
+			"\\",
+			"",
+			"\\",
+			"",
+			"Interrupt latency and jitter of __non-OS__",
+			"Interrupt \\1 @\\2 of __ZLI__ RTOS setup",
+			"Interrupt \\1 of __ZLI__ RTOS setup",
+			"Interrupt \\1 of __SWI__ RTOS setup",
+			"Interrupt \\1 of __HWI__ RTOS setup",
+			"Swi",
+			"uint\\1_t",
+			"__tmp",
+			"datdir",
+			"",
+			"__Q:__ <span class=\"quest\">\\1</span>",
+			"__Q:__",
+			"",
+			"\\1",
+			"20ns",
+			"\\1 markdown=1",
+			"</figure>",
+			"",
+			"Interrupt jitter",
+			"Interrupt latency ",
+			"latency",
+			"<h4 class=\"sp",
+			"./pics/picsTry1",
+			"20ns",
+			"jitter",
+			"latency",
+			"of ZLI ",
+			"latency",
+			"jitter",
+			"100ns",
+			"jitter",
+			"SWI",
+			"picsTry1",
+			"\"",
+			"",
+			"__Q:__",
+			"jitter",
+			"\\1\\4 @$\\\\;\\\\si{\\2\\3}\\\\;$",
+			"\\1\\4$\\\\;\\\\si{\\2\\3}\\\\;$",
+			"\\1$\\\\;\\\\si{\\2\\3}\\\\;$",
+			"\\1$\\;\\si{\\2\\3}\\;$",
+			"TI-RTOS",
+			"\\2(Part \\1) ##",
+			"//!< ",
+			" *",
+			"ELT131_LAB_03_RTOS_3",
+			"attrStrs",
+			"",
+			">",
+			" ",
+			"\\sI",
+			"\\Si",
+			"\\\\si\\\\{\\1\\\\}",
+			"\\si\\{\\1\\}",
+			"\\si",
+			"\\1\\\\}",
+			"\\\\}",
+			"\\\\{",
+			"\\{",
+			"\\1",
+			"\\\\\\1",
+			"\\\\1",
+			"\\Si",
+			"adjRows",
+			"getHtmlMetaInfo",
+			"modified_html",
+			"headFoot",
+			"addHeadFoot",
+			"modifiedHtml",
+			"codeImport",
+			"mdFileDirname",
+			"ATTRPREFIX",
+			"ATTPREFIX",
+			"view",
+			"AddHeaderFooter",
+			" __non-OS__ ",
+			"__non-OS__",
+			"non-OS setup",
+			"figure class=\"oszi\"",
+			" __RAM__",
+			" __FLASH__",
+			"flash",
+			"ram",
+			"\"",
+			"<boxed>\\1</boxed>",
+			"*        –",
+			"*    •",
+			" * ",
+			"_",
+			"",
+			"footicon",
+			"true",
+			"\\t\"\\1\": true,",
+			"\\t\"\\1\": \"\\2\",",
+			"\\t\"\\1\": \"\\2\"",
+			"",
+			"src=\"./pics/",
+			"",
+			" * asm",
+			"\"",
+			"",
+			"/",
+			"",
+			"/"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 22.0
+	},
+	"input":
+	{
+		"height": 29.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.ShellCommand":
+	{
+		"height": 120.0
+	},
+	"output.anaconda_documentation":
+	{
+		"height": 154.0
+	},
+	"output.astyle_error_message":
+	{
+		"height": 0.0
+	},
+	"output.exec":
+	{
+		"height": 100.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.stino_panel":
+	{
+		"height": 88.0
+	},
+	"pinned_build_system": "Packages/User/pdflatex.sublime-build",
+	"project": "MD_F2833x_LIB.sublime-project",
+	"replace":
+	{
+		"height": 40.0
+	},
+	"save_all_on_build": false,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 290.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

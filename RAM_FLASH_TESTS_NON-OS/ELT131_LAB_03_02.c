@@ -51,6 +51,18 @@ __interrupt void CPU_TIM0_isr(void);
 void delaySamps(uint16_t samps);
 void MD_InitSysCtrl(uint16_t MD_DSP28_PLLCR);
 
+
+/* Normalized sine table doesn't need to be modified at runtime --> RO access */
+const double cSine[] = { -0.998, -0.995, -0.988, -0.980, -0.968, -0.955};
+const double *pSine = &cSine[0];
+
+/* This application needs zero-wait read acces since table scalars are fetched during time-critical IRQ service. */
+#pragma DATA_SECTION(cSine, "myRamconsts");
+
+/* Don't miss to to instruct the compiler  */
+//#pragma DATA_SECTION(cSine, "ramconsts");
+
+
 /**
  * ePWM frequency values
  */
@@ -93,6 +105,8 @@ int main(void) {
     MD_EPWM1_Init(epwmFreqs[encVal], F_CPU );	//!< Configure ePWM module
     CpuTimer0Regs.TCR.bit.TSS = 0;  			//!< Timer Start/Stop
     EINT;                   					//!< Enable Global Interrupts
+
+    volatile double x = *pSine;
 
     while (1)
         asm("  NOP");

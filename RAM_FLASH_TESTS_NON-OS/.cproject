@@ -96,7 +96,7 @@
 						</tool>
 					</fileInfo>
 					<sourceEntries>
-						<entry excluding="linker/F28335.cmd|ELT131_LAB_03_01.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="linker/28335_RAM_lnk.cmd|ELT131_LAB_03_01.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
