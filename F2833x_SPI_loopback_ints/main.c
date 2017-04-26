@@ -1,47 +1,43 @@
-//###########################################################################
-// Description:
-//! \addtogroup f2833x_example_list
-//!  <h1>SPI Digital Loop Back with Interrupts (spi_loopback_interrupts)</h1>
-//!
-//!  This program uses the internal loop back test mode of the peripheral.
-//!  Other then boot mode pin configuration, no other hardware configuration
-//!  is required. Both interrupts and the SPI FIFOs are used.
-//!
-//!    A stream of data is sent and then compared to the received stream.
-//!    The sent data looks like this: \n
-//!    0000 0001 0002 0003 0004 0005 0006 0007 \n
-//!    0001 0002 0003 0004 0005 0006 0007 0008 \n
-//!    0002 0003 0004 0005 0006 0007 0008 0009 \n
-//!    .... \n
-//!    FFFE FFFF 0000 0001 0002 0003 0004 0005 \n
-//!    FFFF 0000 0001 0002 0003 0004 0005 0006 \n
-//!     etc.. \n
-//!
-//!    This pattern is repeated forever.
-//!
-//! \b Watch \b Variables \n
-//! - sdata    - Data to send
-//! - rdata    - Received data
-//! - rdata_point - Used to keep track of the last position in
-//! the receive stream for error checking
-//
-//###########################################################################
-// $TI Release: F2833x/F2823x Header Files and Peripheral Examples V141 $
-// $Release Date: November  6, 2015 $
-// $Copyright: Copyright (C) 2007-2015 Texas Instruments Incorporated -
-//             http://www.ti.com/ ALL RIGHTS RESERVED $
-//###########################################################################
+/**
+ * @file        main.c
+ * @project		F2833x_SPI_loopback_ints
+ *
+ * @date        27 Apr 2017
+ * @author      Manuel Del Basso (mainster)
+ * @email       manuel.delbasso@gmail.com
+ *
+ * @ide         Code Composer Studio Version: 7.1.0.00015
+ * @license		GNU GPL v3
+ *
+   @verbatim
 
-#include "DSP28x_Project.h"     // Device Headerfile and Examples Include File
+	------------------------------------------------------------------------
+
+	Copyright (C) 2017  Manuel Del Basso
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	------------------------------------------------------------------------
+
+   @endverbatim
+ *
+ */
+#include "DSP28x_Project.h"
 #include "md_globals.h"
 #include "md_gpio.h"
+#include "md_spi.h"
+//#include "md_config.h"
 
-
-
-// Prototype statements for functions found within this file.
-// __interrupt void ISRTimer2(void);
-__interrupt void spiTxFifoIsr(void);
-__interrupt void spiRxFifoIsr(void);
 void delay_loop(void);
 void MD_SPI_FifoInit(void);
 void error();
@@ -55,6 +51,8 @@ Uint16 rdata_point;  // Keep track of where we are
 // in the data stream to check received data
 uint16_t ctr = 0;
 
+extern MD_GPIO_TypeDef_t MD_Gpios[];
+
 
 void main(void) {
 
@@ -63,13 +61,13 @@ void main(void) {
 // This example function is found in the DSP2833x_SysCtrl.c file.
   InitSysCtrl();
 
-  MD_GPIO_InitAll();
 
 // Step 2. Initialize GPIO:
 // This example function is found in the DSP2833x_Gpio.c file and
 // illustrates how to set the GPIO to it's default state.
 // InitGpio();  // Skipped for this example
 // Setup only the GP I/O only for SPI-A functionality
+  MD_GPIO_InitAll(&MD_Gpios[0]);
   InitSpiaGpio();
 
 // Step 3. Initialize PIE vector table:

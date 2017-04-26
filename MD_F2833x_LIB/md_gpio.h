@@ -35,14 +35,14 @@
  *
  *
  * @note	In order to configure this GPIO library, one must enumerate GPIO
- * 			names as MD_GPIOName_t in md_globals.h
+ * 			names as MD_GPIO_Name_t in md_globals.h
  *
    @verbatim
     ------------------------------------------------------------------------
 	typedef enum {
 		LED_RED_A         = 0,    //!< LED
 		DBG_TIMING_PE2    = 1,    //!< Not used!
-	} MD_GPIOName_t;
+	} MD_GPIO_Name_t;
     ------------------------------------------------------------------------
    @endverbatim
  *
@@ -140,7 +140,7 @@
  * @brief      GPIO Pins enumeration.
  *             For HAL drivers compatibility
  */
-typedef enum {
+typedef enum MD_GPIO_Pin {
     MD_GPIO0=0,MD_GPIO1,  MD_GPIO2,  MD_GPIO3,  MD_GPIO4,  MD_GPIO5,  MD_GPIO6,  MD_GPIO7,
     MD_GPIO8,  MD_GPIO9,  MD_GPIO10, MD_GPIO11, MD_GPIO12, MD_GPIO13, MD_GPIO14, MD_GPIO15,
     MD_GPIO16, MD_GPIO17, MD_GPIO18, MD_GPIO19, MD_GPIO20, MD_GPIO21, MD_GPIO22, MD_GPIO23,
@@ -152,7 +152,7 @@ typedef enum {
     MD_GPIO64, MD_GPIO65, MD_GPIO66, MD_GPIO67, MD_GPIO68, MD_GPIO69, MD_GPIO70, MD_GPIO71,
     MD_GPIO72, MD_GPIO73, MD_GPIO74, MD_GPIO75, MD_GPIO76, MD_GPIO77, MD_GPIO78, MD_GPIO79,
     MD_GPIO80, MD_GPIO81, MD_GPIO82, MD_GPIO83, MD_GPIO84, MD_GPIO85, MD_GPIO86, MD_GPIO87
-} MD_GPIOPin_t;
+} MD_GPIO_Pin_t;
 
 /**
  * @brief      GPIO Configuration Mode enumeration
@@ -164,33 +164,32 @@ typedef enum {
     GPIO_Mode_AF3   = 0x03, 	/*!< GPIO alternate function mode 3 */
     GPIO_Mode_IN   	= 0x04, 	/*!< GPIO input mode */
     GPIO_Mode_OUT  	= 0x05 		/*!< GPIO output mode */
-} MD_GPIOMode_t;
+} MD_GPIO_Mode_t;
 
 /**
  * @brief      GPIO Output type enumeration
  */
 typedef enum {
-    GPIO_OType_PP = 0x00,
-    GPIO_OType_OD = 0x01
-} MD_GPIOOType_t;
+    GPIO_OType_PP = 0x00,	//!< Push-Pull driver stage
+    GPIO_OType_OD = 0x01	//!< Open-Drain driver stage
+} MD_GPIO_OType_t;
 
 /**
  * @brief      GPIO pull resistors enumeration
  */
 typedef enum {
-    GPIO_PuENA 	= 0,    //!< Pull up resistor enabled
-    GPIO_PuDIS 	= 1 	//!< Pull up resistor disabled
-//  GPIO_PuPd_DOWN = 0x02    /*!< Pull down resistor enabled */
-} MD_GPIOPuRe_t;
+    GPIO_PUEna 	= 0,    //!< Pull up resistor enabled
+    GPIO_PUDis 	= 1 	//!< Pull up resistor disabled
+} MD_GPIO_PuRe_t;
 
 /**
  * @brief      GPIO Output Maximum frequency enumeration
  */
 typedef enum {
-    GPIO_Low_Speed     = 0x00, /*!< Low speed    */
-    GPIO_Medium_Speed  = 0x01, /*!< Medium speed */
-    GPIO_Fast_Speed    = 0x02, /*!< Fast speed   */
-    GPIO_High_Speed    = 0x03  /*!< High speed   */
+    GPIO_Low_Speed     = 0x00, 		/*!< Low speed    */
+    GPIO_Medium_Speed  = 0x01, 		/*!< Medium speed */
+    GPIO_Fast_Speed    = 0x02, 		/*!< Fast speed   */
+    GPIO_High_Speed    = 0x03  		/*!< High speed   */
 } GPIOSpeed_t;
 
 /**
@@ -199,31 +198,30 @@ typedef enum {
 typedef enum {
     GPIO_OFF = 0,
     GPIO_ON
-} MD_GPIOState_t;
+} MD_GPIO_State_t;
 
 /**
  * @brief      User level "per-GPIO" typedf to realize a "per GPIO" configuration array MDB_GPIO.
  * @todo       Add configuration of clock the GPIO modules clock.
  */
 typedef struct MD_GPIO_TypeDef {
-    MD_GPIOName_t   _GPIO_Name;       //!< GPIO name
-    MD_GPIOPin_t    _GPIO_Pin;        //!< GPIO pin number
-    MD_GPIOMode_t   _GPIO_Mode;       //!< Mode, alternate function
-    MD_GPIOOType_t  _GPIO_OType;      //!< Driver output type.
-    MD_GPIOPuRe_t   _GPIO_PuRe;       //!< GPIO pull resistor.
-    MD_GPIOState_t  _GPIO_InitVal;    //!< GPIO initial state
+    MD_GPIO_Name_t   GPIO_Name;       //!< GPIO name
+    MD_GPIO_Pin_t    GPIO_Pin;        //!< GPIO pin number
+    MD_GPIO_Mode_t   GPIO_Mode;       //!< Mode, alternate function
+    MD_GPIO_OType_t  GPIO_OType;      //!< Driver output type.
+    MD_GPIO_PuRe_t   GPIO_PuRe;       //!< GPIO pull resistor.
+    MD_GPIO_State_t  GPIO_InitVal;    //!< GPIO initial state
 } MD_GPIO_TypeDef_t;
 
-//extern MD_GPIO_TypeDef_t MD_Gpios[];
 
-void MD_GPIO_InitAll(void);
-void MD_GPIO_Init(MD_GPIOName_t Name, MD_GPIOPin_t Pin, 
-                  MD_GPIOMode_t Mode, MD_GPIOOType_t DriverType, 
-                  MD_GPIOPuRe_t PuPd, MD_GPIOState_t InitVal);
-void MD_GPIO_Switch(MD_GPIOName_t name, MD_GPIOState_t newState);
-void MD_GPIO_On(MD_GPIOName_t name);
-void MD_GPIO_Off(MD_GPIOName_t name);
-void MD_GPIO_Toggle(MD_GPIOName_t name);
+void MD_GPIO_InitAll(const MD_GPIO_TypeDef_t *IO);
+void MD_GPIO_Init(MD_GPIO_Name_t Name, MD_GPIO_Pin_t Pin,
+                  MD_GPIO_Mode_t Mode, MD_GPIO_OType_t DriverType,
+                  MD_GPIO_PuRe_t PuPd, MD_GPIO_State_t InitVal);
+void MD_GPIO_Switch(MD_GPIO_Name_t name, MD_GPIO_State_t newState);
+void MD_GPIO_On(MD_GPIO_Name_t name);
+void MD_GPIO_Off(MD_GPIO_Name_t name);
+void MD_GPIO_Toggle(MD_GPIO_Name_t name);
 
 /**
  * @brief      Initializes GPIO pins(s) as alternate function
@@ -239,7 +237,7 @@ void MD_GPIO_Toggle(MD_GPIOName_t name);
  *                          enumeration
  * @param      Alternate    Alternate function you will use
  */
-// void MD_GPIO_InitAlternate(GPIO_t* GPIOx, uint16_t GPIO_Pin, MD_GPIO_OType_t GPIO_OType, 
+// void MD_GPIO_InitAlternate(GPIO_t* GPIOx, uint16_t GPIO_Pin, MD_GPIO_OType_t GPIO_OType,
 //                            MD_GPIO_PuRe_t GPIO_PuPd, MD_GPIO_Speed_t GPIO_Speed, uint8_t Alternate);
 
 /**

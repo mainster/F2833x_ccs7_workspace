@@ -63,7 +63,7 @@ typedef enum {
 	ILI934x_SDI_PIN,
 	ILI934x_SDO_PIN,
 	DBG_TIMING_PE2  		//!< Not used!
-} MD_GPIOName_t;
+} MD_GPIO_Name_t;
 
 /* ---------------------------  Global typedefs  --------------------------- */
 
