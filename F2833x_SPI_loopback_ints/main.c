@@ -36,10 +36,10 @@
 #include "md_globals.h"
 #include "md_gpio.h"
 #include "md_spi.h"
-//#include "md_config.h"
+#include "md_config.h"
 
 void delay_loop(void);
-void MD_SPI_FifoInit(void);
+//void MD_SPI_FifoInit(void);
 void error();
 
 uint16_t txBuff[8]; 			//!< Send data buffer
@@ -48,65 +48,22 @@ uint16_t txWord = 0;
 
 Uint16 rdata[8];     // Receive data buffer
 Uint16 rdata_point;  // Keep track of where we are
-// in the data stream to check received data
 uint16_t ctr = 0;
-
-extern MD_GPIO_TypeDef_t MD_Gpios[];
 
 
 void main(void) {
-
-// Step 1. Initialize System Control:
-// PLL, WatchDog, enable Peripheral Clocks
-// This example function is found in the DSP2833x_SysCtrl.c file.
   InitSysCtrl();
 
-
-// Step 2. Initialize GPIO:
-// This example function is found in the DSP2833x_Gpio.c file and
-// illustrates how to set the GPIO to it's default state.
-// InitGpio();  // Skipped for this example
-// Setup only the GP I/O only for SPI-A functionality
-  MD_GPIO_InitAll(&MD_Gpios[0]);
-  InitSpiaGpio();
-
-// Step 3. Initialize PIE vector table:
-// Disable and clear all CPU interrupts
   DINT;
   IER = 0x0000;
   IFR = 0x0000;
 
-// Initialize PIE control registers to their default state:
-// This function is found in the DSP2833x_PieCtrl.c file.
   InitPieCtrl();
-
-// Initialize the PIE vector table with pointers to the shell Interrupt
-// Service Routines (ISR).
-// This will populate the entire table, even if the interrupt
-// is not used in this example.  This is useful for debug purposes.
-// The shell ISR routines are found in DSP2833x_DefaultIsr.c.
-// This function is found in DSP2833x_PieVect.c.
   InitPieVectTable();
 
-// Interrupts that are used in this example are re-mapped to
-// ISR functions found within this file.
-  EALLOW;  // This is needed to write to EALLOW protected registers
-//  PieVectTable.SPIRXINTA = &spiRxFifoIsr;
-//  PieVectTable.SPITXINTA = &spiTxFifoIsr;
-  EDIS;   // This is needed to disable write to EALLOW protected registers
+  MD_GPIO_InitAll(MD_Gpios, CONFIG_MATRIX_ROWS);
+  MD_SPI_Init(0x0063);
 
-// Step 4. Initialize all the Device Peripherals:
-// This function is found in DSP2833x_InitPeripherals.c
-// InitPeripherals(); // Not required for this example
-//  MD_SPI_FifoInit();   // Initialize the SPI only
-
-// Step 5. User specific code, enable interrupts:
-
-// Initialize the send data buffer
-//  for (i = 0; i < 8; i++) {
-//    sdata[i] = i;
-//  }
-//  rdata_point = 0;
   *pTx = 0x0000;
   *(pTx + 1) = 0x0001;
   *(pTx + 2) = 0x0010;
@@ -116,10 +73,8 @@ void main(void) {
   *(pTx + 6) = 0xff00;
   *(pTx + 7) = 0xffff;
 
-// Enable interrupts required for this example
-  EINT;                                // Enable Global Interrupts
+  EINT;
 
-// Step 6. IDLE loop. Just sit and loop forever (optional):
   for (;;);
 }
 
@@ -137,6 +92,8 @@ void error(void) {
 /* IRQ hook function for SPI TxFifo IRQ */
 void onSpiTxFifo_irq(void) {
 	SpiaRegs.SPITXBUF = *pTx++;    			//!< Send data
+	if (pTx == &txBuff[8])
+		pTx = &txBuff[0];
 }
 
 /* IRQ hook function for SPI RxFifo IRQ */

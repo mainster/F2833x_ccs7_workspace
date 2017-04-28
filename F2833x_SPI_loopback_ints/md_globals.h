@@ -55,6 +55,8 @@
 /* --------------------------  Global variables  --------------------------- */
 
 /* ----------------------------  Configuration  ---------------------------- */
+#define CONFIG_MATRIX_ROWS	6
+
 typedef enum {
 	LED_RED = 0,    		//!< Red LED at GPIO34
 	ILI934x_WRx_PIN,
