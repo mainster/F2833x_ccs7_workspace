@@ -32,9 +32,12 @@
    @endverbatim
  *
  */
+#include <stdint.h>
+#include <DSP28x_Project.h>
 #include "md_ili934x.h"
 #include "md_gpio.h"
 #include "md_globals.h"
+#include "md_config.h"
 
 /**
  * @brief  Orientation
@@ -56,12 +59,9 @@ typedef struct {
 } MD_ILI931_Options_t;
 
 /* Pin definitions */
-#define ILI934x_nRST_SET            (1)
-#define ILI934x_nRST_CLR            (0)
-#define ILI934x_nCS_SET             MD_GPIO_Switch  (MD_Gpio[ILI934x_nCS_PIN], GPIO_ON)
-#define ILI934x_nCS_CLR             MD_GPIO_Switch  (MD_Gpio[ILI934x_nCS_PIN], GPIO_OFF)
-#define ILI934x_WRx_SET             MD_GPIO_Switch  (MD_Gpio[ILI934x_WRx_PIN], GPIO_ON)
-#define ILI934x_WRx_CLR             MD_GPIO_Switch  (MD_Gpio[ILI934x_WRx_PIN], GPIO_OFF)
+#define ILI934x_nRST_STATE(x)   MD_GPIO_Switch (MD_Gpios, ILI934x_nRST_PIN, x)
+#define ILI934x_nCS_STATE(x)    MD_GPIO_Switch (MD_Gpios, ILI934x_nCS_PIN, x)
+#define ILI934x_WRx_STATE(x)	MD_GPIO_Switch (MD_Gpios, ILI934x_WRx_PIN, x)
 
 /* Private defines */
 #define ILI934x_CMD_RESET               0x01
@@ -104,29 +104,29 @@ uint16_t ILI934x_INT_CalledFromPuts = 0;
 /* Private functions */
 void MD_ILI934x_InitLCD(void);
 void MD_ILI934x_SendData(uint16_t data);
-void MD_ILI934x_SendCommand(uint8_t data);
-void MD_ILI934x_Delay(volatile unsigned int delay);
+void MD_ILI934x_SendCommand(uint16_t data);
+void MD_ILI934x_Delay(volatile long delay);
 void MD_ILI934x_SetCursorPosition(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2);
 void MD_ILI934x_INT_Fill(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1, uint16_t color);
 
 void MD_ILI934x_Init() {
     /* Init WRX pin */
-    MD_GPIO_Init(ILI934x_WRX_PORT, ILI934x_WRX_PIN, MD_GPIO_Mode_OUT, MD_GPIO_OType_PP, MD_GPIO_PuPd_NOPULL, MD_GPIO_Speed_Medium);
+//    MD_GPIO_Init(ILI934x_WRX_PORT, ILI934x_WRX_PIN, MD_GPIO_Mode_OUT, MD_GPIO_OType_PP, MD_GPIO_PuPd_NOPULL, MD_GPIO_Speed_Medium);
 
     /* Init CS pin */
-    MD_GPIO_Init(ILI934x_CS_PORT, ILI934x_CS_PIN, MD_GPIO_Mode_OUT, MD_GPIO_OType_PP, MD_GPIO_PuPd_NOPULL, MD_GPIO_Speed_Medium);
+//    MD_GPIO_Init(ILI934x_CS_PORT, ILI934x_CS_PIN, MD_GPIO_Mode_OUT, MD_GPIO_OType_PP, MD_GPIO_PuPd_NOPULL, MD_GPIO_Speed_Medium);
 
     /* Init RST pin */
-    MD_GPIO_Init(ILI934x_nRST_PORT, ILI934x_nRST_PIN, MD_GPIO_Mode_OUT, MD_GPIO_OType_PP, MD_GPIO_PuPd_UP, MD_GPIO_Speed_Low);
+//    MD_GPIO_Init(ILI934x_nRST_PORT, ILI934x_nRST_PIN, MD_GPIO_Mode_OUT, MD_GPIO_OType_PP, MD_GPIO_PuPd_UP, MD_GPIO_Speed_Low);
 
     /* CS high */
-    ILI934x_CS_SET;
+    ILI934x_nCS_STATE(GPIO_ON);
 
     /* Init SPI */
-    MD_SPI_Init(ILI934x_SPI, ILI934x_SPI_PINS);
+//    MD_SPI_Init(ILI934x_SPI, ILI934x_SPI_PINS);
 
     /* Init DMA for SPI */
-    MD_SPI_DMA_Init(ILI934x_SPI);
+//    MD_SPI_DMA_Init(ILI934x_SPI);
 
     /* Init LCD */
     MD_ILI934x_InitLCD();
@@ -142,10 +142,10 @@ void MD_ILI934x_Init() {
 }
 
 void MD_ILI934x_InitLCD(void) {
-    /* Force reset */
-    ILI934x_nRST_CLR;
-    MD_ILI934x_Delay(20000);
-    ILI934x_nRST_SET;
+	/* Force reset */
+	ILI934x_nRST_STATE(GPIO_OFF);
+	MD_ILI934x_Delay(20000);
+	ILI934x_nRST_STATE(GPIO_ON);
 
     /* Delay for RST response */
     MD_ILI934x_Delay(20000);
@@ -260,18 +260,18 @@ void MD_ILI934x_DisplayOff(void) {
     MD_ILI934x_SendCommand(ILI934x_CMD_DISPLAY_OFF);
 }
 
-void MD_ILI934x_SendCommand(uint8_t data) {
-    ILI934x_WRX_RESET;
-    ILI934x_CS_RESET;
-    MD_SPI_Send(ILI934x_SPI, data);
-    ILI934x_CS_SET;
+void MD_ILI934x_SendCommand(uint16_t data) {
+    ILI934x_WRx_STATE(GPIO_OFF);
+    ILI934x_nCS_STATE(GPIO_OFF);
+    MD_SPI_Put(data);
+    ILI934x_nCS_STATE(GPIO_ON);
 }
 
 void MD_ILI934x_SendData(uint16_t data) {
-    ILI934x_WRX_SET;
-    ILI934x_CS_RESET;
-    MD_SPI_Send(ILI934x_SPI, data);
-    ILI934x_CS_SET;
+    ILI934x_WRx_STATE(GPIO_ON);
+    ILI934x_nCS_STATE(GPIO_OFF);
+    MD_SPI_Put(data);
+    ILI934x_nCS_STATE(GPIO_ON);
 }
 
 void MD_ILI934x_DrawPixel(uint16_t x, uint16_t y, uint32_t color) {
@@ -281,7 +281,6 @@ void MD_ILI934x_DrawPixel(uint16_t x, uint16_t y, uint32_t color) {
     MD_ILI934x_SendData(color >> 8);
     MD_ILI934x_SendData(color & 0xFF);
 }
-
 
 void MD_ILI934x_SetCursorPosition(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2) {
     MD_ILI934x_SendCommand(ILI934x_CMD_COLUMN_ADDR);
@@ -315,32 +314,32 @@ void MD_ILI934x_INT_Fill(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1, uin
     pixels_count = (x1 - x0 + 1) * (y1 - y0 + 1);
 
     /* Send everything */
-    ILI934x_CS_RESET;
-    ILI934x_WRX_SET;
+    ILI934x_nCS_STATE(GPIO_OFF);
+    ILI934x_WRx_STATE(GPIO_ON);
 
     /* Go to 16-bit SPI mode */
-    MD_SPI_SetDataSize(ILI934x_SPI, MD_SPI_DataSize_16b);
+    MD_SPI_SetDataSize(MD_SPI_16_BIT);
 
     /* Send first 65535 bytes, SPI MUST BE IN 16-bit MODE */
-    MD_SPI_DMA_SendHalfWord(ILI934x_SPI, color, (pixels_count > 0xFFFF) ? 0xFFFF : pixels_count);
+    MD_SPI_DMA_SendHalfWord_fake(color, (pixels_count > 0xFFFF) ? 0xFFFF : pixels_count);
     /* Wait till done */
-    while (MD_SPI_DMA_Working(ILI934x_SPI));
+//    while (MD_SPI_DMA_Working(ILI934x_SPI));
 
     /* Check again */
     if (pixels_count > 0xFFFF) {
         /* Send remaining data */
-        MD_SPI_DMA_SendHalfWord(ILI934x_SPI, color, pixels_count - 0xFFFF);
+        MD_SPI_DMA_SendHalfWord_fake(color, pixels_count - 0xFFFF);
         /* Wait till done */
-        while (MD_SPI_DMA_Working(ILI934x_SPI));
+//        while (MD_SPI_DMA_Working(ILI934x_SPI));
     }
 
-    ILI934x_CS_SET;
+    ILI934x_nCS_STATE(GPIO_ON);
 
     /* Go back to 8-bit SPI mode */
-    MD_SPI_SetDataSize(ILI934x_SPI, MD_SPI_DataSize_8b);
+    MD_SPI_SetDataSize(MD_SPI_8_BIT);
 }
 
-void MD_ILI934x_Delay(volatile unsigned int delay) {
+void MD_ILI934x_Delay(volatile long delay) {
     for (; delay != 0; delay--);
 }
 
@@ -435,7 +434,6 @@ void MD_ILI934x_Putc(uint16_t x, uint16_t y, char c, MD_FontDef_t *font, uint32_
     ILI934x_x += font->FontWidth;
 }
 
-
 void MD_ILI934x_DrawLine(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1, uint32_t color) {
     /* Code by dewoller: https://github.com/dewoller */
 
@@ -524,7 +522,7 @@ void MD_ILI934x_DrawFilledRectangle(uint16_t x0, uint16_t y0, uint16_t x1, uint1
     MD_ILI934x_INT_Fill(x0, y0, x1, y1, color);
 
     /* CS HIGH back */
-    ILI934x_CS_SET;
+    ILI934x_nCS_STATE(GPIO_ON);
 }
 
 void MD_ILI934x_DrawCircle(int16_t x0, int16_t y0, int16_t r, uint32_t color) {

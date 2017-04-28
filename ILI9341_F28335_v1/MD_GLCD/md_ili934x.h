@@ -53,55 +53,11 @@
  *
  */
 #ifndef MD_ILI934x_H
-#define MD_ILI934x_H 100
+#define MD_ILI934x_H
 
-//#include "stm32f4xx.h"
-//#include "stm32f4xx_rcc.h"
-//#include "stm32f4xx_gpio.h"
 #include "md_globals.h"
 #include "md_fonts.h"
-//#include "md_gpio.h"
-//#include "tm_stm32f4_spi.h"
-//#include "tm_stm32f4_dma.h"
-//#include "tm_stm32f4_spi_dma.h"
-
-/**
- * @defgroup MD_ILI934x_Macros
- * @brief    Library defines
- * @{
- */
-
-///**
-// * @brief  This SPI pins are used on STM32F429-Discovery board
-// */
-//#ifndef ILI934x_SPI
-//#define ILI934x_SPI           SPI5
-//#define ILI934x_SPI_PINS      MD_SPI_PinsPack_1
-//#endif
-//
-///**
-// * @brief  CS PIN for SPI, used as on STM32F429-Discovery board
-// */
-//#ifndef ILI934x_CS_PIN
-//#define ILI934x_CS_PORT       GPIOC
-//#define ILI934x_CS_PIN        GPIO_PIN_2
-//#endif
-//
-///**
-// * @brief  WRX PIN for data/command, used as on STM32F429-Discovery board
-// */
-//#ifndef ILI934x_WRX_PIN
-//#define ILI934x_WRX_PORT      GPIOD
-//#define ILI934x_WRX_PIN       GPIO_PIN_13
-//#endif
-//
-///**
-// * @brief  RESET for LCD
-// */
-//#ifndef ILI934x_RST_PIN
-//#define ILI934x_RST_PORT      GPIOD
-//#define ILI934x_RST_PIN       GPIO_PIN_12
-//#endif
+#include "md_spi.h"
 
 /* LCD settings */
 #define ILI934x_WIDTH        240
@@ -111,7 +67,7 @@
 /* Colors */
 #define ILI934x_COLOR_WHITE			0xFFFF
 #define ILI934x_COLOR_BLACK			0x0000
-#define ILI934x_COLOR_RED       0xF800
+#define ILI934x_COLOR_RED       	0xF800
 #define ILI934x_COLOR_GREEN			0x07E0
 #define ILI934x_COLOR_GREEN2		0xB723
 #define ILI934x_COLOR_BLUE			0x001F

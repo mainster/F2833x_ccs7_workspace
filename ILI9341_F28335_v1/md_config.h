@@ -47,48 +47,15 @@
 extern MD_GPIO_TypeDef_t MD_GPIO_TypeDef;
 
 /* ----------------------------  Configuration  ---------------------------- */
-MD_GPIO_TypeDef_t MD_Gpios[] = {
-	{ LED_RED,			MD_GPIO34, GPIO_Mode_OUT, GPIO_OType_PP, MD_GPIO_PuPd_NOPULL, GPIO_OFF },
-	{ ILI934x_WRx_PIN,	MD_GPIO0,  GPIO_Mode_OUT, GPIO_OType_PP, MD_GPIO_PuPd_NOPULL, GPIO_OFF },
-	{ ILI934x_nCS_PIN,	MD_GPIO19, GPIO_Mode_AF,  GPIO_OType_PP, MD_GPIO_PuPd_UP, 	  GPIO_OFF },
-	{ ILI934x_SCK_PIN,	MD_GPIO18, GPIO_Mode_AF,  GPIO_OType_PP, MD_GPIO_PuPd_NOPULL, GPIO_OFF },
-	{ ILI934x_SDI_PIN,	MD_GPIO17, GPIO_Mode_IN,  GPIO_OType_OD, MD_GPIO_PuPd_UP, 	  GPIO_OFF },
-	{ ILI934x_SDO_PIN,	MD_GPIO16, GPIO_Mode_AF,  GPIO_OType_PP, MD_GPIO_PuPd_NOPULL, GPIO_OFF },
-	{ DBG_TIMING_PE2, 	MD_GPIO1,  GPIO_Mode_IN,  GPIO_OType_OD, MD_GPIO_PuPd_UP, 	  GPIO_OFF },
+MD_GPIO_TypeDef_t MD_Gpios[CONFIG_MATRIX_ROWS] = {
+	{ LED_RED,			MD_GPIO34, GPIO_Mode_OUT, GPIO_OType_PP, GPIO_PUDis, GPIO_OFF },
+	{ ILI934x_nRST_PIN,	MD_GPIO1,  GPIO_Mode_OUT, GPIO_OType_PP, GPIO_PUEna, GPIO_ON  },
+	{ ILI934x_WRx_PIN,	MD_GPIO0,  GPIO_Mode_OUT, GPIO_OType_PP, GPIO_PUEna, GPIO_OFF },
+	{ ILI934x_nCS_PIN,	MD_GPIO19, GPIO_Mode_AF1, GPIO_OType_PP, GPIO_PUEna, GPIO_ON  },
+	{ ILI934x_SCK_PIN,	MD_GPIO18, GPIO_Mode_AF1, GPIO_OType_PP, GPIO_PUEna, GPIO_OFF },
+	{ ILI934x_SDI_PIN,	MD_GPIO17, GPIO_Mode_AF1, GPIO_OType_OD, GPIO_PUEna, GPIO_OFF },
+	{ ILI934x_SDO_PIN,	MD_GPIO16, GPIO_Mode_AF1, GPIO_OType_PP, GPIO_PUDis, GPIO_OFF }
 };
-
-
-/**
- * @brief  This SPI pins are used on STM32F429-Discovery board
- */
-//#ifndef ILI934x_SPI
-//#define ILI934x_SPI           SPI5
-//#define ILI934x_SPI_PINS      MD_SPI_PinsPack_1
-//#endif
-//
-///**
-// * @brief  CS PIN for SPI, used as on STM32F429-Discovery board
-// */
-//#ifndef ILI934x_CS_PIN
-//#define ILI934x_CS_PORT       GPIOC
-//#define ILI934x_CS_PIN        GPIO_PIN_2
-//#endif
-//
-///**
-// * @brief  WRX PIN for data/command, used as on STM32F429-Discovery board
-// */
-//#ifndef ILI934x_WRX_PIN
-//#define ILI934x_WRX_PORT      GPIOD
-//#define ILI934x_WRX_PIN       GPIO_PIN_13
-//#endif
-//
-///**
-// * @brief  RESET for LCD
-// */
-//#ifndef ILI934x_RST_PIN
-//#define ILI934x_RST_PORT      GPIOD
-//#define ILI934x_RST_PIN       GPIO_PIN_12
-//#endif
 
 /* ----------------------------  Private macros  --------------------------- */
 

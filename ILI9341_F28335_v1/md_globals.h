@@ -38,7 +38,7 @@
 /* -------------------------------  Includes  ------------------------------ */
 #include <stdint.h>
 #include <DSP28x_Project.h>
-//#include "md_fonts.h"
+
 #include "md_ili934x.h"
 
 #ifdef __cplusplus
@@ -55,15 +55,17 @@
 /* --------------------------  Global variables  --------------------------- */
 
 /* ----------------------------  Configuration  ---------------------------- */
+#define CONFIG_MATRIX_ROWS	7
+
 typedef enum {
 	LED_RED = 0,    		//!< Red LED at GPIO34
+	ILI934x_nRST_PIN,
 	ILI934x_WRx_PIN,
 	ILI934x_nCS_PIN,
 	ILI934x_SCK_PIN,
 	ILI934x_SDI_PIN,
 	ILI934x_SDO_PIN,
-	DBG_TIMING_PE2  		//!< Not used!
-} MD_GPIOName_t;
+} MD_GPIO_Name_t;
 
 /* ---------------------------  Global typedefs  --------------------------- */
 
@@ -73,13 +75,28 @@ typedef enum {
 
 /* ---------------------  Global function prototypes  ---------------------- */
 void MD_ConfigCpuTimer(struct CPUTIMER_VARS *Timer, float Freq, float Period);
-void onEncLsb_changed(void);
+
+/* ------------------------------------------------------------------------- */
+/* IRQ hook function for button XINT IRQ (must be HW interconnected) */
 void onBtn_pressed(void);
+
+/* IRQ hook function for encoder LSB pin IRQs */
+void onEncLsb_changed(void);
+
+/* ------------------------------------------------------------------------- */
+/* IRQ hook function for SPI TxFifo IRQ */
+#pragma CODE_SECTION(onSpiTxFifo_irq, "ramfuncs");
+void onSpiTxFifo_irq(void);
+
+/* IRQ hook function for SPI RxFifo IRQ */
+void onSpiRxFifo_irq(void);
 
 #ifndef RTOS
 __interrupt
 #endif
 void XINT2_EncLsb_isr(void);
+
+/* ------------------------------------------------------------------------- */
 
 #ifndef RTOS
 __interrupt

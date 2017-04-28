@@ -42,6 +42,8 @@
  extern C {
 #endif
 
+#include <stdint.h>
+
 //#include "stm32f4xx.h"
 //#include "defines.h"
 //#include "string.h"

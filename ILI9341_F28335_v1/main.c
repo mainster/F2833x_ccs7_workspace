@@ -34,14 +34,20 @@
    @endverbatim
  *
  */
-#include <stdio.h>
-#include <stdint.h>
+#include "DSP28x_Project.h"
+//#include "DSP2833x_Gpio.h"
 #include "md_globals.h"
 #include "md_gpio.h"
+#include "md_spi.h"
+#include "md_ili934x.h"
 
-
-#undef FLASH
+uint16_t txBuff[8]; 			//!< Send data buffer
+uint16_t *pTx = &txBuff[0];		//!< Tx data word pointer
+uint16_t txWord = 0;
 uint16_t ctr = 0;
+
+extern MD_GPIO_TypeDef_t MD_Gpios[];
+#define F_CPU 150e6
 
 /*
  * ===================== main of MD_GPIO_LIB_F2833x =====================
@@ -53,18 +59,62 @@ void main(void) {
            (unsigned long)(&RamfuncsLoadEnd - &RamfuncsLoadStart)+1);
     InitFlash();
 #endif
-    InitGpio();
-    MD_GPIO_InitAll();
-
+//    InitGpio();
     InitPieCtrl();          //!< Initialize PIE ctrl registers to POR state
     InitPieVectTable();     //!< Initialize PIE vector table
     InitCpuTimers();
-    MD_ConfigCpuTimer(&CpuTimer0, 150, 50000);
-    StartCpuTimer(0);
 
+    MD_ConfigCpuTimer(&CpuTimer0, 150, 50000);
+//    StartCpuTimer(0);
     EINT;
 
-    while(1);;
+    MD_GPIO_InitAll(MD_Gpios, CONFIG_MATRIX_ROWS);
+    MD_SPI_Init(0x0063, MD_SPI_8_BIT);
+//
+//    MD_SPI_Put(0xaa);
+//    MD_SPI_Put(0xaa);
+
+
+    //!< Initialize ILI9341
+    MD_ILI934x_Init();
+
+    //!< Rotate LCD for 90 degrees
+    MD_ILI934x_Rotate(MD_ILI934x_Orientation_Landscape_2);
+	//FIll lcd with color
+	MD_ILI934x_Fill(ILI934x_COLOR_MAGENTA);
+	//Draw white circle
+	MD_ILI934x_DrawCircle(60, 60, 40, ILI934x_COLOR_GREEN);
+	//Draw red filled circle
+	MD_ILI934x_DrawFilledCircle(60, 60, 35, ILI934x_COLOR_RED);
+	//Draw blue rectangle
+	MD_ILI934x_DrawRectangle(120, 20, 220, 100, ILI934x_COLOR_BLUE);
+	//Draw black filled rectangle
+	MD_ILI934x_DrawFilledRectangle(130, 30, 210, 90, ILI934x_COLOR_BLACK);
+	//Draw line with custom color 0x0005
+	MD_ILI934x_DrawLine(10, 120, 310, 120, 0x0005);
+
+	//Put string with black foreground color and blue background with 11x18px font
+	MD_ILI934x_Puts(65, 130, "STM32F4 Discovery", &MD_Font_11x18, ILI934x_COLOR_BLACK, ILI934x_COLOR_BLUE2);
+	//Put string with black foreground color and blue background with 11x18px font
+	MD_ILI934x_Puts(60, 150, "ILI934x LCD Module", &MD_Font_11x18, ILI934x_COLOR_BLACK, ILI934x_COLOR_BLUE2);
+	//Put string with black foreground color and red background with 11x18px font
+	MD_ILI934x_Puts(245, 225, "majerle.eu", &MD_Font_7x10, ILI934x_COLOR_BLACK, ILI934x_COLOR_ORANGE);
+
+	while(1);;
+}
+
+/* IRQ hook function for SPI TxFifo IRQ */
+void onSpiTxFifo_irq(void) {
+	return;
+
+	SpiaRegs.SPITXBUF = *pTx++;    			//!< Send data
+	if (pTx == &txBuff[8])
+		pTx = &txBuff[0];
+}
+
+/* IRQ hook function for SPI RxFifo IRQ */
+void onSpiRxFifo_irq(void) {
+	asm("  NOP");
 }
 
 void MD_ConfigCpuTimer(struct CPUTIMER_VARS *Timer, float Freq, float Period) {
