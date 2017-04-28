@@ -41,6 +41,12 @@
  extern "C" {
 #endif
 
+typedef enum {
+ 	MD_SPI_8_BIT = 0x08,
+ 	MD_SPI_16_BIT = 0x0f
+} MD_SPI_CharLen_t ;
+
+ //SpiaRegs.SPICCR.bit.SPICHAR
 /* -------------------------------  Includes  ------------------------------ */
 
 /* ----------------------------  Configuration  ---------------------------- */
@@ -56,10 +62,11 @@
 /* ----------------------------  Private defines  -------------------------- */
 
 /* ---------------------  Public function prototypes  --------------------- */
- void MD_SPI_Init(const uint16_t BAUDVAL);
-
-
-
+void MD_SPI_Init(const uint16_t BAUDVAL, MD_SPI_CharLen_t cLen);
+void MD_SPI_Putvar(const uint16_t txChar, MD_SPI_CharLen_t cLen);
+void MD_SPI_Put(const uint16_t);
+void MD_SPI_SetDataSize(MD_SPI_CharLen_t DataSize);
+void MD_SPI_DMA_SendHalfWord_fake (uint16_t color, uint16_t pixels_count);
 #ifdef __cplusplus
  }
 #endif

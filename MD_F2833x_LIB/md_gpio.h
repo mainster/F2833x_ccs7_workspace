@@ -214,13 +214,13 @@ typedef struct MD_GPIO_TypeDef {
 } MD_GPIO_TypeDef_t;
 
 
-void MD_GPIO_InitAll(const MD_GPIO_TypeDef_t *IO);
+void MD_GPIO_InitAll(const MD_GPIO_TypeDef_t *IO, short size);
 void MD_GPIO_Init(MD_GPIO_Name_t Name, MD_GPIO_Pin_t Pin,
                   MD_GPIO_Mode_t Mode, MD_GPIO_OType_t DriverType,
                   MD_GPIO_PuRe_t PuPd, MD_GPIO_State_t InitVal);
-void MD_GPIO_Switch(MD_GPIO_Name_t name, MD_GPIO_State_t newState);
-void MD_GPIO_On(MD_GPIO_Name_t name);
-void MD_GPIO_Off(MD_GPIO_Name_t name);
+void MD_GPIO_Switch(const MD_GPIO_TypeDef_t *IO, MD_GPIO_Name_t name, MD_GPIO_State_t newState);
+void MD_GPIO_On(const MD_GPIO_TypeDef_t *IO, MD_GPIO_Name_t name);
+void MD_GPIO_Off(const MD_GPIO_TypeDef_t *IO, MD_GPIO_Name_t name);
 void MD_GPIO_Toggle(MD_GPIO_Name_t name);
 
 /**

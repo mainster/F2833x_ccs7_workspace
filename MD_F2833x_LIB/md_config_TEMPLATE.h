@@ -47,9 +47,13 @@
 extern MD_GPIO_TypeDef_t MD_GPIO_TypeDef;
 
 /* ----------------------------  Configuration  ---------------------------- */
-MD_GPIO_TypeDef_t MD_Gpios[] = {
-	{ LED_RED,	MD_GPIO34, GPIO_Mode_OUT, GPIO_OType_PP, MD_GPIO_PuPd_NOPULL, GPIO_OFF },
-	{ DBG_TIMING_PE2, 	MD_GPIO1,  GPIO_Mode_IN,  GPIO_OType_OD, MD_GPIO_PuPd_UP, GPIO_OFF },
+MD_GPIO_TypeDef_t MD_Gpios[CONFIG_MATRIX_ROWS] = {
+	{ LED_RED,			MD_GPIO34, GPIO_Mode_OUT, GPIO_OType_PP, GPIO_PUDis, GPIO_OFF },
+//	{ ILI934x_WRx_PIN,	MD_GPIO0,  GPIO_Mode_OUT, GPIO_OType_PP, GPIO_PUEna, GPIO_ON  },
+//	{ ILI934x_nCS_PIN,	MD_GPIO19, GPIO_Mode_AF1, GPIO_OType_PP, GPIO_PUEna, GPIO_ON  },
+//	{ ILI934x_SCK_PIN,	MD_GPIO18, GPIO_Mode_AF1, GPIO_OType_PP, GPIO_PUDis, GPIO_OFF },
+//	{ ILI934x_SDI_PIN,	MD_GPIO17, GPIO_Mode_AF1, GPIO_OType_OD, GPIO_PUEna, GPIO_OFF },
+//	{ ILI934x_SDO_PIN,	MD_GPIO16, GPIO_Mode_AF1, GPIO_OType_PP, GPIO_PUDis, GPIO_OFF },
 };
 
 /* ----------------------------  Private macros  --------------------------- */

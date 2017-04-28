@@ -529,18 +529,26 @@
 			}
 		},
 		{
-			"file": "md_gpio.h",
+			"file": "md_gpio.c",
 			"settings":
 			{
-				"buffer_size": 16134,
+				"buffer_size": 11915,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "md_gpio.c",
+			"file": "md_config_TEMPLATE.h",
 			"settings":
 			{
-				"buffer_size": 11441,
+				"buffer_size": 2558,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "md_gpio.h",
+			"settings":
+			{
+				"buffer_size": 19938,
 				"line_ending": "Windows"
 			}
 		},
@@ -548,7 +556,7 @@
 			"file": "/media/data/CODES/ccs7_workspace/ILI9341_F28335_v1/main.c",
 			"settings":
 			{
-				"buffer_size": 2554,
+				"buffer_size": 4387,
 				"line_ending": "Unix"
 			}
 		},
@@ -627,10 +635,14 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 392.0,
-		"last_filter": "asty",
+		"height": 172.0,
+		"last_filter": "set syn mrk",
 		"selected_items":
 		[
+			[
+				"set syn mrk",
+				"Set Syntax: Markdown Extended"
+			],
 			[
 				"asty",
 				"SublimeAStyleFormatter: Format Current File"
@@ -1176,6 +1188,8 @@
 	],
 	"file_history":
 	[
+		"/home/mainster/.config/sublime-text-3/Packages/User/Default (Linux).sublime-mousemap",
+		"/media/data/ti/TMS320F28335_docs/table_alt_periph.mmd",
 		"/media/data/ti/TMS320F28335_docs/tms320f28335.txt",
 		"/media/data/CODES/ccs7_workspace/ILI9341/tm_stm32f4_ili9341/tm_stm32f4_ili9341.c",
 		"/media/data/whz/reports/ELT131/ELT131_LAB_03/ELT131_LAB_03_RTOS_3/ELT131_LAB_03_RTOS_3.c",
@@ -1301,9 +1315,7 @@
 		"/home/mainster/.config/sublime-text-3/Packages/User/SublimeAStyleFormatter.sublime-settings",
 		"/home/mainster/.config/sublime-text-3/Packages/User/asmComment.py",
 		"/home/mainster/.config/sublime-text-3/Packages/User/styleMdb.css",
-		"/media/data/whz/reports/ELT131/ELT131_LAB_01/markdown/ELT131_LAB_01.mmd",
-		"/media/data/whz/reports/ELT131/ELT131_LAB_01/mathjax.html",
-		"/media/data/whz/reports/ELT131/ELT131_LAB_01.sublime-project"
+		"/media/data/whz/reports/ELT131/ELT131_LAB_01/markdown/ELT131_LAB_01.mmd"
 	],
 	"find":
 	{
@@ -1318,9 +1330,38 @@
 	},
 	"find_state":
 	{
-		"case_sensitive": false,
+		"case_sensitive": true,
 		"find_history":
 		[
+			"GPIO\\_\\_",
+			"GPIO__",
+			"MD\\_GPIO(.*)\\_t",
+			"PERI_SEL_3",
+			"PERI_SEL_2",
+			"MD_GPIOPuPd_t",
+			"\\| ([0-9])\\, ([0-9])     \\|",
+			"^",
+			"|----------|--------------|----------------|-----------------------------|",
+			"|----------|--------------|----------------|--------------|--------------|",
+			"^\\| [0-9]",
+			"\\)$",
+			"\\)",
+			"\\) ([^\\|])",
+			"(\\| .*)(GPIO.*)",
+			"reserv_",
+			"^",
+			"PER",
+			"Reserved",
+			"\\|\\|",
+			"(\\([OI]\\)[^\\/])",
+			"\\(I\\/O\\)",
+			"(I/O)",
+			"\\(I\\/O\\)",
+			"^ +",
+			"^\\|[ -].[^\\|]*",
+			"([0-9]+\\, [0-9]+)",
+			"(^\\| +)([0-9]+)",
+			"^",
 			"MD_GPIO_NAME_t",
 			"GPIO_PuPd_UP",
 			"MD_GPIO_NAME_t",
@@ -1419,43 +1460,40 @@
 			"latency",
 			"jitter",
 			"of ",
-			"jitter",
-			"latency",
-			"500ns",
-			"latency",
-			"HWI",
-			"pics",
-			"main_03",
-			"lambda",
-			"”",
-			"“",
-			"_+$",
-			"",
-			"Jitter",
-			"(>.* )@([0-9]+)(k?Hz) (.[^<]*)",
-			"(>.* )@([0-9]+)(k?Hz)(.[^<]*)",
-			"(>.* @)([0-9]+)(k?Hz)(.[^<]*)",
-			"(>.*@)([0-9]+)(k?Hz)",
-			"TI\\_RTOS",
-			"Part ([0-5])\\: (.[^#]*)",
-			"^",
-			" *\\*\\/\n\n\\/\\*",
-			" *\\*\\/\n \n\\/\\*",
-			" *\\*\\/\n\\/\\*",
-			" *\\*\\/\n ",
-			" *\\*\\/",
-			"ELT131_LAB_03_RTOSv2",
-			"ELT131_LAB_03_RTOS_v2",
-			"hasAttrs",
-			"</boxed>",
-			"<boxed>"
+			"jitter"
 		],
 		"highlight": true,
 		"in_selection": false,
 		"preserve_case": false,
-		"regex": false,
+		"regex": true,
 		"replace_history":
 		[
+			"GPIO_",
+			"MD_GPIO_\\1_t",
+			"Alt_Fun_3",
+			"Alt_Fun_1",
+			"MD_GPIOPuRe_t",
+			"|  \\1,  \\2   |",
+			" *     ",
+			"+----------+--------------+----------------+--------------+--------------+",
+			") |",
+			") | ",
+			"| \\2",
+			"reserv ",
+			" *     ",
+			" * ",
+			"PERIPH_SEL",
+			"_reserv_",
+			"RSVD",
+			"|",
+			"\\1 |",
+			"(I/O) | ",
+			"| (I/O)",
+			"",
+			"|  \\1  |",
+			"\\1|   \\2   |",
+			"\\1| \\2 |",
+			"| ",
 			"MD_GPIOName_t",
 			"MD_GPIOState_t",
 			"MD_GPIOPuPd_t",
@@ -1557,33 +1595,7 @@
 			"addHeadFoot",
 			"modifiedHtml",
 			"codeImport",
-			"mdFileDirname",
-			"ATTRPREFIX",
-			"ATTPREFIX",
-			"view",
-			"AddHeaderFooter",
-			" __non-OS__ ",
-			"__non-OS__",
-			"non-OS setup",
-			"figure class=\"oszi\"",
-			" __RAM__",
-			" __FLASH__",
-			"flash",
-			"ram",
-			"\"",
-			"<boxed>\\1</boxed>",
-			"*        –",
-			"*    •",
-			" * ",
-			"_",
-			"",
-			"footicon",
-			"true",
-			"\\t\"\\1\": true,",
-			"\\t\"\\1\": \"\\2\",",
-			"\\t\"\\1\": \"\\2\"",
-			"",
-			"src=\"./pics/"
+			"mdFileDirname"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -1616,159 +1628,9 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 429.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "md_gpio.h",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 16134,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								5631,
-								5631
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C.sublime-syntax",
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "md_gpio.c",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 11441,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								173,
-								173
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 1,
-			"sheets":
-			[
-				{
-					"buffer": 3,
-					"file": "/media/data/CODES/ccs7_workspace/ILI9341_F28335_v1/main.c",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2554,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1785,
-								1785
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 507.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "md_gpio.h",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 16134,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4716,
-								4716
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "md_gpio.c",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 11441,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								5554,
-								5554
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1778,7 +1640,191 @@
 					"type": "text"
 				},
 				{
+					"buffer": 1,
+					"file": "md_gpio.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 11915,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1198,
+								1198
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 64.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "md_config_TEMPLATE.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2558,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1558,
+								1558
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 117.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 3,
+					"file": "md_gpio.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 19938,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7442,
+								7442
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1560.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
 					"buffer": 4,
+					"file": "/media/data/CODES/ccs7_workspace/ILI9341_F28335_v1/main.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4387,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 507.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "md_gpio.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 19938,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "md_gpio.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 11915,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5558,
+								5558
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
 					"file": "/media/data/CODES/ccs7_workspace/ILI9341_F28335_v1/main.h",
 					"semi_transient": false,
 					"settings":
@@ -1804,7 +1850,7 @@
 						"translation.y": 468.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 7,
 					"type": "text"
 				}
 			]
@@ -1838,7 +1884,7 @@
 		"cols":
 		[
 			0.0,
-			0.5,
+			0.564871481028,
 			1.0
 		],
 		"rows":
@@ -1906,7 +1952,7 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 0,
+	"selected_group": 1,
 	"settings":
 	{
 	},

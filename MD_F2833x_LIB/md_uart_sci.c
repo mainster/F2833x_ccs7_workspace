@@ -108,9 +108,6 @@ void MD_SCIA_Init (const float F_CPU_MHZ, const uint32_t baudrate) {
 	SciaRegs.SCIHBAUD = UINT8_C(BRR >> 8);      //!< Set the upper 8-Bits
 	SciaRegs.SCILBAUD = UINT8_C(BRR & 0x00ff);  //!< Set the lower 8-Bits
 
-	BRR = SysCtrlRegs.LOSPCP.all;
-	BRR = SysCtrlRegs.LOSPCP.bit.LSPCLK;
-
 	/**
 	 * Initialize transmit and receive buffers
 	 */
