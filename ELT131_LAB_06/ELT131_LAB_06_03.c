@@ -1,5 +1,5 @@
 /**
- * @file        ELT131_LAB_06.c
+ * @file        ELT131_LAB_06_01.c
  * @project		ELT131_LAB_06
  *
  * @date        27 Apr 2017
@@ -34,13 +34,18 @@
  */
 #include <xdc/std.h>
 #include <xdc/runtime/System.h>
+#include <xdc/cfg/global.h> //header for statically defined objects/handle
+#include <xdc/runtime/Log.h> //for Log_info() calls when UIA is added
+
 #include <ti/sysbios/BIOS.h>
 #include <ti/sysbios/knl/Task.h>
+#include <ti/sysbios/knl/Semaphore.h>
 
 #include <stdint.h>
 #include <DSP28x_Project.h>
-#include <ELT131_LAB_06.h>
 #include "DSP2833x_GlobalPrototypes.h"
+
+#include "ELT131_LAB_06_03.h"
 #include "md_bsp_explorer.h"
 
 /**
@@ -48,21 +53,19 @@
  */
 extern uint16_t RamfuncsLoadSize;
 
-#ifdef RTOS
-retVal_t tskUartPuts(const char *str);
-void uartPutsByTask(char *str);
-#endif
-
 /**
  * ePWM frequency values
  */
 uint32_t  epwmFreqs[] = { 100, 200, 2e3, 20e3, 200e3 };
 
-
 /**
- * Idle message buffer + pointer
+ * Idle message buffer
  */
 char idleMsgBuff[32];
+
+/**
+ * Message buffer pointer
+ */
 char *pIdleMsg = NULL;
 
 /**
@@ -109,42 +112,40 @@ void main() {
     encVal = (sizeof(epwmFreqs)/sizeof(uint32_t) > MD_BSP_EncValue())
     		? MD_BSP_EncValue() : 2;			//!< Read in initial encoder value
 
-    MD_EPWM1_Init(epwmFreqs[encVal], 150e6);	//!< Init/Start signal ePWM1A
+    MD_EPWM1_Init(epwmFreqs[2], 150e6);			//!< Init/Start signal ePWM1A
 //    CpuTimer0Regs.TCR.bit.TSS = 0;  			//!< Timer Start/Stop
     errorLed_off();
     BIOS_start();        						//!< ENI and start SYS/BIOS idle
 }
 
-
-#if defined(RTOS) && defined(RTOS_DYNAMIC_TASK)
-void uartPutsByTask(char *str) {
-	Task_Params taskParams;
-	Task_Handle tskUartBusy;
-	Error_Block eb;
-	Error_init(&eb);
-
-	/**
-	 * Create a task with priority 10.
-	 */
-	Task_Params_init(&taskParams);
-	taskParams.stackSize = 512;
-	taskParams.priority = 10;
-
-	tskUartBusy = Task_create((Task_FuncPtr)tskUartPuts(str), &taskParams, &eb);
-	if (tskUartBusy == NULL)
-		System_abort("Task create failed");
+/**
+ * @brief      XINT1 GPIO1 IRQ handler
+ */
+void XINT1_GPIO1_isr(void) {
+	Semaphore_post(sem_GPIO01);
 }
-
-retVal_t tskUartPuts(const char *str) {
-	/* DEADLOCK */
-	while (_uartPuts(str, "\n") != ret_ok);;
-}
-
-#endif
 
 /**
- * sizeof(epwmFreqs) = 5 so mask out encVal > 4:	encVal & 0x04
+ * @brief      GPIO pulse task
  */
+void GPIO02_Pulse_fxn(void) {
+	static uint16_t pulsCountGpio2;
+
+	do {
+		Semaphore_pend(sem_GPIO01,BIOS_WAIT_FOREVER);
+		GpioDataRegs.GPASET.bit.GPIO2 = 1; 		//!< Rising edge at GPIO2
+		for(int i=0;i<10;i++)
+			asm(" NOP");
+		GpioDataRegs.GPACLEAR.bit.GPIO2 = 1; 	//!< falling edge at GPIO2
+
+		pulsCountGpio2 ++;
+		Log_info1("GPIO02 Pulse [%u] times", pulsCountGpio2);
+	} while (1);
+
+#ifndef RTOS_DISPATCHER
+    PieCtrlRegs.PIEACK.bit.ACK4 = 1;		//!< Ack interrupt service
+#endif
+}
 
 /**
  * @brief      Idle task.
@@ -173,10 +174,48 @@ void tsk_idle_UartEnc(void) {
 }
 
 /**
- * http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/bios/
- * sysbios/6_33_04_39/exports/bios_6_33_04_39/docs/cdoc/index.html
- *
- * PIE interrupts
+ * @brief      Timer0 IRQ callback handler
+ */
+void CPU_TIM0_isr(void) {
+    int i = 0;
+    do asm("  NOP");
+    while (--i);
+
+    PieCtrlRegs.PIEACK.bit.ACK7 = 1;		//!< Ack interrupt service
+#ifndef RTOS_DISPATCHER
+    PieCtrlRegs.PIEACK.bit.ACK7 = 1;		//!< Ack interrupt service
+#endif
+}
+
+/**
+ * @brief      Encoder LSB XINT hook function
+ */
+void onEncLsb_changed(void) {
+	MD_EPWM1_freqConfig(epwmFreqs[encVal], F_CPU);
+}
+
+/**
+ * @brief      SCIA TxFifo IRQ hook function
+ */
+void onSpiTxFifo_irq(void) {
+#ifdef USE_TX_BUFFER
+	SpiaRegs.SPITXBUF = *pTx++;
+	if (pTx == &txBuff[8])
+		pTx = &txBuff[0];
+#endif
+}
+
+/**
+ * @brief      SCIA RxFifo IRQ hook function
+ */
+void onSpiRxFifo_irq(void) {
+#ifdef USE_RX_BUFFER
+	MD_EPWM1_freqConfig(epwmFreqs[encVal], F_CPU);
+#endif
+}
+
+/**
+ * ===================== About PIE interrupts =====================
  * The peripheral interrupt expansion (PIE) block multiplexes 96 interrupts into
  * 12 CPU interrupts. The PIE vector table includes entries for each of these 96
  * interrupts. The relationship between Group number (x), IRQ number (y) and the
@@ -191,37 +230,7 @@ void tsk_idle_UartEnc(void) {
  * First assume that INT numbers 0-31 are “reserved” or “taken”. Now look at the
  * table on page 124 and start counting (from the right) at 32 with INT1.1.
  * INT1.2 would be 33…and so on…making INT1.4 = 35.
+ *
+ * http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/targetcontent/bios/
+ * sysbios/6_33_04_39/exports/bios_6_33_04_39/docs/cdoc/index.html
  */
-
-/**
- * @brief      XINT1 GPIO1 IRQ handler
- */
-void XINT1_GPIO1_isr(void) {
-	GpioDataRegs.GPASET.bit.GPIO2 = 1; 		//!< Rising edge at GPIO2
-	for(int i=0;i<10;i++)
-		asm(" NOP");
-	GpioDataRegs.GPACLEAR.bit.GPIO2 = 1; 	//!< falling edge at GPIO2
-
-#ifndef RTOS_DISPATCHER
-    PieCtrlRegs.PIEACK.bit.ACK4 = 1;		//!< Ack interrupt service
-#endif
-}
-
-void onEncLsb_changed(void) {
-	MD_EPWM1_freqConfig(epwmFreqs[encVal], F_CPU);
-}
-
-/**
- * @brief      Timer0 IRQ callback handler
- */
-void CPU_TIM0_isr(void) {
-    int i = 0;
-    do asm("  NOP");
-    while (--i);
-
-    PieCtrlRegs.PIEACK.bit.ACK7 = 1;		//!< Ack interrupt service
-#ifndef RTOS_DISPATCHER
-    PieCtrlRegs.PIEACK.bit.ACK7 = 1;		//!< Ack interrupt service
-#endif
-}
-

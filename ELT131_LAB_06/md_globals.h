@@ -53,13 +53,16 @@
 /* --------------------------  Global variables  --------------------------- */
 
 /* ----------------------------  Configuration  ---------------------------- */
+#define CONFIG_MATRIX_ROWS	1
 
+typedef enum {
+	MD_LED_RED = 0,    		//!< Red LED at GPIO34
+} MD_GPIO_Name_t;
 /* ---------------------------  Global typedefs  --------------------------- */
 
 /* ----------------------------  Global macros  ---------------------------- */
 
 /* ---------------------  Global function prototypes  ---------------------- */
-void onEncLsb_changed(void);
 
 #ifdef __cplusplus
  }

@@ -1,0 +1,48 @@
+{
+    "folders": [{
+        "path": ".",
+
+        "folder_exclude_patterns": [
+            "*ebug",
+            "*oxygen",
+            "*uild",
+            "._d", 
+            ".git",
+            ".hg",
+            ".metadata", 
+            ".settings",
+            ".svn",
+            ".svn", 
+            "CVS",
+            "node_modules"
+        ],
+
+        "file_exclude_patterns": [
+            ".cproject",
+            ".project", 
+            "*.sublime-workspace",
+            "*.db",
+            "*.pyc", 
+            "*.pyo", 
+            "bpm", 
+            "*.1"
+        ]
+    }],
+
+    "build_systems": [
+        {
+            "name": "LT Profile",
+            "cmd": "ant"
+        },
+        {
+            "name": "List",
+            "cmd": "ls"
+        }
+    ],
+
+    "settings": {
+        "font_size": 8,
+        "highlight_line": true,
+        "rulers": [ 100, 120 ]
+    }
+}

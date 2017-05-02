@@ -72,6 +72,7 @@
 
 /* ---------------------  Private function prototypes  --------------------- */
 void tsk_idle_UartEnc(void);
+
 /**
  * Remove compiler directive __interrupt from function declaration
  * and definition if registered as TI_RTOS irq callback.

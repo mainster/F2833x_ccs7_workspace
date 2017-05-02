@@ -11,7 +11,7 @@ var makeAssembly = false;
 var Executable = xdc.module('xdc.bld.Executable');
 
 var exeOpts = new Executable.Attrs({
-        cfgScript: '/media/data/CODES/ccs7_workspace/ELT131_LAB_03_RTOS_3/app.cfg',
+        cfgScript: '/media/data/CODES/ccs7_workspace/ELT131_LAB_06/app.cfg',
         profile: 'release',
         cfgHome: 'xconfig_app',
 });
@@ -40,8 +40,8 @@ else {
 }
 
 var thisObj = {
-    cfg:        '/media/data/CODES/ccs7_workspace/ELT131_LAB_03_RTOS_3/app.cfg',
-    outputPath: '/media/data/CODES/ccs7_workspace/ELT131_LAB_03_RTOS_3/.config/xconfig_app',
+    cfg:        '/media/data/CODES/ccs7_workspace/ELT131_LAB_06/app.cfg',
+    outputPath: '/media/data/CODES/ccs7_workspace/ELT131_LAB_06/.config/xconfig_app',
     exeName:    'app' + suffix,
     exeIntName: 'app' + suffix.replace('.', '_'),
     targ:       targ,
