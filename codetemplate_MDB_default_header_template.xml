@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="false" context="org.eclipse.cdt.core.cHeader.contenttype_context" deleted="false" description="" enabled="true" name="MDB_default_header_template ">${filecomment}
+#ifndef ${include_guard_symbol}
+#define ${include_guard_symbol}
+
+#ifdef __cplusplus
+ extern "C" {
+#endif
+
+/* Includes ------------------------------------------------------------------*/
+${includes}
+
+/* Configuration -------------------------------------------------------------*/
+
+/* Private typedef -----------------------------------------------------------*/
+
+/* Private define ------------------------------------------------------------*/
+
+/* Private macro -------------------------------------------------------------*/
+
+/* Private variables ---------------------------------------------------------*/
+
+/* Private function prototypes -----------------------------------------------*/
+
+/* Private functions ---------------------------------------------------------*/
+
+${declarations}
+
+#ifdef __cplusplus
+ }
+#endif
+
+#endif</template></templates>
