@@ -109,6 +109,21 @@
 							<outputType id="org.eclipse.cdt.managedbuilder.ui.rcbs.outputtype.812290097" name="Resource Custom Build Step Output Type"/>
 						</tool>
 					</fileInfo>
+					<fileInfo id="com.ti.ccstudio.buildDefinitions.C2000.Debug.1597996636.865839210" name="md_bsp_explorer.c" rcbsApplicability="disable" resourcePath="MD_F2833x_LIB/md_bsp_explorer.c" toolsToInvoke="com.ti.ccstudio.buildDefinitions.C2000_16.12.exe.compilerDebug.706884828.878179878">
+						<tool id="com.ti.ccstudio.buildDefinitions.C2000_16.12.exe.compilerDebug.706884828.878179878" name="C2000 Compiler" superClass="com.ti.ccstudio.buildDefinitions.C2000_16.12.exe.compilerDebug.706884828">
+							<option id="com.ti.ccstudio.buildDefinitions.C2000_16.12.compilerID.DEFINE.2008308981" superClass="com.ti.ccstudio.buildDefinitions.C2000_16.12.compilerID.DEFINE" valueType="definedSymbols">
+								<listOptionValue builtIn="false" value="${COM_TI_RTSC_TIRTOSC2000_SYMBOLS}"/>
+								<listOptionValue builtIn="false" value="RTOS"/>
+								<listOptionValue builtIn="false" value="F_CPU=150e6L"/>
+								<listOptionValue builtIn="false" value="xdc__strict"/>
+								<listOptionValue builtIn="false" value="FLASH"/>
+							</option>
+							<inputType id="com.ti.ccstudio.buildDefinitions.C2000_16.12.compiler.inputType__C_SRCS.501868472" name="C Sources" superClass="com.ti.ccstudio.buildDefinitions.C2000_16.12.compiler.inputType__C_SRCS"/>
+							<inputType id="com.ti.ccstudio.buildDefinitions.C2000_16.12.compiler.inputType__CPP_SRCS.1528280479" name="C++ Sources" superClass="com.ti.ccstudio.buildDefinitions.C2000_16.12.compiler.inputType__CPP_SRCS"/>
+							<inputType id="com.ti.ccstudio.buildDefinitions.C2000_16.12.compiler.inputType__ASM_SRCS.109533270" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.C2000_16.12.compiler.inputType__ASM_SRCS"/>
+							<inputType id="com.ti.ccstudio.buildDefinitions.C2000_16.12.compiler.inputType__ASM2_SRCS.1219121019" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.C2000_16.12.compiler.inputType__ASM2_SRCS"/>
+						</tool>
+					</fileInfo>
 					<sourceEntries>
 						<entry excluding="MD_F2833x_LIB/md_GlobalVariableDefs.c|MD_F2833x_LIB/md_encoder.h|src" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
@@ -236,6 +251,4 @@
 			<resource resourceType="PROJECT" workspacePath="/ELT131_LAB_04_01"/>
 		</configuration>
 	</storageModule>
-	<storageModule moduleId="null.devicePreference"/>
-	<storageModule moduleId="cpuFamily"/>
 </cproject>
