@@ -34,12 +34,14 @@
    @endverbatim
  *
  */
-#include "DSP28x_Project.h"     // Device Headerfile and Examples Include File
+#include "DSP28x_Project.h"
 #include "md_globals.h"
 #include "md_spi.h"
 
-
 /* ---------------------  Private function prototypes  --------------------- */
+void MD_SPI_FifoInit(const uint16_t BAUDVAL, MD_SPI_CharLen_t cLen);
+void MD_SPI_DMA_SendHalfWord_fake (uint16_t color, uint16_t pixels_count);
+
 #if defined(RTOS) || !defined(RTOS_ENC_XINT)
 __interrupt
 #endif
@@ -49,8 +51,6 @@ void SPI_TxFifo_isr(void);
 __interrupt
 #endif
 void SPI_RxFifo_isr(void);
-
-void MD_SPI_FifoInit(const uint16_t BAUDVAL, MD_SPI_CharLen_t cLen);
 
 /* ---------------------  Public function implementations  ----------------- */
 void MD_SPI_Init(const uint16_t BAUDVAL, MD_SPI_CharLen_t cLen) {
@@ -94,30 +94,7 @@ void MD_SPI_SetDataSize(MD_SPI_CharLen_t DataSize) {
 	SpiaRegs.SPICCR.bit.SPICHAR = (uint16_t) DataSize;
 }
 
-void MD_SPI_DMA_SendHalfWord_fake (uint16_t color, uint16_t pixels_count) {
-	while (pixels_count--)
-		MD_SPI_Put(color);
-}
 /* ---------------------  Private function implementation  ----------------- */
-void SPI_TxFifo_isr(void) {
-	onSpiTxFifo_irq();						//!< Invoke hook function TxFifo INT
-
-#if !defined(RTOS) || (defined(RTOS) && !defined(RTOS_ENC_XINT))
-//	SpiaRegs.SPIFFTX.bit.TXFFINTCLR = 1;	//!< Clear Interrupt flag
-	PieCtrlRegs.PIEACK.bit.ACK6 	= 1;   	//!< Issue PIE ACK for Group 6
-#endif
-}
-
-void SPI_RxFifo_isr(void) {
-	onSpiRxFifo_irq();						//!< Invoke hook function RxFifo INT
-
-#if !defined(RTOS) || (defined(RTOS) && !defined(RTOS_ENC_XINT))
-	  SpiaRegs.SPIFFRX.bit.RXFFOVFCLR = 1; 	//!< Clear Overflow flag
-	  SpiaRegs.SPIFFRX.bit.RXFFINTCLR = 1; 	//!< Clear Interrupt flag
-	  PieCtrlRegs.PIEACK.bit.ACK6 	  = 1;  //!< Issue PIE ACK for Group 6
-#endif
-}
-
 void MD_SPI_FifoInit (const uint16_t BAUDVAL, MD_SPI_CharLen_t cLen) {
 	SpiaRegs.SPICCR.bit.SPISWRESET    = 0;        //!< Block SPI logic via reset line
 	SpiaRegs.SPICCR.bit.SPICHAR = (uint16_t)cLen; //!< 16-bit character
@@ -155,6 +132,31 @@ void MD_SPI_FifoInit (const uint16_t BAUDVAL, MD_SPI_CharLen_t cLen) {
 	SpiaRegs.SPIFFTX.bit.TXFIFO       = 1;        //!< Tx FIFO reset ?? (*RESET)
 	SpiaRegs.SPIFFRX.bit.RXFIFORESET  = 1;        //!< Rx FIFO reset
 }
+
+void MD_SPI_DMA_SendHalfWord_fake (uint16_t color, uint16_t pixels_count) {
+	while (pixels_count--)
+		MD_SPI_Put(color);
+}
+
+void SPI_TxFifo_isr(void) {
+	onSpiTxFifo_irq();						//!< Invoke hook function TxFifo INT
+
+#if !defined(RTOS) || (defined(RTOS) && !defined(RTOS_ENC_XINT))
+//	SpiaRegs.SPIFFTX.bit.TXFFINTCLR = 1;	//!< Clear Interrupt flag
+	PieCtrlRegs.PIEACK.bit.ACK6 	= 1;   	//!< Issue PIE ACK for Group 6
+#endif
+}
+
+void SPI_RxFifo_isr(void) {
+	onSpiRxFifo_irq();						//!< Invoke hook function RxFifo INT
+
+#if !defined(RTOS) || (defined(RTOS) && !defined(RTOS_ENC_XINT))
+	  SpiaRegs.SPIFFRX.bit.RXFFOVFCLR = 1; 	//!< Clear Overflow flag
+	  SpiaRegs.SPIFFRX.bit.RXFFINTCLR = 1; 	//!< Clear Interrupt flag
+	  PieCtrlRegs.PIEACK.bit.ACK6 	  = 1;  //!< Issue PIE ACK for Group 6
+#endif
+}
+
 
 
 

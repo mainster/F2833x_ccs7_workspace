@@ -46,7 +46,7 @@ volatile uint16_t  encVal = 0;
 void XINT2_EncLsb_isr(void) {
 	encVal = MD_BSP_EncValue();		//!< Read-in actual encoder value
 #ifdef RTOS
-	onEncLsb_changed((UArg) 0);		//!< Invoke hook function for XINT2 Enc
+//	onEncLsb_changed((UArg) 0);		//!< Invoke hook function for XINT2 Enc
 #else
 	onEncLsb_changed();		//!< Invoke hook function for XINT2 Enc
 #endif
@@ -58,7 +58,7 @@ void XINT2_EncLsb_isr(void) {
 }
 
 void XINT3_Btn_isr(void) {
-	onBtn_pressed();					//!< Invoke hook function for XINT2 Btn
+//	onBtn_pressed();					//!< Invoke hook function for XINT2 Btn
 
 #if !defined(RTOS) || (defined(RTOS) && !defined(RTOS_BTN_XINT))
 	PieCtrlRegs.PIEACK.all = PIEACK_GROUP12;    //!< Ack interrupt service
