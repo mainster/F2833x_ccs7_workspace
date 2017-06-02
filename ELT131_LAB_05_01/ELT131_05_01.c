@@ -80,10 +80,10 @@ void GPIOToggle_fxn(void) {
 	GpioDataRegs.GPATOGGLE.bit.GPIO0 = 1;
 }
 
-void XINT2_EncLsb_isr(void) {
-	PieCtrlRegs.PIEACK.bit.ACK5 = 1;            //!< Ack interrupt service
-
-	//!< Read-in actual encoder value
-	encVal = MD_BSP_EncValue();
-
-}
+//void XINT2_EncLsb_isr(void) {
+//	PieCtrlRegs.PIEACK.bit.ACK5 = 1;            //!< Ack interrupt service
+//
+//	//!< Read-in actual encoder value
+//	encVal = MD_BSP_EncValue();
+//
+//}

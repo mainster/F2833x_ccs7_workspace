@@ -139,7 +139,7 @@ void MD_SPI_DMA_SendHalfWord_fake (uint16_t color, uint16_t pixels_count) {
 }
 
 void SPI_TxFifo_isr(void) {
-	onSpiTxFifo_irq();						//!< Invoke hook function TxFifo INT
+//	onSpiTxFifo_irq();						//!< Invoke hook function TxFifo INT
 
 #if !defined(RTOS) || (defined(RTOS) && !defined(RTOS_ENC_XINT))
 //	SpiaRegs.SPIFFTX.bit.TXFFINTCLR = 1;	//!< Clear Interrupt flag
@@ -148,7 +148,7 @@ void SPI_TxFifo_isr(void) {
 }
 
 void SPI_RxFifo_isr(void) {
-	onSpiRxFifo_irq();						//!< Invoke hook function RxFifo INT
+//	onSpiRxFifo_irq();						//!< Invoke hook function RxFifo INT
 
 #if !defined(RTOS) || (defined(RTOS) && !defined(RTOS_ENC_XINT))
 	  SpiaRegs.SPIFFRX.bit.RXFFOVFCLR = 1; 	//!< Clear Overflow flag

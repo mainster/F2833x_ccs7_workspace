@@ -68,7 +68,7 @@ void main(void) {
 //    xInt1Init();
 //    gpioXintInit();
 
-    MD_BSP_LedInit();
+//    MD_BSP_LedInit();
 //    MD_BSP_EncInit();
 
     /*
@@ -96,10 +96,10 @@ void GPIOToggle_fxn(void) {
 	Log_info1("GPIO0 BENCHMARK = [%u] cycles", delta);
 }
 
-void XINT2_EncLsb_isr(void) {
-	PieCtrlRegs.PIEACK.bit.ACK5 = 1;            //!< Ack interrupt service
-
-	//!< Read-in actual encoder value
-	encVal = MD_BSP_EncValue();
-
-}
+//void XINT2_EncLsb_isr(void) {
+//	PieCtrlRegs.PIEACK.bit.ACK5 = 1;            //!< Ack interrupt service
+//
+//	//!< Read-in actual encoder value
+//	encVal = MD_BSP_EncValue();
+//
+//}
