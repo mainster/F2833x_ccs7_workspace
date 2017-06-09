@@ -50,6 +50,69 @@ char *pUartTxBuff = &sciaTxBuff[0];
 const char _EOL[] = { "\n" };
 
 /**
+ * @brief      SCIA ready to transmit IRQ handler
+ *
+ * Don't know how to handle SCITXINTA via HWI/RTOS-object since the unique IRQ-ID
+ * leds to be 97 (>96) ???
+ */
+__interrupt void MD_SCIA_Tx_irq(void) {
+	if ((*pUartTxBuff != '\0') &&
+			(pUartTxBuff <= &sciaTxBuff[SCI_TX_BUFF_SIZ]))
+		SciaRegs.SCITXBUF = *pUartTxBuff++;
+	else
+		/*
+		 * Reset pointer to buffer base address stops blocking of
+		 * new uartPuts() calls.
+		 */
+		pUartTxBuff = &sciaTxBuff[0];
+
+//#if defined(SERVICE_TX_IRQ) && !defined(RTOS)
+	/**
+	 * Acknowledge group 9 IRQ
+	 */
+	PieCtrlRegs.PIEACK.bit.ACK9 = 1;
+//#endif
+}
+
+/**
+ * @brief      SCIA data received IRQ handler
+ *
+ * UNUSED in case of BIOS application.
+ */
+__interrupt void MD_SCIA_Rx_irq(void) {
+	/**
+	 * If Rx buffer pointer equals Rf buffer base address,
+	 * memset Rx buffer up to (and including) next '\0'
+	 */
+	if (pUartRxBuff == &sciaRxBuff[SCI_RX_BUFF_SIZ])
+		memset(pUartRxBuff, ' ', strlen(pUartRxBuff)+1);
+
+	/**
+	 * If \n detected, close string in buffer by appending \0
+	 */
+	if ((SciaRegs.SCIRXBUF.all == '\n') ||
+			(pUartRxBuff >= &sciaRxBuff[SCI_RX_BUFF_SIZ])) {
+		*pUartRxBuff = '\0';
+		uartSetRxed(1);
+	}
+	else {
+		*pUartRxBuff++ = SciaRegs.SCIRXBUF.all;
+		/**
+		 * Clear RX FIFO interrupt flag to unblock new incoming interrupts
+		 */
+		SciaRegs.SCIFFRX.bit.RXFFINTCLR = 1;
+	}
+#if defined(SERVICE_RX_IRQ) && !defined(RTOS)
+	/**
+	 * Acknowledge group 9 IRQ
+	 */
+	PieCtrlRegs.PIEACK.all = PIEACK_GROUP9;
+#endif
+
+	//SciaRegs.SCIFFRX.bit.RXFFOVRCLR=1;   // Clear Overflow flag
+}
+
+/**
  * @brief      Initialization of serial communication module A.
  *
  * @param[in]  F_CPU_MHZ   The SYSCLKOUT frequency in MHz.
@@ -83,10 +146,15 @@ void MD_SCIA_Init (const float F_CPU_MHZ, const uint32_t baudrate) {
 	 * SCICTL1:   SCI Control register 1
 	 * SCI receiver/transmitter enable/disable
 	 */
+//#if defined(SERVICE_RX_IRQ) && !defined(RTOS)
 	SciaRegs.SCICTL1.bit.RXENA = 1;             //!< Enable receiver to buffer transfer
+	SciaRegs.SCICTL2.bit.RXBKINTENA = 1;        //!< Enable SCI_A Rx IRQ
+//#endif
+
+//#if defined(SERVICE_TX_IRQ) && !defined(RTOS)
 	SciaRegs.SCICTL1.bit.TXENA = 1;             //!< Enable transmitter
 	SciaRegs.SCICTL2.bit.TXINTENA = 1;          //!< Enable SCI_A Tx IRQ
-	SciaRegs.SCICTL2.bit.RXBKINTENA = 1;        //!< Enable SCI_A Rx IRQ
+//#endif
 
 	/**
 	 * LSPCLK   Low-speed peripheral clock.
@@ -114,12 +182,14 @@ void MD_SCIA_Init (const float F_CPU_MHZ, const uint32_t baudrate) {
 	pUartRxBuff = &sciaRxBuff[0];
 	pUartTxBuff = &sciaTxBuff[0];
 
-#if defined(SERVICE_TX_IRQ) && !defined(RTOS)
+//#if defined(SERVICE_TX_IRQ) && !defined(RTOS)
+	//!< Don't know how to handle SCITXINTA via HWI/RTOS-object since the unique IRQ-ID
+	//! leds to be 97 (>96) ???
 	EALLOW;
 	PieVectTable.SCITXINTA = &MD_SCIA_Tx_irq;
-	EDIS;
 	PieCtrlRegs.PIEIER9.bit.INTx2 = 1;  		//!< SCI-A-TX-irq
-#endif
+	EDIS;
+//#endif
 
 #if defined(SERVICE_RX_IRQ) && !defined(RTOS)
 	EALLOW;
@@ -128,11 +198,95 @@ void MD_SCIA_Init (const float F_CPU_MHZ, const uint32_t baudrate) {
 #endif
 }
 
+retVal_t uartPutsp(char *str) {
+	retVal_t ret = _uartPuts(str, "\n");
+	str = NULL;
+	return ret;
+}
+
+retVal_t uartPuts(const char *str) {
+	return _uartPuts(str, "\n");
+}
+
+retVal_t uartPutsNoEOL(const char *str) {
+	return _uartPuts(str, "");
+}
+
+retVal_t uartPutsi(const char *prefix, uint32_t arg, const char *posfix) {
+	const char i2sa[10];
+	const char *i2s = &i2sa[0];
+
+	i2s = int2str(arg);
+	_uartPuts(prefix, "");
+	_uartPuts(i2s, "");
+	_uartPuts(posfix, "");
+
+	return ret_ok;
+}
+
+retVal_t _uartPuts(const char *str, const char *EOL) {
+	/* Return busy if pUartTxBuff doesnt match txBuff base */
+	if (pUartTxBuff != &sciaTxBuff[0])
+		return ret_busy;
+
+	retVal_t retVal = ret_ok;
+
+	/* Strip if string doesnt fit into tx buffer */
+	if (strlen(str) >= SCI_TX_BUFF_SIZ) {
+		strncpy(pUartTxBuff, str, SCI_TX_BUFF_SIZ-1);
+		retVal = ret_striped;
+	}
+	else {
+		strcpy(pUartTxBuff, str);
+		strcat(pUartTxBuff, EOL);
+	}
+
+	/* Copy first char to SCI Tx register */
+	SciaRegs.SCITXBUF = *pUartTxBuff++;
+
+	return retVal;
+}
+
+char uartGetc(void) {
+	return SciaRegs.SCIRXBUF.all;
+	/**
+	 * Clear RX FIFO interrupt flag to unblock new incoming interrupts
+	 */
+//	SciaRegs.SCIFFRX.bit.RXFFINTCLR = 1;
+}
+
+char *_uartGets(const int maxChars) {
+	pUartRxBuff = &sciaRxBuff[0];
+	/**
+	 * If less than strlen(pUartRxBuff) chars has been queried,
+	 * strip rx buffer by manual placed '\0'.
+	 */
+	if ((maxChars > 0) && (maxChars < strlen(pUartRxBuff))) {
+		if (maxChars < strlen(pUartRxBuff))
+			*(pUartRxBuff + maxChars) = '\0';
+	}
+	uartSetRxed(0);
+	return pUartRxBuff;
+}
+
+int16_t _uartRxedLine(int16_t state) {
+	static int16_t line_received = 0;
+	if (state > -1) {
+		line_received = state;
+		if (state == 0)
+			/**
+			 * Clear RX FIFO interrupt flag to unblock new incoming interrupts
+			 */
+			SciaRegs.SCIFFRX.bit.RXFFINTCLR = 1;
+	}
+
+	return line_received;
+}
 
 /**
- * @brief      Simple digit to char converter.
+ * @brief      Simple digit to char converter to avoid stdio overhead.
  *
- * @param      number   The number 
+ * @param      number   The number
  * @param[in]  base     The base
  * @return     character representation of number
  */
@@ -173,130 +327,4 @@ const char *int2str (const uint32_t number) {
 	}
 	*p = '\0';
 	return tmp;
-}
-
-
-retVal_t uartPutsp(char *str) {
-	retVal_t ret = _uartPuts(str, "\n");
-	str = NULL;
-	return ret;
-}
-
-retVal_t uartPuts(const char *str) {
-	return _uartPuts(str, "\n");
-}
-
-retVal_t uartPutsNoEOL(const char *str) {
-	return _uartPuts(str, "");
-}
-
-retVal_t _uartPuts(const char *str, const char *EOL) {
-	/* Return busy if pUartTxBuff doesnt match txBuff base */
-	if (pUartTxBuff != &sciaTxBuff[0])
-		return ret_busy;
-
-	retVal_t retVal = ret_ok;
-
-	/* Strip if string doesnt fit into tx buffer */
-	if (strlen(str) >= SCI_TX_BUFF_SIZ) {
-		strncpy(pUartTxBuff, str, SCI_TX_BUFF_SIZ-1);
-		retVal = ret_striped;
-	}
-	else {
-		strcpy(pUartTxBuff, str);
-		strcat(pUartTxBuff, EOL);
-	}
-
-	/* Copy first char to SCI Tx register */
-	SciaRegs.SCITXBUF = *pUartTxBuff++;
-
-	return retVal;
-}
-
-
-char *_uartGets(const int maxChars) {
-	pUartRxBuff = &sciaRxBuff[0];
-	/**
-	 * If less than strlen(pUartRxBuff) chars has been queried,
-	 * strip rx buffer by manual placed '\0'.
-	 */
-	if ((maxChars > 0) && (maxChars < strlen(pUartRxBuff))) {
-		if (maxChars < strlen(pUartRxBuff))
-			*(pUartRxBuff + maxChars) = '\0';
-	}
-	uartSetRxed(0);
-	return pUartRxBuff;
-}
-
-int16_t _uartRxedLine(int16_t state) {
-	static int16_t line_received = 0;
-	if (state > -1) {
-		line_received = state;
-		if (state == 0)
-			/**
-			 * Clear RX FIFO interrupt flag to unblock new incoming interrupts
-			 */
-			SciaRegs.SCIFFRX.bit.RXFFINTCLR = 1;
-	}
-
-	return line_received;
-}
-
-
-/**
- * @brief      SCIA ready to transmit IRQ handler 
- */
-void MD_SCIA_Tx_irq(void) {
-	if ((*pUartTxBuff != '\0') &&
-			(pUartTxBuff <= &sciaTxBuff[SCI_TX_BUFF_SIZ]))
-		SciaRegs.SCITXBUF = *pUartTxBuff++;
-	else
-		/*
-		 * Reset pointer to buffer base address stops blocking of
-		 * new uartPuts() calls.
-		 */
-		pUartTxBuff = &sciaTxBuff[0];
-
-#if defined(SERVICE_TX_IRQ) && !defined(RTOS)
-	/**
-	 * Acknowledge group 9 IRQ
-	 */
-	PieCtrlRegs.PIEACK.all = PIEACK_GROUP9;
-#endif
-}
-
-/**
- * @brief      SCIA data receive IRQ handler
- */
-void MD_SCIA_Rx_irq(void) {
-	/**
-	 * If Rx buffer pointer equals Rf buffer base address,
-	 * memset Rx buffer up to (and including) next '\0'
-	 */
-	if (pUartRxBuff == &sciaRxBuff[SCI_RX_BUFF_SIZ])
-		memset(pUartRxBuff, ' ', strlen(pUartRxBuff)+1);
-
-	/**
-	 * If \n detected, close string in buffer by appending \0
-	 */
-	if ((SciaRegs.SCIRXBUF.all == '\n') ||
-			(pUartRxBuff >= &sciaRxBuff[SCI_RX_BUFF_SIZ])) {
-		*pUartRxBuff = '\0';
-		uartSetRxed(1);
-	}
-	else {
-		*pUartRxBuff++ = SciaRegs.SCIRXBUF.all;
-		/**
-		 * Clear RX FIFO interrupt flag to unblock new incoming interrupts
-		 */
-		SciaRegs.SCIFFRX.bit.RXFFINTCLR = 1;
-	}
-#if defined(SERVICE_RX_IRQ) && !defined(RTOS)
-	/**
-	 * Acknowledge group 9 IRQ
-	 */
-	PieCtrlRegs.PIEACK.all = PIEACK_GROUP9;
-#endif
-
-	//SciaRegs.SCIFFRX.bit.RXFFOVRCLR=1;   // Clear Overflow flag
 }

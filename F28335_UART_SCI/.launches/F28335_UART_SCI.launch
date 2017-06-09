@@ -6,7 +6,7 @@
 <stringAttribute key="com.ti.ccstudio.debug.debugModel.ATTR_PROGRAM.Texas Instruments XDS100v1 USB Debug Probe/C28xx" value="${build_artifact:F28335_UART_SCI}"/>
 <stringAttribute key="com.ti.ccstudio.debug.debugModel.ATTR_PROJECT.Texas Instruments XDS100v1 USB Debug Probe/C28xx" value="F28335_UART_SCI"/>
 <stringAttribute key="com.ti.ccstudio.debug.debugModel.ATTR_TARGET_CONFIG" value="${target_config_active_default:F28335_UART_SCI}"/>
-<stringAttribute key="com.ti.ccstudio.debug.debugModel.MRU_PROGRAM.Texas Instruments XDS100v1 USB Debug Probe/C28xx" value="/media/data/CODES/ccs7_workspace/F28335_UART_SCI/Debug/F28335_UART_SCI.out"/>
+<stringAttribute key="com.ti.ccstudio.debug.debugModel.MRU_PROGRAM.Texas Instruments XDS100v1 USB Debug Probe/C28xx" value="/home/mainster/CODES_local/ccs7_workspace/F28335_UART_SCI/Debug/F28335_UART_SCI.out"/>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
 <listEntry value="/F28335_UART_SCI"/>
 </listAttribute>

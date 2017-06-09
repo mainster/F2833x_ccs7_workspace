@@ -42,11 +42,12 @@
 								<option id="com.ti.ccstudio.buildDefinitions.C2000_16.12.compilerID.INCLUDE_PATH.1947815309" name="Add dir to #include search path (--include_path, -I)" superClass="com.ti.ccstudio.buildDefinitions.C2000_16.12.compilerID.INCLUDE_PATH" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${PROJECT_ROOT}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/MD_F2833x_LIB}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${BSP_COMMON}/include&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${BSP_HEADERS}/include&quot;"/>
+									<listOptionValue builtIn="false" value="/opt/ti/c2000ware/device_support/f2833x/common/include"/>
+									<listOptionValue builtIn="false" value="/opt/ti/c2000ware/device_support/f2833x/headers/include"/>
 									<listOptionValue builtIn="false" value="&quot;${CG_TOOL_ROOT}/include&quot;"/>
 								</option>
 								<option id="com.ti.ccstudio.buildDefinitions.C2000_16.12.compilerID.ADVICE__PERFORMANCE.927863734" name="Provide advice on optimization techniques (--advice:performance)" superClass="com.ti.ccstudio.buildDefinitions.C2000_16.12.compilerID.ADVICE__PERFORMANCE" value="--advice:performance=all" valueType="string"/>
+								<option id="com.ti.ccstudio.buildDefinitions.C2000_16.12.compilerID.C_DIALECT.1439447557" superClass="com.ti.ccstudio.buildDefinitions.C2000_16.12.compilerID.C_DIALECT" value="com.ti.ccstudio.buildDefinitions.C2000_16.12.compilerID.C_DIALECT.C99" valueType="enumerated"/>
 								<inputType id="com.ti.ccstudio.buildDefinitions.C2000_16.12.compiler.inputType__C_SRCS.299092814" name="C Sources" superClass="com.ti.ccstudio.buildDefinitions.C2000_16.12.compiler.inputType__C_SRCS"/>
 								<inputType id="com.ti.ccstudio.buildDefinitions.C2000_16.12.compiler.inputType__CPP_SRCS.1351620245" name="C++ Sources" superClass="com.ti.ccstudio.buildDefinitions.C2000_16.12.compiler.inputType__CPP_SRCS"/>
 								<inputType id="com.ti.ccstudio.buildDefinitions.C2000_16.12.compiler.inputType__ASM_SRCS.144125663" name="Assembly Sources" superClass="com.ti.ccstudio.buildDefinitions.C2000_16.12.compiler.inputType__ASM_SRCS"/>
@@ -85,7 +86,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="linker/F28335.cmd" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="MD_F2833x_LIB/md_spi.c|MD_F2833x_LIB/md_epwm.c|MD_F2833x_LIB/md_bsp_explorer.c|linker/F28335.cmd" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>

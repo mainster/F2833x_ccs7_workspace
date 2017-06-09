@@ -64,7 +64,7 @@ void Gpio_select(void);
 #undef 		FLASH
 #undef      JITTER
 
-
+#define RTOS
 
 void main(void) {
     InitSysCtrl();    // Basic Core Initialization

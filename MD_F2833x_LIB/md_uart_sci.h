@@ -40,7 +40,7 @@
 #define MD_UART_SCI_H_
 
 #ifdef __cplusplus
- extern "C" {
+extern "C" {
 #endif
     
 /* -------------------------------  Includes  ------------------------------ */
@@ -62,8 +62,10 @@
 
 #define SERVICE_RX_IRQ
 #define SERVICE_TX_IRQ
-//#undef    SERVICE_RX_IRQ
-//#undef    SERVICE_TX_IRQ
+
+#ifndef RTOS
+#define RTOS
+#endif
 
 /* --------------------------  External variables  ------------------------- */
 extern const char _EOL[];
@@ -84,36 +86,33 @@ typedef enum RetVal {
 #define uartGetsn(n)    (*_uartGets(n))
 #define uartHasRxed()   (_uartRxedLine(-1))     //!< Returns static state
 #define uartSetRxed(x)  (_uartRxedLine(x))      //!< Updates and returns static state
+#define uartGeti()		((uint16_t) uartGetc())
 
 /* ---------------------  Private function prototypes  --------------------- */
 void MD_SCIA_Init (const float _F_CPU_MHZ, const uint32_t baudrate);
 char *_uartGets(const int maxChars);
+char uartGetc(void);
 retVal_t _uartPuts(const char *str, const char *EOL);
 retVal_t uartPuts(const char *str);
 retVal_t uartPutsp(char *str);
 retVal_t uartPutsNoEOL(const char *str);
+retVal_t uartPutsi(const char *prefix, uint32_t arg, const char *posfix);
 int16_t _uartRxedLine(int16_t state);
 const char *int2str (const uint32_t number);
 char makedigit (uint32_t *number, uint32_t base);
 
+extern char sciaRxBuff[];
+extern char sciaTxBuff[];
+extern char *pUartRxBuff;
+extern char *pUartTxBuff;
 
-/**
- * Remove compiler directive __interrupt from function declaration
- * and definition if used as TI_RTOS irq callback.
- */
-//#ifndef RTOS
-interrupt
-//#endif
-void MD_SCIA_Rx_irq(void);
+__interrupt void MD_SCIA_Rx_irq(void);
 
-//#ifndef RTOS
-interrupt
-//#endif
-void MD_SCIA_Tx_irq(void);
+__interrupt void MD_SCIA_Tx_irq(void);
 
 
 #ifdef __cplusplus
- }
+}
 #endif
 
 #endif
